@@ -1,0 +1,659 @@
+/* alwb.css
+*  Note: css for dropdown menu is jquery.dropdown.css
+*/
+
+
+div.alwb-media-dropdown-div {
+	font-size: 50% !important;
+	position: absolute;
+}
+
+
+@font-face {
+	font-family: "Arimo";
+	src:
+		url('fonts/Arimo-Bold.ttf') format('truetype'),
+		url('fonts/Arimo-BoldItalic.ttf') format('truetype'),
+		url('fonts/Arimo-Italic.ttf') format('truetype'),
+		url('fonts/Arimo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ED Psaltica';
+  src: url('fonts/Psaltica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+	font-family: "Arimo", sans-serif;
+	font-size: 12pt;
+	font-weight:bold;
+    color: black; /* do not remove. Used in Javascript */
+    height: 100%;
+    width: 100%;
+}
+/* Properties for the Menu Bar */
+div.agesMenu {
+	border-style: none;
+	font-size: 100%;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	background-color:#72A0CE;
+	position: fixed;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	top: 0px;
+	left: 0px;
+	opacity: 1;
+	z-index: 10000;
+}
+
+.agesMenu a .fa {
+	font-size: 1em; /* is rescaled by javascript for mobile devices */
+}
+
+
+/* Properties to control the spacing between menu bar icons
+   and their color.
+   Note that the alwb.js controls the sizing dynamically
+   depending on various factors.
+*/
+i.ages-menu-link {
+	padding: 0.25em;
+	color: white;
+}
+
+/* Sets the color of icons in content div */
+.content, .index-content > a >.fa {
+    color: #000000;
+}
+
+/* Accordion Text*/
+.panelTitle {
+	font-size: 100%;
+}
+.panel-body {
+	background-color: #FBF0D9;
+}
+
+div.panel-heading {
+	background-color: #BCB6A9 !important;
+}
+
+/* Placeholders to change specific icons */
+.fa-arrows {}
+.fa-bars {
+    padding-top: 1px;
+}
+.fa-byznote:before{
+  font-family: 'ED Psaltica';
+  font-size: 250%;
+  content: "\006c";
+  line-height: 0;
+  position: relative;
+  bottom: -20px;
+}
+.fa-calendar {}
+.fa-caret-square-o-left {}
+.fa-caret-square-o-right {}
+.fa-columns {}
+.fa-columns {}
+.fa-envelope {}
+.fa-info-circle {
+	padding-left: 2px;
+}
+.fa-list-alt {}
+.fa-minus {}
+.fa-mobile {}
+.fa-money {}
+.fa-music {}
+.fa-plus {}
+.fa-question-circle {}
+.fa-text-height {}
+.fa-undo {}
+.fa-volume-up {
+	padding-left: 3px;
+}
+
+/* Sets properties for the Byzantine Music Score Icon */
+.byzscore {
+	height: 10pt;
+	width: 15pt;
+}
+
+/* Properties of the "button" hyperlinks in the Index pages */
+.IndexLink {
+    font-size: 100% !important;
+	background-color: #BCB6A9;
+}
+
+.container {
+    position: absolute;
+    left: -10px;
+    height: 100%;
+}
+
+span.clockbox {
+  font-family: "Arial Unicode MS", sans-serif;
+  font-size: 0.75em;
+  color: white;
+  line-height: 0em;
+  position: fixed;
+  top: 1.2em;
+  right: 5px;
+}
+
+/* Properties for the main content on a service or book */
+div.content {
+	position: absolute;
+	top: 20px;
+	left: 5px;
+}
+
+/* Properties for the content of an index page */
+div.index-content {
+	position: absolute;
+	top: 30px;
+	left: 5px;
+}
+
+span.media-icon {
+    font-family: "Arimo", sans-serif;
+    font-style:italic;
+ 	margin: 0 3px;
+}
+
+div.media-group {
+    text-align:center;
+}
+
+title, p.designation, p.mixed, p.mode, p.melody {
+    font-family: "Arimo", sans-serif;
+    text-align:center;
+    font-weight:normal;
+    font-size:95%;
+  	margin-top: 6px;
+  	margin-bottom: 0px;
+}
+
+p {
+	color: black;   /* night mode #FBF0D9 */
+    text-align: left;
+    font-family: "Arimo", sans-serif;
+    font-weight: 150;
+    margin-bottom: 0em; /* to control spacing after para */
+}
+p.actor {
+    text-align:left;
+    font-size:80%;
+    color:red;
+    font-weight:bold;
+    text-indent: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+p.actor:first-letter {
+    text-align:left;
+    font-size:125%;
+}
+p.break {
+    margin-bottom: 10px;
+}
+p.chant {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-bottom: 10px;
+}
+p.chant:first-letter {
+    color:red;
+    font-size:180%;
+    font-weight:normal;
+}
+p.chapverse {
+    font-weight:normal;
+    font-style:italic;
+    text-indent: 0px;
+    text-align:center;
+    color:red;
+    font-size: 80%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+p.designation {
+    font-style:normal;
+    font-weight:bolder;
+    color:red;
+}
+p.dialog {
+    text-align:left;
+    text-indent: 28px;
+    font-size:95%;
+    line-height:130%;
+    margin-bottom: 5px;
+}
+p.dialogzero {
+    text-align:left;
+    text-indent: 28px;
+    font-size:95%;
+    line-height:130%;
+    margin-bottom: 0px;
+}
+p.heirmos {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-bottom: 10px;
+}
+p.heirmos:first-letter {
+    color:red;
+    font-size:180%;
+    font-weight:normal;
+}
+p.hymn {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-bottom: 10px;
+}
+p.hymn:first-letter {
+    color:red;
+    font-size:180%;
+    font-weight:normal;
+}
+p.hymn:first-letter(drop) {
+    float: left;
+    font-size: 320%;
+    line-height: 0.5em;
+    padding-bottom: 0.05em;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    color:red;
+}
+p.hymnlinefirst {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-bottom: 0;
+}
+p.hymnlinefirst:first-letter {
+    color:red;
+    font-size:180%;
+    font-weight:normal;
+}
+p.hymnlinemiddle {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+p.hymnlinelast {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+p.inaudible {
+    text-indent: 28px;
+	font-size:80%;
+    text-align:left;
+    line-height:150%;
+}
+p.mode {
+    color:red;
+    font-weight:bold;
+}
+p.mixed {
+    font-weight:normal;
+    font-style:normal;
+}
+
+p.melody {
+    font-weight:normal;
+    font-style:italic;
+    color:red;
+}
+p.name {
+    font-weight:normal;
+    font-style:italic;
+    color:red;
+}
+p.prayer {
+    text-align:left;
+    text-indent: 28px;
+    line-height:150%;
+    margin-bottom: 5px;
+}
+p.prayerzero {
+    text-align:left;
+    text-indent: 28px;
+    line-height:150%;
+    margin-bottom: 0px;
+}
+p.reading {
+    text-align:left;
+    text-indent: 28px;
+    line-height:150%;
+    margin-bottom: 5px;
+}
+p.readingzero {
+    text-align:left;
+    text-indent: 28px;
+    line-height:150%;
+    margin-bottom: 0em;
+}
+p.rubric {
+    color:red;
+    font-size:80%;
+    font-style:italic;
+    text-align:left;
+    text-indent: 28px;
+}
+p.verse {
+    text-align:left;
+    text-indent: 28px;
+    font-style:italic;
+    font-size:100%;
+    line-height:150%;
+    margin-bottom: 5px;
+}
+p.cover1 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:normal;
+    font-size:48pt;
+    margin-top: 1in;
+    margin-bottom: 1in;
+}
+p.cover2 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:bold;
+    font-size:24pt;
+    margin-bottom: 1em;
+}
+p.cover3 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:bold;
+    font-size:12pt;
+    color:red;
+    text-indent: 20px;
+    margin-left: 2in;
+    margin-bottom: 2em;
+}
+p.cover4 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:bold;
+    font-size:16pt;
+    color:red;
+    margin-bottom: 1em;
+}
+p.cover5 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:bold;
+    font-size:16pt;
+    margin-top: 1in;
+}
+.verticalLine {
+	position:fixed;
+	left: .5in;    
+	border-left: thick solid #ff0000;
+    height: 10in;
+}
+.horizontalLine {
+ 	position:fixed;
+	top: .5in;    
+    border-top: thick solid #ff0000;
+    width: 7in;
+}
+p.credits1 {
+    font-family: "Arimo", serif;
+    margin-top: 1em;
+    text-align:left;
+    font-weight:bold;
+    font-size:10pt;
+    margin-bottom: 1em;
+}
+p.credits2 {
+    font-family: "Arimo", serif;
+    text-align:left;
+    font-size:9pt;
+}
+p.credits3 {
+    font-family: "Arimo", serif;
+    text-align:left;
+    font-size:9pt;
+    margin-bottom: 1em;
+}
+
+span.mode {
+	font-style:normal;
+	font-weight:bolder;
+	color:red;
+}
+span.melody {
+	font-style:italic;
+	color:red;	
+}
+
+span.mode {
+	font-style:normal;
+	font-weight:bolder;
+	color:red;
+}
+
+span.designation {
+	font-style:normal;
+	font-weight:bolder;
+	color:red;
+}
+
+span.rubric{
+	font-variant:normal;
+	font-weight:normal;
+	font-style:italic;
+	font-size:80%;
+	color:red;	
+}
+span.italics {
+	font-style:italic;
+}
+span.strong {
+	font-weight:bold;
+}
+span.bold {
+	font-weight:bold;
+	font-style:inherit;
+}
+span.bolditalics {
+	font-weight:bold;
+	font-style:italic;
+}
+
+span.red {
+	font-style:inherit;
+	color:red;
+}
+
+span.boldred {
+	font-weight:bold;
+	color:red;
+	font-style:inherit;
+}
+
+span.italicsred {
+	font-style:italic;
+	color:red;
+}
+
+span.bolditalicsred {
+	font-weight:bold;
+	font-style:italic;
+	color:red;
+}
+
+table {
+  padding: 0;
+  border-collapse: collapse;
+  display: inline;
+}
+tr {
+}
+td {
+  vertical-align: top;
+  width: 50%;
+}
+td.leftCell {
+  padding-right: 8px;
+  padding-left: 2px;
+  width: 50% !important;
+  border-right: thin solid silver;
+}
+td.RightCell {
+  padding-right: 2px;
+  padding-left: 8px;
+  width: 50% !important;
+  border-right: thin solid silver;
+}
+th {
+  font-family: "Arimo", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1em;
+  font-size: 1em;
+  padding-top: 3pt;
+  padding-bottom: 3pt;
+}
+.glyphicon {
+ 	margin: 0 3px;
+}
+button {
+  border: 1px solid silver;
+  padding: 6px 12px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  color: silver;
+  width: 6em;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+iframe {
+  border:  none;
+  margin: 0;
+  padding: 0;
+}
+#FrameLinks {
+  width: 38%;
+  position: fixed;
+  top: 0;
+  height: 2em;
+  margin-top: 1em;
+  z-index: 1;
+}
+#FrameText {
+  width: 38%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+#FrameAudio {
+  width: 36.5%;
+  position: fixed;
+  bottom: 0;
+  height: 4.5em;
+  margin-bottom: -2.75em;
+  z-index: 0;
+}
+#FrameScore {
+  width: 61%;
+  height: 100%;
+  position: fixed;
+  left: 39%;
+  top: 0;
+}
+.left {
+  left: 0;
+}
+.left:hover {
+  color: #1a75cf;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.center {
+  text-align: center;
+  left: 50%;
+  margin-left: -36px;
+}
+.center:hover {
+  color: #800080;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.right {
+  right: 0;
+}
+.right:hover {
+  color: #e60000;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+  .pixels {
+        font-size:16px;
+        line-height:30px;
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    .point {
+        font-size:12pt;
+        line-height:30px;
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    .em {
+        font-size:1em;
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    .percentage {
+        font-size:100%;
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    .undefined {
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    #changeFont {
+        position:absolute;
+        top:10px;
+        right:10px;
+        background-color:#333333;
+        padding:5px;
+    }
+
+
+
+
+
+
