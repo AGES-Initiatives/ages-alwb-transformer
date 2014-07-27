@@ -1,0 +1,4205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" font-family="Palatino Linotype, Palatino Linotype Italic, Palatino Linotype Bold, Palatino Linotype Bold Italic" font-size="10pt" text-align="justify" line-height="normal" font-selection-strategy="character-by-character" line-height-shift-adjustment="disregard-shifts" writing-mode="lr-tb" language="en">
+   <fo:layout-master-set>
+    <fo:simple-page-master master-name="even"
+      page-height="11in" page-width="8.5in"
+      margin-top=".5in" margin-bottom=".5in"
+      margin-left=".75in" margin-right=".75in">
+      <fo:region-body margin-top=".25in" margin-bottom=".25in" column-count="2" column-gap="60pt"/>
+      <fo:region-before region-name="header-even" extent="0in"/>
+      <fo:region-after region-name="footer-even" extent="0in"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="odd"
+      page-height="11in" page-width="8.5in"
+      margin-top=".5in" margin-bottom=".5in"
+      margin-left=".75in" margin-right=".75in">
+      <fo:region-body margin-top=".25in" margin-bottom=".25in" column-count="2" column-gap="60pt"/>
+      <fo:region-before region-name="header-odd" extent="0in"/>
+      <fo:region-after region-name="footer-odd" extent="0in"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference odd-or-even="even"
+          master-reference="even"/>
+        <fo:conditional-page-master-reference odd-or-even="odd"
+          master-reference="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set> 
+<fo:page-sequence master-reference='document' initial-page-number='1'>
+		    <fo:static-content flow-name="header-even">
+<fo:table table-layout="fixed">
+	<fo:table-column column-number="1" column-width='20%' text-align="left"/>
+	<fo:table-column column-number="2" column-width="60%" text-align="center"/>
+	<fo:table-column column-number="3" column-width="20%" text-align="right"/>
+	<fo:table-body>
+		<fo:table-cell>
+      		<fo:block  
+      		border-bottom='thin solid silver' 
+      		font-size='12pt' 
+      		text-align='left'><fo:inline  
+      		color='red'><fo:page-number/></fo:inline></fo:block>
+		</fo:table-cell>
+		<fo:table-cell>
+      		<fo:block  
+      		border-bottom='thin solid silver' 
+      		font-size='12pt' 
+      		text-align='center'><fo:inline  
+      		color='red'>Divine Liturgy Sunday, February 2, 2014</fo:inline></fo:block>
+		</fo:table-cell>
+		<fo:table-cell>
+      		<fo:block  
+      		border-bottom='thin solid silver' 
+      		font-size='12pt' 
+      		text-align='right'><fo:inline  
+      		color='red'>&#xA0;&#xA0;&#xA0;</fo:inline></fo:block>
+		</fo:table-cell>
+	</fo:table-body>
+</fo:table>
+		    </fo:static-content>
+		    <fo:static-content flow-name="header-odd">
+<fo:table table-layout="fixed">
+	<fo:table-column column-number="1" column-width='20%' text-align="left"/>
+	<fo:table-column column-number="2" column-width="60%" text-align="center"/>
+	<fo:table-column column-number="3" column-width="20%" text-align="right"/>
+	<fo:table-body>
+		<fo:table-cell>
+      		<fo:block  
+      		border-bottom='thin solid silver' 
+      		font-size='12pt' 
+      		text-align='left'><fo:inline  
+      		color='red'>&#xA0;&#xA0;&#xA0;</fo:inline></fo:block>
+		</fo:table-cell>
+		<fo:table-cell>
+      		<fo:block  
+      		border-bottom='thin solid silver' 
+      		font-size='12pt' 
+      		text-align='center'><fo:inline  
+      		color='red'>Divine Liturgy Sunday, February 2, 2014</fo:inline></fo:block>
+		</fo:table-cell>
+		<fo:table-cell>
+      		<fo:block  
+      		border-bottom='thin solid silver' 
+      		font-size='12pt' 
+      		text-align='right'><fo:inline  
+      		color='red'><fo:page-number/></fo:inline></fo:block>
+		</fo:table-cell>
+	</fo:table-body>
+</fo:table>
+		    </fo:static-content>	
+    <fo:flow flow-name='xsl-region-body' text-align='left'>	
+<fo:table border-collapse='collapse' margin='0 3 pt' padding='0'>		
+<fo:table-body>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Blessed is the kingdom of the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>The Great Litany </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>In peace, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'><fo:inline 
+		font-style='italic' 
+		font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For the peace from above and the salvation of our souls, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For peace in the whole world, for the stability of the holy churches of God, and for the unity of all, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For this holy house and for those who enter it with faith, reverence, and the fear of God, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For our <fo:inline 
+		color='red'>(episcopal rank) (name), </fo:inline> the honorable presbyters, the deacons in the service of Christ, and all the clergy and laity, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For our country, the president, and all those in public service, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For the Holy and Great Church of Christ, for this Holy Metropolis, this parish and city, for every city and town, and for the faithful who live in them, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For favorable weather, an abundance of the fruits of the earth, and temperate seasons, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For travelers by land, sea and air, for the sick, the suffering, for captives, and for their salvation, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>For our deliverance from all affliction, wrath, danger, and distress, let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Help us, save us, have mercy upon us and protect us, O God, by your grace. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Remembering our most holy, pure, blessed, and glorious Lady, the Theotokos and ever-virgin Mary, with all the saints, let us commit ourselves and one another and our whole life to Christ our God. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'><fo:inline 
+		font-style='italic' 
+		font-weight='normal'>(To You, O Lord.) </fo:inline> </fo:block></fo:table-cell>
+		</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Lord, our God, whose power is beyond compare, and glory is beyond understanding; whose mercy is boundless, and love for us is ineffable: look upon us and upon this holy house in Your compassion. Grant to us and to those who pray with us Your abundant mercy. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For to You belong all glory, honor, and worship, to the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Antiphon I. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Mode 2. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 1: </fo:inline> My heart overflowed with a good word; I tell my works to the King. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Through the intercessions of the Theotokos, Savior, save us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 2: </fo:inline> My tongue is a pen of a swift-writing scribe. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Through the intercessions of the Theotokos, Savior, save us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 3: </fo:inline> Grace was poured out on Your lips. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Through the intercessions of the Theotokos, Savior, save us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 4: </fo:inline> Therefore God blessed You forever. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Through the intercessions of the Theotokos, Savior, save us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Glory to Father and the Son and the Holy Spirit. Both now and ever and to the ages of ages. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Through the intercessions of the Theotokos, Savior, save us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Again and again in peace let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'><fo:inline 
+		font-style='italic' 
+		font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Help us, save us, have mercy upon us and protect us, O God, by your grace. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Remembering our most holy, pure, blessed, and glorious Lady, the Theotokos and ever-virgin Mary, with all the saints, let us commit ourselves and one another and our whole life to Christ our God. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'><fo:inline 
+		font-style='italic' 
+		font-weight='normal'>(To You, O Lord.) </fo:inline> </fo:block></fo:table-cell>
+		</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Lord our God, save Your people and bless Your inheritance; protect the whole body of Your Church; sanctify those who love the beauty of Your house; glorify them in return by Your divine power; and do not forsake us who hope in You. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For yours is the dominion, and yours is  the kingdom, the power, and the glory of the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Antiphon II. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Mode 2. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 1: </fo:inline> Gird Your sword upon Your thigh, O Mighty One, in Your splendor and Your beauty. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Save us, O Son of God,  who in the arms of righteous Symeon were held. We sing to You, Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 2: </fo:inline> And stretch Your bow, and grant prosperity, and reign because of truth, gentleness, and righteousness. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Save us, O Son of God,  who in the arms of righteous Symeon were held. We sing to You, Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 3: </fo:inline> Your arrows are sharp, O Mighty One; the peoples shall fall under You. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Save us, O Son of God,  who in the arms of righteous Symeon were held. We sing to You, Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 4: </fo:inline> Your royal scepter is a scepter of uprightness. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Save us, O Son of God,  who in the arms of righteous Symeon were held. We sing to You, Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Glory to Father and the Son and the Holy Spirit. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Both now and ever and to the ages of ages. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Only begotten Son and Word of God, who are immortal, and for our salvation condescended to become incarnate of the holy Theotokos and ever-virgin Mary, and, without change became man, and were crucified, O Christ our God, and trampled on death by death, being one of the Holy Trinity, glorified together with the Father and the Holy Spirit: save us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Again and again in peace let us pray to the Lord. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'><fo:inline 
+		font-style='italic' 
+		font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Help us, save us, have mercy upon us and protect us, O God, by your grace. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Remembering our most holy, pure, blessed, and glorious Lady, the Theotokos and ever-virgin Mary, with all the saints, let us commit ourselves and one another and our whole life to Christ our God. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'><fo:inline 
+		font-style='italic' 
+		font-weight='normal'>(To You, O Lord.) </fo:inline> </fo:block></fo:table-cell>
+		</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Lord, You have given us grace to offer these common prayers with one heart. You have promised to grant the requests of two or three gathered in Your name. Fulfill now the petitions of Your servants for our benefit, giving us the knowledge of Your truth in this world, and granting us eternal life in the world to come. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For you are a good and loving God, and to you we give glory, to the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Antiphon III. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Mode 1. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-style='normal' 
+	font-weight='bold'>Verse 1: </fo:inline> Listen, O daughter; behold and incline your ear, and forget your people and your father's; house; for the King desired your beauty. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Apolytikion. For the Feast. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Lady full of grace, rejoice, O Virgin Theotokos, for Christ our God, the Sun of righteousness has risen from you and He illumined those in darkness. And you, righteous Elder, be glad in heart, receiving in your embraces the One who liberates our souls and bestows on us the Resurrection. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE SMALL ENTRANCE </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Master and Lord our God, You have established in heaven the orders and hosts of angels and archangels to minister to Your glory. Grant that the holy angels may enter with us that together we may serve and glorify Your goodness. For to You belong all glory, honor, and worship, to the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Master, bless the holy entrance. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Blessed is the entrance of Your saints always, now and forever and to the ages of ages. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Wisdom! Arise! </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CLERGY </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Mode 2. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>The Lord made know His salvation; He revealed His righteousness in the sight of the Gentiles. Save us, O Son of God,  who arose from the dead. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We sing to You, Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+color='red' 
+font-family='Palatino Linotype Bold' 
+font-size='12pt' 
+font-variant='small-caps' 
+font-weight='bold' 
+padding-bottom='6px' 
+text-align='left' 
+text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+	<fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-style='normal' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='center'>Resurrectional Apolytikion. </fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+	<fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='center'>Grave Mode. </fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+font-size='12pt' 
+line-height='150%' 
+padding-bottom='6px' 
+text-align='left' 
+text-indent='.3in'>By means of Your Cross, O Lord, You abolished death. To the robber You opened Paradise. The lamentation of the myrrh-bearing women You transformed, and You gave Your Apostles the order to proclaim to all that You had risen, O Christ our God, and granted the world Your great mercy. </fo:block></fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+	<fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-style='normal' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='center'>For the Feast. </fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+	<fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='center'>Mode 1. </fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+font-size='12pt' 
+line-height='150%' 
+padding-bottom='6px' 
+text-align='left' 
+text-indent='.3in'>Lady full of grace, rejoice, O Virgin Theotokos, for Christ our God, the Sun of righteousness has risen from you and He illumined those in darkness. And you, righteous Elder, be glad in heart, receiving in your embraces the One who liberates our souls and bestows on us the Resurrection. </fo:block></fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+	<fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-style='normal' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='center'>Kontakion. For the Feast. </fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+	<fo:block keep-with-next.within-page='always' 
+	font-size='12pt' 
+	font-style='normal' 
+	font-weight='normal' 
+	padding-bottom='6px' 
+	text-align='center'><fo:inline 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='center'>Mode 1. </fo:inline> <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic' 
+	font-weight='normal' 
+	padding-bottom='6px' 
+	text-align='center'>While looking for meLI.SeasonalKontakion.melody in file me.m02.d02_en_US_ematins.ares, getDefinitionValueById returned null </fo:inline> </fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+font-size='12pt' 
+line-height='150%' 
+padding-bottom='6px' 
+text-align='left' 
+text-indent='.3in'>You sanctified the virginal womb by Your birth, O Lord, and blessed the hands of Symeon fittingly, O Christ God; and even now You came and saved us. Now, give peace to our Nation in time of war, and empower our Leaders, so loved by You, the only one who loves humanity. </fo:block></fo:table-cell>
+</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>TRISAGIOS HYMN </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us pray to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Holy God, You dwell among Your saints. You are praised by the Seraphim with the thrice holy hymn and glorified by the Cherubim and worshiped by all the heavenly powers. You have brought all things out of nothing into being. You have created man and woman in Your image and likeness and adorned them with all the gifts of Your grace. You give wisdom and understanding to the supplicant and do not overlook the sinner but have established repentance as the way of salvation. You have enabled us, Your lowly and unworthy servants, to stand at this hour before the glory of Your holy altar and to offer to You due worship and praise. Master, accept the thrice holy hymn also from the lips of us sinners and visit us in Your goodness. Forgive our voluntary and involuntary transgressions, sanctify our souls and bodies, and grant that we may worship and serve You in holiness all the days of our lives, by the intercessions of the holy Theotokos and of all the saints who have pleased You throughout the ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For you are holy, our God, and to you we give glory, to the Father and the Son and the Holy Spirit, now and forever... </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>...and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Holy God, Holy Mighty, Holy Immortal, have mercy on us. <fo:inline 
+	color='red'>(3) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Glory to Father and the Son and the Holy Spirit. Both now and ever and to the ages of ages. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Holy Immortal, have mercy on us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Dynamis. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Command, Master! </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Blessed is He who comes in the name of the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Master, bless the throne on high. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Blessed are You on the throne of glory of Your kingdom, seated upon the Cherubim always, now and forever and to the ages of ages. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Dynamis. Holy God, Holy Mighty, Holy Immortal, have mercy on us. </fo:block></fo:table-cell>
+	</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+			<fo:block keep-with-next.within-page='always' 
+			color='red' 
+			font-family='Palatino Linotype Bold' 
+			font-size='12pt' 
+			font-style='normal' 
+			font-weight='bold' 
+			padding-bottom='6px' 
+			text-align='center'>THE READINGS </fo:block>
+		</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+			<fo:block keep-with-next.within-page='always' 
+			color='red' 
+			font-family='Palatino Linotype Bold' 
+			font-size='12pt' 
+			font-style='normal' 
+			font-weight='bold' 
+			padding-bottom='6px' 
+			text-align='center'>THE EPISTLE </fo:block>
+		</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-variant='small-caps' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='0px'>DEACON </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Let us be attentive! </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-variant='small-caps' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='0px'>READER </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+			<fo:block keep-with-next.within-page='always' 
+			font-size='12pt' 
+			font-style='normal' 
+			font-weight='normal' 
+			padding-bottom='6px' 
+			text-align='center'><fo:inline 
+			color='red' 
+			font-family='Palatino Linotype Bold' 
+			font-size='12pt' 
+			font-style='normal' 
+			font-weight='bold' 
+			padding-bottom='6px' 
+			text-align='center'>Prokeimenon. </fo:inline> <fo:inline 
+			color='red' 
+			font-family='Palatino Linotype Bold' 
+			font-size='12pt' 
+			font-weight='bold' 
+			padding-bottom='6px' 
+			text-align='center'>Mode 3. </fo:inline> </fo:block>
+		</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		padding-bottom='6px' 
+		padding-top='5px' 
+		text-align='left' 
+		text-indent='.3in'>My soul magnifies the Lord, and my spirit rejoices in God my savior. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		font-style='italic' 
+		line-height='150%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'><fo:inline 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-style='normal' 
+		font-weight='bold'>Verse: </fo:inline> For he has regarded the humility of his servant. </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-variant='small-caps' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='0px'>DEACON </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Wisdom! </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-variant='small-caps' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='0px'>READER </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>The reading is from Saint Paul's Letter to the Hebrews.  </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-variant='small-caps' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='0px'>DEACON </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Let us be attentive! </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-variant='small-caps' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='0px'>READER </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+			<fo:block keep-with-next.within-page='always' 
+			color='red' 
+			font-size='12pt' 
+			font-style='italic' 
+			font-weight='normal' 
+			padding-bottom='6px' 
+			text-align='center'>(7:7-17) </fo:block>
+		</fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		padding-bottom='6px' 
+		padding-top='5px' 
+		text-align='left' 
+		text-indent='.3in'>Brethren, it is beyond dispute that the inferior is blessed by the superior. Here tithes are received by mortal men; there, by one whom it is testified that he lives. One might even say that Levi himself, who receives tithes, paid tithes through Abraham, for he was still in the loins of his ancestor when Melchizedek met him. Now if perfection had been attainable through the Levitical priesthood (for under it the people received the law), what further need would there have been for another priest to arise after the order of Melchizedek, rather than one named after the order of Aaron? For when there is a change in the priesthood, there is necessarily a change in the law as well. For the one of whom these things are spoken belonged to another tribe, from which no one has ever served at the altar. For it is evident that our Lord was descended from Judah, and in connection with that tribe Moses said nothing about priests. This becomes even more evident when another priest arises in the likeness of Melchizedek, who has become a priest, not according to a legal requirement concerning bodily descent but by the power of an indestructible life. For it is witnessed of him, "Thou art a priest for ever, after the order of Melchizedek." </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-variant='small-caps' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+		</fo:table-row>
+		<fo:table-row>
+		<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+		font-size='12pt' 
+		line-height='130%' 
+		padding-bottom='6px' 
+		text-align='left' 
+		text-indent='.3in'>Peace be to you the reader. </fo:block></fo:table-cell>
+		</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+				<fo:block keep-with-next.within-page='always' 
+				color='red' 
+				font-family='Palatino Linotype Bold' 
+				font-size='12pt' 
+				font-style='normal' 
+				font-weight='bold' 
+				padding-bottom='6px' 
+				text-align='center'>Alleluia. Mode 4. </fo:block>
+			</fo:table-cell>
+			</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Alleluia. Alleluia. Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+			font-size='12pt' 
+			font-style='italic' 
+			line-height='150%' 
+			padding-bottom='6px' 
+			text-align='left' 
+			text-indent='.3in'><fo:inline 
+			color='red' 
+			font-family='Palatino Linotype Bold' 
+			font-style='normal' 
+			font-weight='bold'>Verse 1: </fo:inline> Lord, now let your servant depart in peace,according to your word; for my eyes have seen your salvation. </fo:block></fo:table-cell>
+			</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Alleluia. Alleluia. Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+			font-size='12pt' 
+			font-style='italic' 
+			line-height='150%' 
+			padding-bottom='6px' 
+			text-align='left' 
+			text-indent='.3in'><fo:inline 
+			color='red' 
+			font-family='Palatino Linotype Bold' 
+			font-style='normal' 
+			font-weight='bold'>Verse 2: </fo:inline> A light for revelation to the Gentiles, and for glory to your people Israel. </fo:block></fo:table-cell>
+			</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Alleluia. Alleluia. Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Shine within our hearts, loving Master, the pure light of Your divine knowledge and open the eyes of our minds that we may comprehend the message of Your Gospel. Instill in us also reverence for Your blessed commandments, so that having conquered all sinful desires, we may pursue a spiritual life, thinking and doing all those things that are pleasing to You. For You, Christ our God, are the light of our souls and bodies, and to You we give glory together with Your Father who is without beginning and Your all holy, good, and life giving Spirit, now and forever and to the ages of ages. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE HOLY GOSPEL </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Wisdom! Arise! Let us hear the holy Gospel. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Peace be with all. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(And with your spirit.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+			font-size='12pt' 
+			line-height='130%' 
+			padding-bottom='6px' 
+			text-align='left' 
+			text-indent='.3in'>The reading is from the holy Gospel according to Luke.  </fo:block></fo:table-cell>
+			</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us be attentive! </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Glory to You, O Lord. Glory to You.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+				<fo:block keep-with-next.within-page='always' 
+				color='red' 
+				font-size='12pt' 
+				font-style='italic' 
+				font-weight='normal' 
+				padding-bottom='6px' 
+				text-align='center'>(2:22-40) </fo:block>
+			</fo:table-cell>
+			</fo:table-row>
+			<fo:table-row>
+			<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+			font-size='12pt' 
+			padding-bottom='6px' 
+			padding-top='5px' 
+			text-align='left' 
+			text-indent='.3in'>At that time, the parents brought the child Jesus up to Jerusalem to present him to the Lord (as it is written in the law of the Lord, "Every male that opens the womb shall be called holy to the Lord") and to offer a sacrifice according to what is said in the law of the Lord, "a pair of turtle doves, or two young pigeons." Now there was a man in Jerusalem, whose name was Symeon, and this man was righteous and devout, looking for the consolation of Israel, and the Holy Spirit was upon him. And it had been revealed to him by the Holy Spirit that he should not see death before he had seen the Lord's Christ. And inspired by the Spirit he came into the temple; and when the parents brought in the child Jesus, to do for him according to the custom of the law, he took him up in his arms and blessed God and said, "Lord, now let your servant depart in peace,according to your word; for my eyes have seen your salvation, which you have prepared in the presence of all peoples, a light for revelation to the Gentiles,and for glory to your people Israel." And his father and his mother marveled at what was said about him; and Symeon blessed them and said to Mary his mother, "Behold, this child is set for the fall and rising of many in Israel, and for a sign that is spoken against (and a sword will pierce through your own soul also), that thoughts of many hearts may be revealed." And there was a prophetess, Anna, the daughter of Phanuel, of the tribe of Asher; she was of a great age, having lived with her husband seven years from her virginity, and as a widow till she was eighty-four. She did not depart from the temple, worshiping with fasting and prayer night and day. And coming up at that very hour she gave thanks to God, and spoke of him to all who were looking for the redemption of Jerusalem. And when they had performed everything according to the law of the Lord, they returned into Galilee, to their own city, Nazareth. And the child grew and became strong, filled with wisdom; and the favor of God was upon him. </fo:block></fo:table-cell>
+			</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Peace be to you who proclaim the Gospel. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Glory to You, O Lord. Glory to You. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>PRAYER OF THE FAITHFUL </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Again, we bow before You and pray to You, O good and loving God. Hear our supplication: cleanse our souls and bodies from every defilement of flesh and spirit, and grant that we may stand before Your holy altar without blame or condemnation. Grant also, O God, progress in life, faith, and spiritual discernment to the faithful who pray with us, so that they may always worship You with reverence and love, partake of Your Holy Mysteries without blame or condemnation, and become worthy of Your heavenly kingdom. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And grant that always guarded by Your power we may give glory to You, the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE GREAT ENTRANCE </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We who mystically represent the Cherubim sing the thrice holy hymn to the life giving Trinity. Let us set aside all the cares of life, that we may receive the King of all... </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>No one bound by worldly desires and pleasures is worthy to approach, draw near or minister to You, the King of glory. To serve You is great and awesome even for the heavenly powers. But because of Your ineffable and immeasurable love for us, You became man without alteration or change. You have served as our High Priest, and as Lord of all, and have entrusted to us the celebration of this liturgical sacrifice without the shedding of blood. For You alone, Lord our God, rule over all things in heaven and on earth. You are seated on the throne of the Cherubim, the Lord of the Seraphim and the King of Israel. You alone are holy and dwell among Your saints. You alone are good and ready to hear. Therefore, I implore you, look upon me, Your sinful and unworthy servant, and cleanse my soul and heart from evil consciousness. Enable me by the power of Your Holy Spirit so that, vested with the grace of priesthood, I may stand before Your holy Table and celebrate the mystery of Your holy and pure Body and Your precious Blood. To you I come with bowed head and pray: do not turn Your face away from me or reject me from among Your children, but make me, Your sinful and unworthy servant, worthy to offer to You these gifts. For You, Christ our God, are the Offerer and the Offered, the One who receives and is distributed, and to You we give glory, together with Your eternal Father and Your holy, good and life giving Spirit, now and forever and to the ages of ages. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>May the Lord God remember all of you in His kingdom, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Invisibly escorted by the angelic hosts. Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE PETITIONS </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us complete our prayer to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block linefeed-treatment='preserve' white-space-collapse='false' white-space-treatment='preserve'> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For the precious gifts here presented, let us pray to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block linefeed-treatment='preserve' white-space-collapse='false' white-space-treatment='preserve'> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For this holy house and for those who enter it with faith, reverence, and the fear of God, let us pray to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For our deliverance from all affliction, wrath, danger, and distress, let us pray to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block linefeed-treatment='preserve' white-space-collapse='false' white-space-treatment='preserve'> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Help us, save us, have mercy upon us and protect us, O God, by your grace. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block linefeed-treatment='preserve' white-space-collapse='false' white-space-treatment='preserve'> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For a perfect, holy, peaceful, and sinless day, let us ask the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Grant this, O Lord.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block linefeed-treatment='preserve' white-space-collapse='false' white-space-treatment='preserve'> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For an angel of peace, a faithful guide, a guardian of our souls and bodies, let us ask the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For forgiveness and remission of our sins and transgressions, let us ask the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For all that is good and beneficial to our souls, and for peace in the world, let us ask the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For the completion of our life in peace and repentance, let us ask the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For a Christian end to our life, peaceful, without shame and suffering, and for a good account before the awesome judgment seat of Christ, let us ask. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Remembering our most holy, pure, blessed, and glorious Lady, the Theotokos and ever-virgin Mary, with all the saints, let us commit ourselves and one another and our whole life to Christ our God. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(To You, O Lord.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE PRAYER OF THE PROSKOMIDE </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Lord, God Almighty, You alone are holy. You accept a sacrifice of praise from those who call upon You with their whole heart. Receive also the prayer of us sinners and let it reach Your holy altar. Enable us to bring before You gifts and spiritual sacrifices for our sins and for the transgressions of the people. Make us worthy to find grace in Your presence so that our sacrifice may be pleasing to You and that Your good and gracious Spirit may abide with us, with the gifts here presented, and with all Your people. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Through the mercies of Your only begotten Son with whom You are blessed, together with Your all holy, good, and life giving Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Peace be with all. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And with your spirit. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us love one another that with one mind we may confess: </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Father, Son, and Holy Spirit, Trinity one in essence and inseparable. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Guard the doors. Wisdom. Let us be attentive. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PEOPLE </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	padding-bottom='6px' 
+	padding-top='5px' 
+	text-align='left' 
+	text-indent='.3in'>I believe in one God, Father Almighty, Creator of heaven and earth and of all things visible and invisible. And in one Lord Jesus Christ, the only-begotten Son of God, begotten of the Father before all ages. Light of Light, true God of true God, begotten not created, of one essence with the Father through Whom all things were made. Who for us men and for our salvation came down from heaven and was incarnate of the Holy Spirit and the Virgin Mary and became man. He was crucified for us under Pontius Pilate. He suffered and was buried. And He rose on the third day, according to the Scriptures. He ascended into heaven and is seated at the right hand of the Father. And He will come again with glory to judge the living and dead. His kingdom shall have no end. And in the Holy Spirit, the Lord, the Creator of life, Who proceeds from the Father, Who together with the Father and the Son is worshipped and glorified, Who spoke through the prophets. In one, holy, catholic, and apostolic Church. I confess one baptism for the forgiveness of sins. I look for the resurrection of the dead and the life of the age to come. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE HOLY ANAPHORA </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us stand well. Let us stand in awe. Let us be attentive, that we may present the holy offering in peace. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Mercy and peace, a sacrifice of praise. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>The grace of our Lord Jesus Christ, and the love of God the Father, and the communion of the Holy Spirit, be with all of you. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And with your spirit. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us lift up our hearts. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We lift them up to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us give thanks to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>It is proper and right. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>It is proper and right to sing to You, bless You, praise You, thank You and worship You in all places of Your dominion; for You are God ineffable, beyond comprehension, invisible, beyond understanding, existing forever and always the same; You and Your only begotten Son and Your Holy Spirit. You brought us into being out of nothing, and when we fell, You raised us up again. You did not cease doing everything until You led us to heaven and granted us Your kingdom to come. For all these things we thank You and Your only begotten Son and Your Holy Spirit; for all things that we know and do not know, for blessings seen and unseen that have been bestowed upon us. We also thank You for this liturgy which You are pleased to accept from our hands, even though You are surrounded by thousands of Archangels and tens of thousands of Angels, by the Cherubim and Seraphim, six-winged, many-eyed, soaring with their wings, </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Singing the victory hymn, proclaiming, crying out, and saying: </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Holy, holy, holy, Lord Sabaoth, heaven and earth are filled with Your glory. Hosanna in the highest. Blessed is He who comes in the name of the Lord. Hosanna to God in the highest. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Together with these blessed powers, merciful Master, we also proclaim and say: You are holy and most holy, You and Your only-begotten Son and Your Holy Spirit. You are holy and most holy, and sublime is Your glory. You so loved Your world that You gave Your only begotten Son so that whoever believes in Him should not perish, but have eternal life. He came and fulfilled the divine plan for us. On the night when He was betrayed, or rather when He gave Himself up for the life of the world, He took bread in His holy, pure, and blameless hands, gave thanks, blessed, sanctified, broke, and gave it to His holy disciples and apostles saying: </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Take, eat, this is my Body which is broken for you for the forgiveness of sins. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Likewise, after supper, He took the cup, saying: </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Drink of it all of you; this is my Blood of the new Covenant which is shed for you and for many for the forgiveness of sins. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Remembering, therefore, this command of the Savior, and all that came to pass for our sake, the cross, the tomb, the resurrection on the third day, the ascension into heaven, the enthronement at the right hand of the Father, and the second, glorious coming. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We offer to You these gifts from Your own gifts in all and for all. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We praise You, we bless You, we give thanks to You, and we pray to You, Lord our God. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Once again we offer to You this spiritual worship without the shedding of blood, and we ask, pray, and entreat You: send down Your Holy Spirit upon us and upon these gifts here presented. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And make this bread the precious Body of Your Christ. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And that which is in this cup the precious Blood of Your Christ. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Changing them by Your Holy Spirit. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Most-holy Theotokos, save us.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>So that they may be to those who partake of them for vigilance of soul, forgiveness of sins, communion of Your Holy Spirit, fulfillment of the kingdom of heaven, confidence before You, and not in judgment or condemnation. Again, we offer this spiritual worship for those who repose in the faith, forefathers, fathers, patriarchs, prophets, apostles, preachers, evangelists, martyrs, confessors, ascetics, and for every righteous spirit made perfect in faith. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Especially for our most holy, pure, blessed, and glorious Lady, the Theotokos and ever virgin Mary. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>MEGALYNARION </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Mode 3. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	font-style='italic' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Theotokos, as the hope * of us Christians, one and all, * guard and shelter and protect * those who put their hope in you. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>O believers, come let us perceive * a type in the law, and the shadow and the letter. * Every male that opens the womb shall be holy to God. * So the unoriginate Father's firstborn Logos and Son, * who is the firstborn of the Mother who knew not man, we magnify. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For Saint John the prophet, forerunner, and baptist; for the holy glorious and most honorable Apostles, for Saints(s) (Name(s)) whose memory we commemorate today; and for all Your saints, through whose supplications, O God, bless us. Remember also all who have fallen asleep in the hope of resurrection unto eternal life. (Here the priest commemorates the names of the deceased.) And grant them rest, our God, where the light of Your countenance shines. Again, we ask You, Lord, remember all Orthodox bishops who rightly teach the word of Your truth, all presbyters, all deacons in the service of Christ, and every one in holy orders. We also offer to You this spiritual worship for the whole world, for the holy, catholic, and apostolic Church, and for those living in purity and holiness. And for all those in public service; permit them, Lord, to serve and govern in peace that through the faithful conduct of their duties we may live peaceful and serene lives in all piety and holiness. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Above all, remember, Lord, <fo:inline 
+	color='red'>(episcopal rank) (name). </fo:inline> Grant that he may serve Your holy churches in peace. Keep him safe, honorable, and healthy for many years, rightly teaching the word of Your truth. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Remember also, Lord, those whom each of us calls to mind and all your people. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And all Your people. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Remember, Lord, the city in which we live, every city and country, and the faithful who dwell in them. Remember, Lord, the travelers, the sick, the suffering, and the captives, granting them protection and salvation. Remember, Lord, those who do charitable work, who serve in Your holy churches, and who care for the poor. And send Your mercy upon us all. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And grant that with one voice and one heart we may glorify and praise Your most honored and majestic name, of the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>The mercy of our great God and Savior Jesus Christ be with all of you. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And with your spirit. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Having remembered all the saints, let us again in peace pray to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For the precious Gifts offered and consecrated, let us pray to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>That our loving God who has received them at His holy, heavenly, and spiritual altar as an offering of spiritual fragrance, may in return send upon us divine grace and the gift of the Holy Spirit, let us pray. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Having prayed for the unity of the faith and for the communion of the Holy Spirit, let us commit ourselves, and one another, and our whole life to Christ our God. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(To You, O Lord.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We entrust to You, loving Master, our whole life and hope, and we ask, pray, and entreat: make us worthy to partake of your heavenly and awesome Mysteries from this holy and spiritual Table with a clear conscience; for the remission of sins, forgiveness of transgressions, communion of the Holy Spirit, inheritance of the kingdom of heaven, confidence before You, and not in judgment or condemnation. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>And make us worthy, Master, with confidence and without fear of condemnation, to dare call You, the heavenly God, FATHER, and to say: </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PEOPLE </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE LORD'S PRAYER </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	padding-bottom='6px' 
+	padding-top='5px' 
+	text-align='left' 
+	text-indent='.3in'>Our Father, who art in heaven, hallowed be Thy name. Thy kingdom come, Thy will be done, on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For thine is the Kingdom and the power and the glory of the Father, and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Peace be with all. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(And with your spirit.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us bow our heads to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(To You, O Lord.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We give thanks to You, invisible King. By Your infinite power You created all things and by Your great mercy You brought everything from nothing into being. Master, look down from heaven upon those who have bowed their heads before You; they have bowed not before flesh and blood but before You the awesome God. Therefore, Master, guide the course of our life for our benefit according to the need of each of us. Sail with those who sail; travel with those who travel; and heal the sick, Physician of our souls and bodies. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>By the grace, mercy, and love for us of Your only begotten Son, with whom You are blessed, together with Your all holy, good, and life giving Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Lord Jesus Christ, our God, hear us from Your holy dwelling place and from the glorious throne of Your kingdom. You are enthroned on high with the Father and are also invisibly present among us. Come and sanctify us, and let Your pure Body and precious Blood be given to us by Your mighty hand and through us to all Your people. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us be attentive! </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>The holy Gifts for the holy people of God. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>One is Holy, one is Lord, Jesus Christ, to the glory of God the Father. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PEOPLE </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>PRAYERS BEFORE HOLY COMMUNION </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	padding-bottom='6px' 
+	padding-top='5px' 
+	text-align='left' 
+	text-indent='.3in'>I believe and confess, Lord, that You are truly the Christ, the Son of the living God, who came into the world to save sinners, of whom I am the first. I also believe that this is truly Your pure Body and that this is truly Your precious Blood. Therefore, I pray to You, have mercy upon me, and forgive my transgressions, voluntary and involuntary, in word and deed, known and unknown. And make me worthy without condemnation to partake of Your pure Mysteries for the forgiveness of sins and for life eternal. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	padding-bottom='6px' 
+	padding-top='5px' 
+	text-align='left' 
+	text-indent='.3in'>How shall I, who am unworthy, enter into the splendor of Your saints? If I dare to enter into the bridal chamber, my clothing will accuse me, since it is not a wedding garment; and being bound up, I shall be cast out by the angels. In Your love, Lord, cleanse my soul and save me. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	padding-bottom='6px' 
+	padding-top='5px' 
+	text-align='left' 
+	text-indent='.3in'>Loving Master, Lord Jesus Christ, my God, let not these holy Gifts be to my condemnation because of my unworthiness, but for the cleansing and sanctification of soul and body and the pledge of the future life and kingdom. It is good for me to cling to God and to place in Him the hope of my salvation. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	padding-bottom='6px' 
+	padding-top='5px' 
+	text-align='left' 
+	text-indent='.3in'>Receive me today, Son of God, as a partaker of Your mystical Supper. I will not reveal Your mystery to Your adversaries. Nor will I give You a kiss as did Judas. But as the thief I confess to You: Lord, remember me in Your kingdom. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE COMMUNION HYMN </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>I will take up the cup of salvation, and call upon the name of the Lord. Alleluia. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Approach with the fear of God, faith, and love. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>The servant of God (Name) receives the Body and Blood of Christ for forgiveness of sins and eternal life. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Save, O God, Your people and bless Your inheritance. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>Mode 2. </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We have seen the true light; we have received the heavenly Spirit; we have found the true faith, worshiping the undivided Trinity, for this has saved us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic' 
+	font-weight='normal' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>(in a low voice) </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Wash away, Lord, by Your holy Blood, the sins of all those commemorated, through the intercessions of the Theotokos and all Your saints. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Exalt, Master. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Be exalted, O God, above the heavens. Let Your glory be over all the earth </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Blessed is our God. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Always, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us be attentive. Having partaken of the divine, holy, pure, immortal, heavenly, life giving, and awesome Mysteries of Christ, let us worthily give thanks to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Glory to You, O Lord. Glory to You.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Help us, save us, have mercy upon us and protect us, O God, by your grace. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Having prayed for a perfect, holy, peaceful, and sinless day, let us commit ourselves, and one another, and our whole life to Christ our God. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(To You, O Lord.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>PRAYER OF THANKSGIVING </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>We thank You, loving Master, benefactor of our souls, that on this day You have made us worthy once again of Your heavenly and immortal Mysteries. Direct our ways in the right path, establish us firmly in Your fear, guard our lives, and make our endeavors safe, through the prayers and supplications of the glorious Theotokos and ever virgin Mary and of all Your saints. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>For You are our sanctification and to You we give glory, to the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'>
+		<fo:block keep-with-next.within-page='always' 
+		color='red' 
+		font-family='Palatino Linotype Bold' 
+		font-size='12pt' 
+		font-style='normal' 
+		font-weight='bold' 
+		padding-bottom='6px' 
+		text-align='center'>THE DISMISSAL </fo:block>
+	</fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'> Let us go forth in peace. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us pray to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Lord, bless those who praise You and sanctify those who trust in You. Save Your people and bless Your inheritance. Protect the whole body of Your Church. Sanctify those who love the beauty of Your house. Glorify them in return by Your divine power, and do not forsake us who hope in You. Grant peace to Your world, to Your churches, to the clergy, to those in public service, to the armed forces, and to all Your people. For every good and perfect gift is from above, coming from You, the Father of lights. To You we give glory, thanksgiving, and worship, to the Father and the Son and the Holy Spirit, now and forever and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Blessed be the name of the Lord, from now and to the ages. <fo:inline 
+	color='red'>(3) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST <fo:inline 
+	color='red' 
+	font-size='12pt' 
+	font-style='italic'>(in a low voice) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Christ our God, You are the fulfillment of the Law and the Prophets. You have fulfilled all the dispensation of the Father. Fill our hearts with joy and gladness always, now and forever and to the ages of ages. Amen. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>DEACON </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Let us pray to the Lord. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Lord, have mercy.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>May the blessing and mercy of the Lord come upon you, by His divine grace and love for mankind, always, now and ever, and to the ages of ages. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Glory to You, O Christ God, our hope. Glory to You. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>May He who condescended to be held in the arms of righteous Symeon, for our salvation, and rose from the dead, Christ our true God, through the intercessions of his most pure and holy Mother, the power of the precious and life-giving Cross,  the protection of the honorable, bodiless powers of heaven, the supplications of the honorable, glorious prophet and forerunner John the Baptist,  the holy, glorious, and praise­worthy Apostles, the holy, glorious, and triumphant Martyrs, our holy and God-bearing Fathers, <fo:inline 
+	color='red'>(local patron saint); </fo:inline> the holy and righteous ancestors of God Joachim and Anna, and all the saints, have mercy on us and save us, as a good, loving and merciful God. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>CHOIR </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='150%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Preserve him who blesses and sanctifies us, O Lord; preserve him for many years. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block keep-with-next.within-page='always' 
+	color='red' 
+	font-family='Palatino Linotype Bold' 
+	font-size='12pt' 
+	font-variant='small-caps' 
+	font-weight='bold' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='0px'>PRIEST </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'>Through the prayers of our holy fathers, Lord Jesus Christ, our God, have mercy on us and save us. </fo:block></fo:table-cell>
+	</fo:table-row>
+	<fo:table-row>
+	<fo:table-cell padding-left='8px' padding-right='8px' vertical-align='top'><fo:block 
+	font-size='12pt' 
+	line-height='130%' 
+	padding-bottom='6px' 
+	text-align='left' 
+	text-indent='.3in'><fo:inline 
+	font-style='italic' 
+	font-weight='normal'>(Amen.) </fo:inline> </fo:block></fo:table-cell>
+	</fo:table-row>
+	</fo:table-body>
+</fo:table>
+		</fo:flow>
+	</fo:page-sequence>
+</fo:root>
