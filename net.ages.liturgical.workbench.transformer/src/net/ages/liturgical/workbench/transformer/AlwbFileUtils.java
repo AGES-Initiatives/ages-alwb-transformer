@@ -18,7 +18,7 @@ import org.jsoup.nodes.Element;
 
 public class AlwbFileUtils {
 	
-	// I am a test comment.
+	// I am a test comment. I am an addition.
 	
 	public static String[] getPathsToFilesInDirectory(String directory, String extension, String excludeSubPath) {
 		List<File> list = getFilesInDirectory(directory, extension);
