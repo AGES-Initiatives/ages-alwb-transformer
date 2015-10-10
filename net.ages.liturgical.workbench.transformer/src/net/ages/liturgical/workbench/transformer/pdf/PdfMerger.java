@@ -1,9 +1,11 @@
-package net.ages.liturgical.workbench.transformer;
+package net.ages.liturgical.workbench.transformer.pdf;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+
+import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.pdfbox.exceptions.COSVisitorException;

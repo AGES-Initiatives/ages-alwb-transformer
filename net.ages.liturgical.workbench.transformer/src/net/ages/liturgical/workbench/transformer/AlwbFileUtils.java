@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -18,7 +21,22 @@ import org.jsoup.nodes.Element;
 
 public class AlwbFileUtils {
 	
-	// I am a test comment. I am an addition.
+	/**
+	 * Read all the lines in the given file and return as a list
+	 * @param f - the file to read
+	 * @return the lines as a List
+	 */
+	public static List<String> linesFromFile(File f) {
+		Path path = f.toPath();
+		List<String> list = null;
+		try {
+			list = Files.readAllLines(path, Charset.forName("UTF-8"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 	public static String[] getPathsToFilesInDirectory(String directory, String extension, String excludeSubPath) {
 		List<File> list = getFilesInDirectory(directory, extension);

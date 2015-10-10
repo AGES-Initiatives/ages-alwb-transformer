@@ -1,0 +1,638 @@
+
+@font-face {
+	font-family: "Arimo";
+	src:
+		url('../Fonts/Arimo-Bold.ttf') format('truetype'),
+		url('../Fonts/Arimo-BoldItalic.ttf') format('truetype'),
+		url('../Fonts/Arimo-Italic.ttf') format('truetype'),
+		url('../Fonts/Arimo-Regular.ttf') format('truetype');
+}
+
+html, body {
+	font-family: "Arimo", sans-serif;
+	font-size: 12pt;
+    color: black; /* do not remove. Used in Javascript */
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    color: red;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 0px;
+	text-align: center;
+}
+
+.container {
+    position: absolute;
+    left: -10px;
+    height: 100%;
+}
+
+/* Properties for the main content on a service or book */
+div.content {
+	position: absolute;
+	top: 20px;
+	left: 5px;
+}
+
+
+title, p.designation, p.mixed, p.mode, p.melody {
+    font-family: "Arimo", sans-serif;
+    text-align:center;
+    font-weight:normal;
+    font-size:95%;
+  	margin-top: 6px;
+  	margin-bottom: 0px;
+    word-wrap: break-word;
+}
+p {
+	color: black;   /* night mode #FBF0D9 */
+    text-align: left;
+    font-family: "Arimo", sans-serif;
+    padding-left: -50px;
+    word-wrap: break-word;
+    margin-bottom: 0em; /* to control spacing after para */
+}
+p.actor {
+    text-align:left;
+    font-size:80%;
+    color:red;
+    font-weight:bold;
+    text-indent: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+p.actor:first-letter {
+    text-align:left;
+    font-size:125%;
+}
+p.alttext {
+	font-size:80%;
+	background-color:#CCCCCC;
+	margin-left:2em;
+}
+p.break {
+    margin-bottom: 10px;
+}
+p.chant {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-bottom: 10px;
+}
+p.chant:first-letter {
+    color:red;
+    font-size:180%;
+    font-weight:normal;
+}
+p.chapverse {
+    font-weight:normal;
+    font-style:italic;
+    text-indent: 0px;
+    text-align:center;
+    color:red;
+    font-size: 80%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+p.designation {
+    font-style:normal;
+    font-weight:bolder;
+    color:red;
+}
+p.dialogzero {
+    text-align:left;
+    text-indent: 28px;
+    font-size:95%;
+    line-height:130%;
+    margin-bottom: 0px;
+}
+p.dialog {
+    text-align:left;
+    text-indent: 28px;
+    font-size:95%;
+    line-height:130%;
+    margin-bottom: 5px;
+}
+p.heirmos {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-bottom: 10px;
+}
+p.heirmos:first-letter {
+    color:red;
+    font-size:180%;
+    font-weight:normal;
+}
+p.hymn {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-bottom: 10px;
+}
+p.hymn:first-letter {
+    color:red;
+    font-size:180%;
+    font-weight:normal;
+}
+p.hymn:first-letter(drop) {
+    float: left;
+    font-size: 320%;
+    line-height: 0.5em;
+    padding-bottom: 0.05em;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    color:red;
+}
+p.hymnlinefirst {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-bottom: 0;
+}
+p.hymnlinefirst:first-letter {
+    color:red;
+    font-size:180%;
+    font-weight:normal;
+}
+p.hymnlinemiddle {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+p.hymnlinelast {
+    text-align:left;
+    text-indent: 0px;
+    line-height:150%;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+p.inaudible {
+    text-indent: 28px;
+	font-size:80%;
+    text-align:left;
+    line-height:150%;
+}
+p.mode {
+    color:red;
+    font-weight:bold;
+}
+p.linkDesig {
+}
+p.linkFirst {
+}
+p.linkVerse {
+	text-index: 15%;
+}
+p.mixed {
+    font-weight:normal;
+    font-style:normal;
+}
+
+p.melody {
+    font-weight:normal;
+    font-style:italic;
+    color:red;
+}
+p.missalreading {
+    text-align:left;
+    text-align-last:right;
+    font-size:80%;
+    font-weight:normal;
+    text-indent: 28px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+p.missaltitle {
+    text-align:left;
+    text-align-last:right;
+    font-size:80%;
+    color:red;
+    font-weight:bold;
+    text-indent: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+p.name {
+    font-weight:normal;
+    font-style:italic;
+    text-align:center;
+    color:red;
+    font-size: 80%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+p.lang, p.date {
+    font-weight:normal;
+    font-style:italic;
+    text-align:center;
+    font-size: 80%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+p.prayerzero {
+    text-align:left;
+    text-indent: 28px;
+    line-height:150%;
+    margin-bottom: 0px;
+}
+p.prayer {
+    text-align:left;
+    text-indent: 28px;
+    line-height:150%;
+    margin-bottom: 6px;
+}
+p.readingzero {
+    text-align:left;
+    text-indent: 28px;
+    line-height:150%;
+    margin-bottom: 0px;
+}
+p.reading {
+    text-align:left;
+    text-indent: 28px;
+    line-height:150%;
+    margin-bottom: 6px;
+}
+p.readingcenterzero {
+    text-align:center;
+	font-size:100%;
+    line-height:150%;
+    margin-bottom: 0px;
+}
+p.readingcenter {
+    text-align:center;
+	font-size:100%;
+    line-height:150%;
+    margin-bottom: 6px;
+}
+p.rubric {
+    color:red;
+    font-size:80%;
+    font-style:italic;
+    text-align:left;
+    text-indent: 28px;
+}
+p.source {
+    margin-top: 6px;
+	font-weight:normal;
+    font-style:normal;
+    font-size:70%;
+    color:gray;
+    text-align:left;
+}
+p.source0 {
+    margin-top: 0px;
+	font-weight:normal;
+    font-style:normal;
+    font-size:70%;
+    color:gray;
+    text-align:left;
+}
+p.titlezero {
+	text-align:center;
+	font-style:normal;
+    font-weight:bolder;
+    color:red;
+    font-size:80%;
+  	margin-top: -7px;
+  	margin-bottom: 0px;
+}
+a.tocChapVerse,p.tocChapVerse {
+  text-align: center;
+}
+a.tocDesignation, p.tocDesignation {
+  font-style: italic;
+  font-weight: bold;
+  color: red  !important;
+  text-align: left;
+}
+a.tocVerse, p.tocVerse, a.tocReading, p.tocReading, a.tocDialog, p.tocDialog {
+  font-size: smaller;
+  padding-left: 30px;
+  text-indent: -40px;
+  text-align: left  !important;
+}
+a.tocSource, p.tocSource {
+  text-align: center;
+}
+p.verse {
+    text-align:left;
+    text-indent: 28px;
+    font-style:italic;
+    font-size:100%;
+    line-height:150%;
+    margin-bottom: 3px;
+}
+p.versecenter {
+    text-align:center;
+    font-style:italic;
+    font-size:90%;
+    line-height:100%;
+    margin-bottom: 3px;
+}
+p.cover1 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:normal;
+    font-size:48pt;
+    margin-top: 1in;
+    margin-bottom: 1in;
+}
+p.cover2 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:bold;
+    font-size:24pt;
+    margin-bottom: 1em;
+}
+p.cover3 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:bold;
+    font-size:12pt;
+    color:red;
+    text-indent: 20px;
+    margin-left: 2in;
+    margin-bottom: 2em;
+}
+p.cover4 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:bold;
+    font-size:16pt;
+    color:red;
+    margin-bottom: 1em;
+}
+p.cover5 {
+    font-family: sans-serif;
+    text-align:right;
+    font-weight:bold;
+    font-size:16pt;
+    margin-top: 1in;
+}
+.verticalLine {
+	position:fixed;
+	left: .5in;    
+	border-left: thick solid #ff0000;
+    height: 10in;
+}
+.horizontalLine {
+ 	position:fixed;
+	top: .5in;    
+    border-top: thick solid #ff0000;
+    width: 7in;
+}
+p.credits1 {
+    font-family: "Arimo", serif;
+    text-align:left;
+    font-weight:bold;
+    font-size:10pt;
+}
+p.credits2 {
+    font-family: "Arimo", serif;
+    text-align:left;
+    font-size:9pt;
+}
+p.credits3 {
+    font-family: "Arimo", serif;
+    text-align:left;
+    font-size:9pt;
+}
+span.anum {
+	color: red;
+    font-size:80%;
+}
+
+span.melody {
+	font-style:italic;
+	color:red;	
+	display: block;
+}
+
+span.mode {
+	font-style:normal;
+	font-weight:bolder;
+	color:red;
+}
+
+span.designation {
+	font-style:normal;
+	font-weight:bolder;
+	color:red;
+	display: block;
+}
+span.reference{
+	font-variant:normal;
+	font-weight:normal;
+	font-style:italic;
+	font-size:70%;
+	color:red;	
+}
+span.rubric{
+	font-variant:normal;
+	font-weight:normal;
+	font-style:italic;
+	font-size:80%;
+	color:red;	
+}
+span.italics {
+	font-style:italic;
+}
+span.strong {
+	font-weight:bold;
+}
+span.bigblack {
+	font-weight:normal;
+	font-style:normal;
+	font-size:150%;
+	display:inline-block;
+	line-height:150%;
+	color:black;
+}
+span.black {
+	font-style:normal;
+	color:black;
+}
+
+span.bold {
+	font-weight:bold;
+	font-style:inherit;
+}
+span.bolditalics {
+	font-weight:bold;
+	font-style:italic;
+}
+span.red {
+	font-style:inherit;
+	color:red;
+}
+
+span.boldred {
+	font-weight:bold;
+	color:red;
+	font-style:inherit;
+}
+
+span.italicsblack {
+	font-style:italic;
+	color:black;
+}
+span.italicsred {
+	font-style:italic;
+	color:red;
+}
+
+span.bolditalicsred {
+	font-weight:bold;
+	font-style:italic;
+	color:red;
+}
+
+span.numright {
+	font-style:inherit;
+	float: right;
+	color:red;
+}
+
+span.versiondesignation {
+	font-style:normal;
+	font-weight:lighter;
+	font-size:50%;
+	vertical-align:middle;
+	color:#428bca;
+	float: right;
+	}
+
+table {
+	width: 100%;
+	table-layout: fixed;
+}
+td {
+  vertical-align: top;
+}
+
+td.leftCell {
+  width: 49%;
+  padding-right: 8px;
+  border-right: thin solid silver;
+}
+td.rightCell {
+  padding-left: 8px;
+  width: 51%;
+  overflow: visible;
+}
+
+
+.glyphicon {
+ 	margin: 0 3px;
+}
+  .pixels {
+        font-size:16px;
+        line-height:30px;
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    .point {
+        font-size:12pt;
+        line-height:30px;
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    .em {
+        font-size:1em;
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    .percentage {
+        font-size:100%;
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    .undefined {
+        margin-bottom:20px;
+        padding:20px;
+        background-color:#222222;
+    }
+    #changeFont {
+        position:absolute;
+        top:10px;
+        right:10px;
+        background-color:#333333;
+        padding:5px;
+    }
+p[class^="bmc_"], p[class^="emc_"] {
+  display: none;
+}
+
+@media print {
+  @page {
+    margin: .5in .75in .5in .75in;
+  }
+
+  .agesMenu {
+    display: none;
+  }
+
+  p {
+    font-family: palatino;
+  }
+
+  .actor,
+  .designation,
+  .red,
+  .mode,
+  .melody,
+  .chapverse {
+    color: #ff0000 !important;
+    font-family: palatino !important;
+  }
+
+  .boldred {
+    color: #ff0000 !important; /* check */
+  }
+
+  .mixed {
+    font-family: palatino !important;
+  }
+
+  .source {
+    color: gray !important; /* check */
+  }
+
+  .media-group, .media-group-empty {
+    display: none !important; /* check */
+  }
+
+  .versiondesignation {
+    color: red !important; /* check */
+  }
+
+  tr .designation,
+  tr .actor,
+  tr .mixed,
+  tr .melody {
+    page-break-after: avoid !important;
+  }
+
+
+  .glyphicon,
+  .fa-byznote {
+    display: none;
+  }
+
+  .print-btn {
+    display: none;
+  }
+
+}
