@@ -1,14 +1,16 @@
 package net.ages.liturgical.workbench.transformer.epub;
 
-import java.text.Normalizer;
 import java.util.Comparator;
 
+/**
+ * Compares after making lowercase and removing diacritics.
+ * @author mac002
+ *
+ */
 public class IndexEntryComparator  implements Comparator<IndexEntry>{
 	public int compare(IndexEntry e1, IndexEntry e2) {
-		String left = Normalizer.normalize(e1.getKey().toLowerCase(), Normalizer.Form.NFD);
-		left = left.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
-		String right = Normalizer.normalize(e2.getKey().toLowerCase(), Normalizer.Form.NFD);
-		right = right.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+		String left = GeneralUtils.normalize(e1.getKey());
+		String right = GeneralUtils.normalize(e2.getKey());
         return left.compareTo(right);
     }
 }

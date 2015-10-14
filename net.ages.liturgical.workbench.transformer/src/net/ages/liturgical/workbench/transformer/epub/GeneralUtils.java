@@ -2,6 +2,7 @@ package net.ages.liturgical.workbench.transformer.epub;
 
 import java.io.File;
 import java.io.InputStream;
+import java.text.Normalizer;
 import java.util.Properties;
 
 public class GeneralUtils {
@@ -53,5 +54,27 @@ public class GeneralUtils {
 	 */
 	public static boolean getPropBoolean(String value) {
 		return value.toLowerCase().startsWith("y") || value.toLowerCase().startsWith("t");
+	}
+	
+	/**
+	 * Removes diacritics from UTF-8
+	 * @param text
+	 * @return lower case version of text with all diacritic marks removed
+	 */
+	public static String normalize(String text) {
+		String result = text;
+		try {
+			while(! Character.isAlphabetic(result.charAt(0)) && result.length() > 1) {
+				if (result.length() > 1) {
+					result = result.substring(1,result.length());
+				}
+			}
+			result = Normalizer.normalize(result.toLowerCase(), Normalizer.Form.NFD);
+			result = result.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+
 	}
 }

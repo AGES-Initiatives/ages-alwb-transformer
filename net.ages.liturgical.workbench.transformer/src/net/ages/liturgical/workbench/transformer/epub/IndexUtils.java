@@ -1,11 +1,17 @@
 package net.ages.liturgical.workbench.transformer.epub;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 
 import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
+import net.sf.jazzlib.ZipFile;
 import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.domain.Resource;
+import nl.siegmann.epublib.domain.Resources;
 import nl.siegmann.epublib.epub.EpubReader;
 
 import org.apache.tools.ant.util.FileUtils;
@@ -75,7 +81,7 @@ public class IndexUtils {
 		Element contentElem = doc.select("div.index-content").get(0);
 		
 		EpubReader reader = new EpubReader();
-
+		
 		StringBuffer sb = new StringBuffer();
 		sb.append("<h1 class=\"index-title\">" + heading + "</h1>");
 		
@@ -84,8 +90,10 @@ public class IndexUtils {
 
 		while (it.hasNext()) {
 			File f = it.next();
+			System.out.println(f.getName());
 			try {
-				Book book = reader.readEpubLazy(f.getPath(), "UTF-8");
+				Book book = reader.readEpub(new FileInputStream(f.getPath()));
+	//			showContents(book);
 				sb.append("<div class=\"index-day\"><a href=\"" + subpath(f.getPath()) + "\">" + book.getTitle() + "</a></div>");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -98,6 +106,17 @@ public class IndexUtils {
 		updateServicesIndex(this.mainIndexEpubInfoHtml);
 	}
 	
+	/**
+	 * For debugging, can be used to view contents of the ePub file
+	 * @param b
+	 */
+	private void showContents(Book b) {
+		Iterator<Resource> it = b.getResources().getAll().iterator();
+		while (it.hasNext()) {
+			Resource r = it.next();
+			System.out.println(r.getId() + ": " + r.getHref());
+		}
+	}
 	/**
 	 * Takes a fully qualified path and strips off the path
 	 * up to the start of the ePub directory.
@@ -114,5 +133,7 @@ public class IndexUtils {
 		}
 		return result;
 	}
-	
+	private static InputStream getResource(String path) {
+		return IndexUtils.class.getResourceAsStream(path);
+	}
 }

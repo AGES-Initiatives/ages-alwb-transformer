@@ -49,23 +49,16 @@ public class EpubBuilder {
 	private 	boolean generateTocWithDialogs = false;
 	private 	boolean generateTocWithSources = false;
 	private 	boolean generateTocWithChapVerses = false;
-	
-	/**
-	 * Add the following back into Transformer.config when ready to make available...
-	        epub.generate.toc = yes
-			# the minimal toc should probably include designations
-			epub.generate.toc.include.designations = yes
-			epub.generate.toc.include.verses = yes
-			epub.generate.toc.include.readings = yes
-			epub.generate.toc.include.dialogs = yes
-			epub.generate.toc.include.sources = yes
-			epub.generate.toc.include.chapverses = yes
-			# the following indicates the first number of words to include from a verse, reading
-			# or dialog.  It does not affect designations.
-			epub.generate.toc.number.of.words = 5
-
-	 */
-	
+	private boolean generateFirstWordsIndex = false;
+	private 	boolean generateFirstWordsIndexWithDesignations = false;
+	private 	boolean generateFirstWordsIndexWithVerses = false;
+	private 	boolean generateFirstWordsIndexWithReadings = false;
+	private 	boolean generateFirstWordsIndexWithDialogs = false;
+	private boolean generateFirstWordsIndexExcludeBetweenParentheses = true;
+	private boolean includeMatinsOrdinary = false;
+	private int indexPosition = 0;
+	private String pathToMatinsOrdinary = "h/c/matinsordinary/gr-en/index.html";
+	private int lettersPerRow = 5;
 	
 	private Map<String,String> bookIndex = new TreeMap<String,String>();
 	
@@ -123,14 +116,13 @@ public class EpubBuilder {
 	
 	private void loadProps() {
 		this.pathToServicesIndex = props.getProperty("pathToServicesIndexHtml");
+		this.pathToMatinsOrdinary = props.getProperty("epub.path.to.matins.ordinary");
 		this.pathToRoot = GeneralUtils.getParentPath(this.pathToServicesIndex)  + "/";
 		this.title = props.getProperty("epub.title");
 		this.author = props.getProperty("epub.author");
 		this.ePubFileNamePrefix = props.getProperty("epub.filename.prefix");
 		this.updateIndex = true;
 		this.separateMonthFiles = true;
-		/**
-		 * 
 		generateToc = props.getProperty("epub.generate.toc").toLowerCase().trim().startsWith("y");
 		generateTocWithDesignations = props.getProperty("epub.generate.toc.include.designations").toLowerCase().trim().startsWith("y");
 		generateTocWithVerses = props.getProperty("epub.generate.toc.include.verses").toLowerCase().trim().startsWith("y");
@@ -138,8 +130,18 @@ public class EpubBuilder {
 		generateTocWithDialogs = props.getProperty("epub.generate.toc.include.dialogs").toLowerCase().trim().startsWith("y");
 		generateTocWithSources = props.getProperty("epub.generate.toc.include.sources").toLowerCase().trim().startsWith("y");
 		generateTocWithChapVerses = props.getProperty("epub.generate.toc.include.chapverses").toLowerCase().trim().startsWith("y");
+		generateFirstWordsIndex = props.getProperty("epub.generate.first.words.index").toLowerCase().trim().startsWith("y");
+		generateFirstWordsIndexWithDesignations = props.getProperty("epub.generate.first.words.index.include.designations").toLowerCase().trim().startsWith("y");
+		generateFirstWordsIndexWithVerses = props.getProperty("epub.generate.first.words.index.include.verses").toLowerCase().trim().startsWith("y");
+		generateFirstWordsIndexWithReadings = props.getProperty("epub.generate.first.words.index.include.readings").toLowerCase().trim().startsWith("y");
+		generateFirstWordsIndexWithDialogs = props.getProperty("epub.generate.first.words.index.include.dialogs").toLowerCase().trim().startsWith("y");
+		generateFirstWordsIndexExcludeBetweenParentheses = props.getProperty("epub.generate.first.words.index.exclude.between.parentheses").toLowerCase().trim().startsWith("y");
 		this.nGram = Integer.parseInt(props.getProperty("epub.generate.toc.number.of.words"));
-		 */
+		if (generateFirstWordsIndex) {
+			indexPosition = Integer.parseInt(props.getProperty("epub.generate.first.words.index.position"));
+			lettersPerRow = Integer.parseInt(props.getProperty("epub.index.letters.per.row"));
+		} // use initialized value of zero
+		includeMatinsOrdinary = props.getProperty("epub.include.matins.ordinary").toLowerCase().trim().startsWith("y");
 	}
 	
 	/**
@@ -163,7 +165,6 @@ public class EpubBuilder {
 
 		TOCReference tocRefMonthYear = null;
 
-//		System.out.println("Found services for the following days...");
 		loadServicesIndex();
 
 		System.out.println("Creating ePub files...");
@@ -173,6 +174,8 @@ public class EpubBuilder {
 			book = initializeEpubBook(title,author,getToday());
 		}
 
+		List<ResourceBundle> theBundles = new ArrayList<ResourceBundle>();
+		
 		// Process each index file referenced in the calendarMap
 
 		Iterator<String> monthIt = calendarMap.keySet().iterator();
@@ -210,29 +213,38 @@ public class EpubBuilder {
 						Entry<String, Service> se = seIt.next();
 						Service seValue = se.getValue();
 						String tocService = seValue.getTitle(); // e.g., Matins
+						// Process services that are not 'custom'
 						if (!tocService.toLowerCase().contains("custom")) {
 
 							String tocLang = seValue.getLanguage(); // e.g. EN
-							String seUrl = seValue.getUrl(); // path to actual
-																// service
-																// index.html
-																// file,
-																// but path
-																// starts
-																// with h/
+							String seUrl = seValue.getUrl(); // relative path starting with /h
 
 							// convert html file to format required for an ePub
-							Resource newHtml = transform(seUrl, tocYear,
+							ResourceBundle bundle = transform(seUrl, tocYear,
 									"<h1>" + tocService + "</h1><p class=\"lang\">(" + tocLang + ")</p>"
 									+ "<p class=\"date\">" + serviceDateHeading(tocServiceDay,tocMonthYear) + "</p>"
-									);									
-
+									);							
+							
 							// add the converted html as a resource in the ePub
 							// book
 							if (!tocMonthYear.matches(lastMonthYearUsed)) {
 								lastMonthYearUsed = tocMonthYear;
 								if (this.separateMonthFiles) {
 									book = initializeEpubBook(title + " - " + tocMonthYear,author,tocMonthYear);
+									// Add Matins Ordinary if requested
+									if (includeMatinsOrdinary) {
+										ResourceBundle matinsOrdinary = transform(
+												pathToMatinsOrdinary
+												, tocYear
+												, "<h1>" 
+													+ "Matins Ordinary" 
+													+ "</h1><p class=\"lang\">(" 
+													+ tocLang 
+													+ ")</p>"
+												);							
+										matinsOrdinary.setTitle("Matins Ordinary - " + tocLang);
+										theBundles.add(matinsOrdinary);
+									}
 								} else {
 									tocRefMonthYear = book.addSection(
 											tocMonthYear,
@@ -245,21 +257,68 @@ public class EpubBuilder {
 								}
 							}
 							if (this.separateMonthFiles) {
-								book.addSection(tocServiceDay + " - " + tocService + " " + tocLang, newHtml);
+								// add the bundle to the list of bundles
+								bundle.setTitle(tocServiceDay + " - " + tocService + " " + tocLang);
+								theBundles.add(bundle);
 							} else {
+								// add the service directly to the book
 								book.addSection(tocRefMonthYear, 
-										tocServiceDay + " - " + tocService + " " + tocLang, newHtml);
+										tocServiceDay + " - " + tocService + " " + tocLang, bundle.getMain());
 							}
 						}
 					} // end while ServiceDay has entries
 				} // end while ServiceDayCollection has entries
 			} // end while Month has entries
+
 			if (separateMonthFiles) {
+				
+				Iterator<ResourceBundle> it = theBundles.iterator();
+
+				switch (indexPosition) {
+					case 0: { // no index at all
+						while (it.hasNext()) {
+							ResourceBundle bundle = it.next();
+							book.addSection(bundle.getTitle(), bundle.getMain());
+						}
+							break;
+						}
+					case 1: { // put index just before its service
+						while (it.hasNext()) {
+							ResourceBundle bundle = it.next();
+							book.addSection("Index: " + bundle.getTitle(), bundle.getIndex());
+							book.addSection("  Text: " + bundle.getTitle(), bundle.getMain());
+						}
+						break;
+					}
+					case 2: { // put index just after its service
+						while (it.hasNext()) {
+							ResourceBundle bundle = it.next();
+							book.addSection("Text: " + bundle.getTitle(), bundle.getMain());
+							book.addSection("  Index: " + bundle.getTitle(), bundle.getIndex());
+						}
+						break;
+					}
+					case 3: { // put all indexes at end of book
+						while (it.hasNext()) {
+							ResourceBundle bundle = it.next();
+							book.addSection("Text: " + bundle.getTitle(), bundle.getMain());
+						}
+						it = theBundles.iterator();
+						while (it.hasNext()) {
+							ResourceBundle bundle = it.next();
+							book.addSection("Index: " + bundle.getTitle(), bundle.getIndex());
+						}
+						break;
+					}
+				}
+								
 				String url = appendDate(ePubFileNamePrefix,"."+tocYear+"."+tocMonthAsNbr);
 				writeEpubFile(
 						book
 						, pathToRoot + Constants.EPUB_SERVICE_DIR + "/" + tocYear + "/"
 						, url);
+				// reset the bundles
+				theBundles = new ArrayList<ResourceBundle>();
 			}
 		} // end while Calendar has months
 
@@ -289,16 +348,21 @@ public class EpubBuilder {
 		return result;
 	}
 
-	private Resource transform(String file, String year, String heading) {
-		Resource result = null;
+	private ResourceBundle transform(
+			String file
+			, String year
+			, String heading) {
+		ResourceBundle result = new ResourceBundle();
 		StringBuffer sb = new StringBuffer();
 		StringBuffer desigSb = new StringBuffer();
-		List<IndexEntry> theIndex = new ArrayList<IndexEntry>();
+		String indexOfFirstLine = "";
+		FirstWordsIndexer theIndex = new FirstWordsIndexer(
+				this.generateFirstWordsIndexExcludeBetweenParentheses
+				, this.lettersPerRow);
 		try {
 			File theFile = new File(pathToRoot + file);
 			Document doc = getDoc(theFile);
 			String lang = doc.getElementsByTag("title").first().attr("data-language").toLowerCase();
-			boolean bilingual = (lang.contains("-"));
 			String title = year
 					+ "."
 					+ doc.title()
@@ -308,6 +372,7 @@ public class EpubBuilder {
 			// Set the name of the html file to use for the transformed HTML.
 			// This is the file that will actually be zipped into the ePub.
 			String newFileName = title + ".html";
+			newFileName = newFileName.replaceAll(" ", "");
 
 			// strip out the media groups. Can't be used in an ePub.
 			Elements media = doc.getElementsByClass("media-group");
@@ -315,64 +380,72 @@ public class EpubBuilder {
 				element.remove();
 			}
 
-			if (generateToc) {
+			if (generateToc || generateFirstWordsIndex) {
 				// Set IDs for the p.designation elements - to create an index of the sections
-				String serviceId = toServiceId(file);
+				String serviceId = "";
+				if (newFileName.toLowerCase().contains("matinsordinary")) {
+					serviceId = toServiceId(file);
+				} else {
+					serviceId = newFileName;
+				}
 				Elements rows = doc.getElementsByTag("tr");
 				desigSb.append("<h3 class=\"linkSectionsTitle\">Outline of Reader and Choral Parts</h3>");
 				desigSb.append("<table>");
 				rows.get(0).attr("id",serviceId);
 				desigSb.append(row("",rows.get(0).id(),"The Beginning"));
-							
+				indexOfFirstLine = anchor(
+						"indexEntry"
+						, newFileName + "#" + rows.get(0).id()
+						,"Go directly to the start of the service...");
 				String rowHtml = "";
 				
 				int cnt = rows.size();
 				for (int i=0; i < cnt; i++) {
 
 					Element row = rows.get(i);
+					String rowId = serviceId + i;
+					row.attr("id", rowId);
+					String href = newFileName + "#" + rowId;
 		
-					if (generateTocWithDesignations) {
+					if (generateTocWithDesignations || generateFirstWordsIndexWithDesignations) {
 						Elements designations = row.getElementsByClass("designation");
 						if (designations.size() > 0) {
-							row.attr("id", serviceId+i);
 							switch(designations.size()) {
 							case 1: {
 								rowHtml = 
 										row(
 												classTocDesignation
-												, row.id()
+												, href
 												, designations.get(0).text()
 										);
 								desigSb.append(rowHtml);
-								theIndex.add(
-										new IndexEntry(
-												designations.get(0).text()
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithDesignations) {
+									theIndex.add(
+											designations.get(0).text()
+													,href
+											);
+								}
 								break;
 							}
 							case 2: {
 								rowHtml =
 										row(
 												classTocDesignation
-												, row.id()
+												, href
 												, designations.get(0).text()
 												, designations.get(1).text()
 										);
 								desigSb.append(rowHtml);
-								theIndex.add(
-										new IndexEntry(
-												designations.get(0).text()
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												designations.get(1).text()
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithDesignations) {
+									theIndex.add(
+													designations.get(0).text()
+															,href
+									);
+									theIndex.add(
+													designations.get(1).text()
+															,href
+									);
+								}
 								break;
 							}
 							case 3: {
@@ -382,37 +455,31 @@ public class EpubBuilder {
 								rowHtml = 
 										row(
 												classTocDesignation
-												, row.id()
+												, href
 												, designations.get(0).text() 
 													+ "  " + designations.get(1).text() 
 												, designations.get(2).text() 
 													+ "  " + designations.get(3).text() 
 										);
 								desigSb.append(rowHtml);
-								theIndex.add(
-										new IndexEntry(
-												designations.get(0).text()
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												designations.get(1).text()
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												designations.get(2).text()
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												designations.get(3).text()
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithDesignations) {
+									theIndex.add(
+													designations.get(0).text()
+															,href
+									);
+									theIndex.add(
+													designations.get(1).text()
+															,href
+									);
+									theIndex.add(
+													designations.get(2).text()
+															,href
+									);
+									theIndex.add(
+													designations.get(3).text()
+															,href
+									);
+								}
 								break;
 							}
 						}
@@ -420,13 +487,12 @@ public class EpubBuilder {
 					if (generateTocWithSources) {
 						Elements sources = row.getElementsByClass("source");
 						if (sources.size() > 0) {
-							row.attr("id", serviceId+i);
 							switch(sources.size()) {
 								case 1: {
 									rowHtml =
 											row(
 													classTocSource
-													, row.id()
+													, href
 													, sources.get(0).text()
 											);
 									desigSb.append(rowHtml);
@@ -436,7 +502,7 @@ public class EpubBuilder {
 									rowHtml =
 											row(
 													classTocSource
-													, row.id()
+													, href
 													, sources.get(0).text()
 													, sources.get(1).text()
 											);
@@ -446,104 +512,98 @@ public class EpubBuilder {
 							}
 						}
 					}
-					if (generateTocWithDialogs) {
+					if (generateTocWithDialogs || generateFirstWordsIndexWithDialogs) {
 						Elements dialogs = row.getElementsByClass("dialog");
 						if (dialogs.size() > 0) {
-							row.attr("id", serviceId+i);
 							switch(dialogs.size()) {
 								case 1: {
 									rowHtml =
 											row(
 													classTocDialog
-													, row.id()
+													, href
 													, firstNWords(dialogs.get(0).text(),nGram)
 											);
 									desigSb.append(rowHtml);
-									theIndex.add(
-											new IndexEntry(
-													firstNWords(dialogs.get(0).text( )
-															,nGram)
-															,row.id()
-											)
-									);
+									if (generateFirstWordsIndexWithDialogs) {
+										theIndex.add(
+														firstNWords(dialogs.get(0).text( )
+																,nGram)
+																,href
+										);
+									}
 									break;
 								}
 								case 2: {
 									rowHtml =
 											row(
 													classTocDialog
-													, row.id()
+													, href
 													, firstNWords(dialogs.get(0).text(),nGram)
 													, firstNWords(dialogs.get(1).text(),nGram)
 											);
 									desigSb.append(rowHtml);
-									theIndex.add(
-											new IndexEntry(
-													firstNWords(dialogs.get(0).text( )
-															,nGram)
-															,row.id()
-											)
-									);
-									theIndex.add(
-											new IndexEntry(
-													firstNWords(dialogs.get(1).text( )
-															,nGram)
-															,row.id()
-											)
-									);
+									if (generateFirstWordsIndexWithDialogs) {
+										theIndex.add(
+														firstNWords(dialogs.get(0).text( )
+																,nGram)
+																,href
+										);
+										theIndex.add(
+														firstNWords(dialogs.get(1).text( )
+																,nGram)
+																,href
+										);
+									}
 									break;
 								}
 							}
 						}
 					}
-					if (generateTocWithVerses) {
+					if (generateTocWithVerses || generateFirstWordsIndexWithVerses) {
 						Elements hymns = row.getElementsByClass("hymn");
 						if (hymns.size() > 0) {
-							row.attr("id", serviceId+i);
 							switch (hymns.size()) {
 							case 1: {
 								rowHtml =
 										row(
 												classTocVerse
-												, row.id()
+												, href
 												, firstNWords(hymns.get(0).text( ),nGram) 
 										);
 								desigSb.append(rowHtml);
-								index(firstNWords(hymns.get(0).text( ),nGram), file);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(hymns.get(0).text( )
-														,nGram)
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithVerses) {
+									index(firstNWords(hymns.get(0).text( ),nGram), file);
+									theIndex.add(
+													firstNWords(hymns.get(0).text( )
+															,nGram)
+															,href
+									);
+								}
 								break;
 							}
 							case 2: {
 								rowHtml = 
 										row(
 												classTocVerse
-												, row.id()
+												, href
 												, firstNWords(hymns.get(0).text( ),nGram) 
 												, firstNWords(hymns.get(1).text(),nGram) 
 										);
 								desigSb.append(rowHtml);
 								index(firstNWords(hymns.get(0).text( ),nGram), file);
 								index(firstNWords(hymns.get(1).text( ),nGram), file);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(hymns.get(0).text( )
-														,nGram)
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(hymns.get(1).text( )
-														,nGram)
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithVerses) {
+									theIndex.add(
+													firstNWords(hymns.get(0).text( )
+															,nGram)
+															,href
+									);
+									theIndex.add(
+													firstNWords(hymns.get(1).text( )
+															,nGram)
+															,href
+									);
+								}
 								break;
 							}
 							case 3: {
@@ -553,7 +613,7 @@ public class EpubBuilder {
 								rowHtml =
 										row(
 												classTocVerse
-												, row.id()
+												, href
 												, firstNWords(hymns.get(0).text( ),nGram) 
 													+ "  " + firstNWords(hymns.get(1).text( ),nGram)
 												, firstNWords(hymns.get(2).text(),nGram) 
@@ -565,83 +625,74 @@ public class EpubBuilder {
 								index(firstNWords(hymns.get(2).text( ),nGram), file);
 								index(firstNWords(hymns.get(3).text( ),nGram), file);
 
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(hymns.get(0).text( )
-														,nGram)
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(hymns.get(1).text( )
-														,nGram)
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(hymns.get(2).text( )
-														,nGram)
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(hymns.get(3).text( )
-														,nGram)
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithVerses) {
+									theIndex.add(
+													firstNWords(hymns.get(0).text( )
+															,nGram)
+															,href
+									);
+									theIndex.add(
+													firstNWords(hymns.get(1).text( )
+															,nGram)
+															,href
+									);
+									theIndex.add(
+													firstNWords(hymns.get(2).text( )
+															,nGram)
+															,href
+									);
+									theIndex.add(
+													firstNWords(hymns.get(3).text( )
+															,nGram)
+															,href
+									);
+								}
 								break;
 							}
 						}
 					}
-					if (generateTocWithReadings) {
+					if (generateTocWithReadings || generateFirstWordsIndexWithReadings) {
 						Elements readings = row.getElementsByClass("reading");
 						if (readings.size() > 0) {
-							row.attr("id", serviceId+i);
 							switch (readings.size()) {
 							case 1: {
 								rowHtml =
 										row(
 												classTocReading
-												, row.id()
+												, href
 												, firstNWords(readings.get(0).text( ),nGram) 
 										);
 								desigSb.append(rowHtml);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(readings.get(0).text( )
-														,nGram)
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithReadings) {
+									theIndex.add(
+													firstNWords(readings.get(0).text( )
+															,nGram)
+															,href
+									);
+								}
 								break;
 							}
 							case 2: {
 								rowHtml = 
 										row(
 												classTocReading
-												, row.id()
+												, href
 												, firstNWords(readings.get(0).text( ),nGram) 
 												, firstNWords(readings.get(1).text(),nGram) 
 										);
 								desigSb.append(rowHtml);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(readings.get(0).text( )
-														,nGram)
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(readings.get(1).text( )
-														,nGram)
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithReadings) {
+									theIndex.add(
+													firstNWords(readings.get(0).text( )
+															,nGram)
+															,href
+									);
+									theIndex.add(
+													firstNWords(readings.get(1).text( )
+															,nGram)
+															,href
+									);
+								}
 								break;
 							}
 							case 3: {
@@ -651,41 +702,35 @@ public class EpubBuilder {
 								rowHtml =
 										row(
 												classTocReading
-												, row.id()
+												, href
 												, firstNWords(readings.get(0).text( ),nGram) 
 													+ "  " + firstNWords(readings.get(1).text( ),nGram)
 												, firstNWords(readings.get(2).text(),nGram) 
 													+ "  " + firstNWords(readings.get(3).text( ),nGram)
 										);
 								desigSb.append(rowHtml);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(readings.get(0).text( )
-														,nGram)
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(readings.get(1).text( )
-														,nGram)
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(readings.get(2).text( )
-														,nGram)
-														,row.id()
-										)
-								);
-								theIndex.add(
-										new IndexEntry(
-												firstNWords(readings.get(3).text( )
-														,nGram)
-														,row.id()
-										)
-								);
+								if (generateFirstWordsIndexWithReadings) {
+									theIndex.add(
+													firstNWords(readings.get(0).text( )
+															,nGram)
+															,href
+									);
+									theIndex.add(
+													firstNWords(readings.get(1).text( )
+															,nGram)
+															,href
+									);
+									theIndex.add(
+													firstNWords(readings.get(2).text( )
+															,nGram)
+															,href
+									);
+									theIndex.add(
+													firstNWords(readings.get(3).text( )
+															,nGram)
+															,href
+									);
+								}
 								break;
 							}
 						}
@@ -693,13 +738,12 @@ public class EpubBuilder {
 					if (generateTocWithChapVerses) {
 						Elements chaps = row.getElementsByClass("chapverse");
 						if (chaps.size() > 0) {
-							row.attr("id", serviceId+i);
 							switch (chaps.size()) {
 							case 1: {
 								rowHtml =
 										row(
 												classTocChapVerse
-												, row.id()
+												, href
 												, chaps.get(0).text( ) 
 										);
 								desigSb.append(rowHtml);
@@ -709,7 +753,7 @@ public class EpubBuilder {
 								rowHtml = 
 										row(
 												classTocChapVerse
-												, row.id()
+												, href
 												, chaps.get(0).text( )
 												, chaps.get(1).text()
 										);
@@ -726,37 +770,91 @@ public class EpubBuilder {
 			
 			// Grab the cleaned up content section of the doc
 			Elements content = doc.getElementsByClass("content");
-
-			// Wrap the content with the required HTML opening and closing
-			// blocks
-			sb.append(HtmlUtils.HTMLopen);
-			sb.append(HtmlUtils.getHead(title, css));
-			sb.append(HtmlUtils.BODYopen);
-			if (generateToc) {
-				sb.append(heading);
-				sb.append(desigSb.toString());
+			
+			StringBuffer bitByBit = new StringBuffer();
+			boolean removeTableElements = false;
+			if(removeTableElements) {
+				doc.select("tr").attr("class", "textGroup");
+				content = doc.getElementsByClass("textGroup");
+				doc.select("tbody").tagName("div");
+				doc.select("table").tagName("div");
+				doc.select("tr").attr("class", "textGroup");
+				doc.select("tr").tagName("div");
+				doc.select("td").tagName("div");
 			}
-			sb.append(heading);
-			sb.append(content.html());
 
-			java.util.Collections.sort(theIndex, new IndexEntryComparator());
-			sb.append("<table>");
-			Iterator<IndexEntry> it = theIndex.iterator();
-			while (it.hasNext()) {
-				sb.append(it.next().getValue());
-			}
-			sb.append("</table>");
-			sb.append(HtmlUtils.BODYclose);
-			sb.append(HtmlUtils.HTMLclose);
+
+			// Set up HTML for the main contents file
+			result.setMain(
+					getResource(
+							heading
+							, null
+							, null
+							, content.html()
+							,newFileName
+					)
+			);
+			
+			// Set up HTML for the index
+			result.setIndex(
+					getResource(
+							heading
+							, "Index"
+							, indexOfFirstLine
+							, theIndex.indexAsHtmlTable()
+							, "index-"+newFileName
+					)
+			);
+
+			// Set up HTML for the TOC
+			result.setToc(
+					getResource(
+							heading
+							, "Outline"
+							, indexOfFirstLine
+							, theIndex.indexAsHtmlTable()
+							, "toc-"+newFileName
+					)
+			);
 
 			// Create a resource for the transformed HTML
-			result = new Resource(sb.toString().getBytes(
-					Charset.forName("UTF-8")), newFileName);
+			result.setToc(
+					new Resource(
+							sb.toString().getBytes(Charset.forName("UTF-8"))
+							, "toc-"+newFileName));
 
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return result;
+	}
+	
+	private Resource getResource(
+			String heading
+			, String subHeading
+			, String indexOfFirstLine
+			, String contents
+			, String filename) {
+		Resource result = null;
+		StringBuffer sb = new StringBuffer();
+		sb.append(HtmlUtils.HTMLopen);
+		sb.append(HtmlUtils.getHead(title, css));
+		sb.append(HtmlUtils.BODYopen);
+		sb.append(heading);
+		if (subHeading != null) {
+			sb.append("<h3>"+subHeading+"</h3>");
+		}
+		if (indexOfFirstLine != null) {
+			sb.append("<p class=\"entryIndex\">" + indexOfFirstLine + "</p>");
+		}
+		sb.append(contents);
+		sb.append(HtmlUtils.BODYclose);
+		sb.append(HtmlUtils.HTMLclose);
+		
+		result = 	new Resource(
+				sb.toString().getBytes(Charset.forName("UTF-8"))
+				, filename);
+		
 		return result;
 	}
 	
@@ -774,7 +872,7 @@ public class EpubBuilder {
 				+ "\">"
 				+  "<a class=\"" 
 				+ pClassName 
-				+ "\" href=\"#" 
+				+ "\" href=\"" 
 				+ href 
 				+ "\">"
 				+ text 
@@ -926,7 +1024,11 @@ public class EpubBuilder {
 		return result;
 	}
 
-	private Book initializeEpubBook(String theTitle, String theAuthor, String theDate) {
+	private Book initializeEpubBook(
+			String theTitle
+			, String theAuthor
+			, String theDate
+			) {
 		
 		Book book = null;
 		try {
@@ -984,6 +1086,7 @@ public class EpubBuilder {
 					getResource(EpubBuilder.class
 							.getResourceAsStream(pathInResources
 									+ "sources.html"), "sources.html"));
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -5,7 +5,7 @@ import java.util.Properties;
 public class RunToBuildEpubIndex {
 
 	public static void main(String[] args) {
-		System.out.println("Building indexes for ePubs.  \nDon't worry about the red letters below that say INFO nl.siegmann.epublib.domain.Resource");
+		System.out.println("Building indexes for ePubs.");
 		String ePubConfig = "/Transformer.config";
 		Properties prop = GeneralUtils.getProperties(
 				RunToBuildEpubIndex.class, ePubConfig);

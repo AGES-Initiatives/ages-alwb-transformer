@@ -178,6 +178,9 @@ p.inaudible {
     text-align:left;
     line-height:150%;
 }
+p.indexEntry {
+	margin: 0em;
+}
 p.mode {
     color:red;
     font-weight:bold;
@@ -517,7 +520,8 @@ table {
 td {
   vertical-align: top;
 }
-
+td.indexLetterAnchor {
+}
 td.leftCell {
   width: 49%;
   padding-right: 8px;
@@ -528,7 +532,14 @@ td.rightCell {
   width: 51%;
   overflow: visible;
 }
-
+td.indexLetter {
+	font-weight:bold;
+	color:red;
+}
+tr.indexLetterRow {
+	color: red;
+	font-weight: bold;
+}
 
 .glyphicon {
  	margin: 0 3px;
@@ -634,5 +645,10 @@ p[class^="bmc_"], p[class^="emc_"] {
   .print-btn {
     display: none;
   }
+
+.textGroup {
+  page-break-before: always;
+  page-break-inside: avoid;
+}
 
 }

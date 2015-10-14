@@ -63,7 +63,7 @@ public class IndexEntry {
 				+ "\">"
 				+  "<a class=\"" 
 				+ pClassName 
-				+ "\" href=\"#" 
+				+ "\" href=\"" 
 				+ href 
 				+ "\">"
 				+ text 
