@@ -3,15 +3,12 @@ package net.ages.liturgical.workbench.transformer.epub;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 
 import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
-import net.sf.jazzlib.ZipFile;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.domain.Resource;
-import nl.siegmann.epublib.domain.Resources;
 import nl.siegmann.epublib.epub.EpubReader;
 
 import org.apache.tools.ant.util.FileUtils;

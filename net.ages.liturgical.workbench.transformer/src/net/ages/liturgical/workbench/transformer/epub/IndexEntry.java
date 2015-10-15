@@ -29,10 +29,6 @@ public class IndexEntry {
 		return td("leftCell", className, href,text);
 	}
 	
-	private String tdRight(String className, String href, String text) {
-		return td("rightCell", className,href,text);
-	}
-
 	private String td(String tdClassName, String pClassName, String href, String text) {
 		return
 				 "<td class=\""
@@ -41,13 +37,6 @@ public class IndexEntry {
 				+ anchor(pClassName, href,text)
 				+ "</td> "
 				;
-	}
-	
-	private String row(String cClassName, String href, String textLeft, String textRight) {
-		return "<tr>"
-				+ tdLeft(cClassName, href,textLeft)
-				+ tdRight(cClassName,href,textRight)
-				+ "</tr>";
 	}
 	
 	private String row(String cClassName, String href, String text) {

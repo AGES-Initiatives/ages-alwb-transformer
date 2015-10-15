@@ -2,10 +2,10 @@
 @font-face {
 	font-family: "Arimo";
 	src:
-		url('../Fonts/Arimo-Bold.ttf') format('truetype'),
-		url('../Fonts/Arimo-BoldItalic.ttf') format('truetype'),
-		url('../Fonts/Arimo-Italic.ttf') format('truetype'),
-		url('../Fonts/Arimo-Regular.ttf') format('truetype');
+		url('Arimo-Bold.ttf') format('truetype'),
+		url('Arimo-BoldItalic.ttf') format('truetype'),
+		url('Arimo-Italic.ttf') format('truetype'),
+		url('Arimo-Regular.ttf') format('truetype');
 }
 
 html, body {

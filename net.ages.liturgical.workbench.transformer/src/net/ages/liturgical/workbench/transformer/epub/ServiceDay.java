@@ -18,7 +18,6 @@ public class ServiceDay {
 		try {
 			this.href = href;
 			load();
-//			print();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -40,8 +39,6 @@ public class ServiceDay {
 
 	private void load() {
 		Document doc = getDoc(new File(href));
-			String indexTitle = doc.getElementsByClass("index-title-date").first().text();
-//			System.out.println(indexTitle);
 
 			String serviceUrl = null;
 			String serviceTitle = null;
@@ -82,6 +79,9 @@ public class ServiceDay {
 			}
 	}
 	
+	/**
+	 * For debugging purposes
+	 */
 	private void print() {
 		Iterator<String> it = theServices.keySet().iterator();
 		while (it.hasNext()) {

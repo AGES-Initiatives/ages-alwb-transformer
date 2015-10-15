@@ -3,6 +3,8 @@ package net.ages.liturgical.workbench.transformer.epub;
 import java.io.File;
 import java.io.InputStream;
 import java.text.Normalizer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class GeneralUtils {
@@ -54,6 +56,21 @@ public class GeneralUtils {
 	 */
 	public static boolean getPropBoolean(String value) {
 		return value.toLowerCase().startsWith("y") || value.toLowerCase().startsWith("t");
+	}
+	
+	public static List<String> getPropSubFolders(String folders) {
+		List<String> result = new ArrayList<String>();
+		try {
+			String[] parts = folders.split(",");
+			if (parts.length > 0) {
+				for (String folder : parts) {
+					result.add(folder.toLowerCase().trim());
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 	/**

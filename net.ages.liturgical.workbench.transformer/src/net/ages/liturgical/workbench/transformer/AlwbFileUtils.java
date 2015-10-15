@@ -92,6 +92,22 @@ public class AlwbFileUtils {
 		return files;
 	}
 	
+	public static List<File> getFilesFromSubdirectories(String directory, String extension) {
+		List<File> list = getFilesInDirectory(directory, extension);
+		String rootPath = new File(directory).getPath();
+		List<File> files = new ArrayList<File>();
+		Iterator<File> it = list.iterator();
+		String path = "";
+		File f;
+		while(it.hasNext()) {
+			f = it.next();
+			if (f.getParent().length() > rootPath.length()) {
+				files.add(f);
+			}
+		}
+		return files;
+	}
+
 	/**
 	 * Recursively read contents of directory and return all files found
 	 * @param directory
@@ -109,6 +125,7 @@ public class AlwbFileUtils {
 		}
 		return files;
 	}
+
 	/**
 	 * The static main method is provided for test purposes and as an example of how to use this class.
 	 * <p>Normal usage is to instantiate the class elsewhere 

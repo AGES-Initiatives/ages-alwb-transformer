@@ -41,13 +41,18 @@ public class HtmlUtils {
 	 * @return
 	 */
 	public static String getHead(String title, String css) {
+		String link = "";
+		if (css.length() > 0) {
+			link = "<link href=\""
+					+ css
+					+ "\" rel=\"stylesheet\" type=\"text/css\"/>";
+		}
+			
 		return HEADopen
 				+ "<title>"
 				+ title
 				+ "</title>"
-				+ "<link href=\""
-				+ css
-				+ "\" rel=\"stylesheet\" type=\"text/css\"/>"
+				+ link
 				+ HEADclose;
 	}
 	

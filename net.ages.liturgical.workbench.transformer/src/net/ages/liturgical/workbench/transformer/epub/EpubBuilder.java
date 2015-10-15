@@ -248,12 +248,14 @@ public class EpubBuilder {
 								} else {
 									tocRefMonthYear = book.addSection(
 											tocMonthYear,
-											new Resource(HtmlUtils.getIndexPage(
-													tocMonthYear,
-													"Services start on next page.",
-													css).getBytes(
-													Charset.forName("UTF-8")),
-													tocMonthYear + ".html"));
+											new Resource(
+													HtmlUtils.getIndexPage(
+													tocMonthYear
+													, "Services start on next page."
+													, css)
+													.getBytes(
+													    Charset.forName("UTF-8"))
+													, tocMonthYear + ".html"));
 								}
 							}
 							if (this.separateMonthFiles) {
