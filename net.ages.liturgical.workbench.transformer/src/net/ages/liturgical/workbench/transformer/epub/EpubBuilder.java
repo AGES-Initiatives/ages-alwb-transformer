@@ -393,12 +393,20 @@ public class EpubBuilder {
 				Elements rows = doc.getElementsByTag("tr");
 				desigSb.append("<h3 class=\"linkSectionsTitle\">Outline of Reader and Choral Parts</h3>");
 				desigSb.append("<table>");
-				rows.get(0).attr("id",serviceId);
-				desigSb.append(row("",rows.get(0).id(),"The Beginning"));
-				indexOfFirstLine = anchor(
-						"indexEntry"
-						, newFileName + "#" + rows.get(0).id()
-						,"Go directly to the start of the service...");
+				try {
+					if (rows.size() > 0) {
+						rows.get(0).attr("id",serviceId);
+						desigSb.append(row("",rows.get(0).id(),"The Beginning"));
+						indexOfFirstLine = anchor(
+								"indexEntry"
+								, newFileName + "#" + rows.get(0).id()
+								,"Go directly to the start of the service...");
+					} else {
+						System.out.println("Got you!");
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				String rowHtml = "";
 				
 				int cnt = rows.size();

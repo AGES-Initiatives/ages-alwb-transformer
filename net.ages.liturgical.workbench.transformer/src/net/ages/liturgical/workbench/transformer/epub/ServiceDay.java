@@ -64,6 +64,8 @@ public class ServiceDay {
 					// ignore PDF files.
 					if (serviceDescription.toLowerCase().contains("pdf") 
 							|| serviceUrl.startsWith("p")
+							|| serviceDescription.toLowerCase().contains("epub")
+							|| serviceUrl.startsWith("e")
 							) {
 						// ignore
 					} else {
