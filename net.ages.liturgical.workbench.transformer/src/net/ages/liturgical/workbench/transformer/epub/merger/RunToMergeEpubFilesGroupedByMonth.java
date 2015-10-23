@@ -45,7 +45,7 @@ public class RunToMergeEpubFilesGroupedByMonth {
 					calendar.set(Calendar.YEAR, Integer.parseInt(year.getName()));
 					File[] months = AlwbFileUtils.getDirectChildMonthDirectories(year.getPath());
 					for (File month : months) {
-						calendar.set(Calendar.MONTH, Integer.parseInt(month.getName()));
+						calendar.set(Calendar.MONTH, Integer.parseInt(month.getName())-1);
 						// get the files that match the patterns
 						List<File> files = AlwbFileUtils.getMatchingFilesInDirectory(month.getPath(), mergeMonthRegEx,"epub");
 						if (files.size() > 0) {
