@@ -7,17 +7,17 @@ import java.util.Properties;
 import net.ages.liturgical.workbench.transformer.AlwbTransformer;
 import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
+import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
 
 public class RunToBuildPdfFiles {
 
 	public static void main(String[] args) {
 		try {
 			String ePubConfig = "/Transformer.config";
-			Properties prop = GeneralUtils.getProperties(
-					AlwbTransformer.class, ePubConfig);
-			String foSource = GeneralUtils.getParentPath(prop.getProperty("pathToServicesIndexHtml"));
-			boolean createPdfFiles = GeneralUtils.getPropBoolean(prop.getProperty("createPdfFiles"));
-			boolean deleteFoFiles = GeneralUtils.getPropBoolean(prop.getProperty("deleteFoFiles"));
+			PropertyUtils props = new PropertyUtils(ePubConfig);
+			String foSource = GeneralUtils.getParentPath(props.getPropString("pathToServicesIndexHtml"));
+			boolean createPdfFiles = props.getPropBoolean("createPdfFiles");
+			boolean deleteFoFiles = props.getPropBoolean("deleteFoFiles");
 
 			boolean hadErrors = false;
 
