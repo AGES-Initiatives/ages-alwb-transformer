@@ -1,9 +1,9 @@
 package net.ages.liturgical.workbench.transformer;
-import java.util.Properties;
 
-import net.ages.liturgical.workbench.transformer.epub.GeneralUtils;
 import net.ages.liturgical.workbench.transformer.epub.RunToBuildEpubFiles;
+import net.ages.liturgical.workbench.transformer.epub.merger.RunToMergeEpubFilesGroupedByMonth;
 import net.ages.liturgical.workbench.transformer.pdf.RunToBuildPdfFiles;
+import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
 
 public class AlwbTransformer {
 
@@ -17,16 +17,19 @@ public class AlwbTransformer {
 	 */
 	public static void main(String[] args) {
 			String ePubConfig = "/Transformer.config";
-			Properties prop = GeneralUtils.getProperties(
-					AlwbTransformer.class, ePubConfig);
-			boolean createPdfFiles = GeneralUtils.getPropBoolean(prop.getProperty("createPdfFiles"));
-			boolean createMonthlyEpubs = GeneralUtils.getPropBoolean(prop.getProperty("createMonthlyEpubs"));
+			PropertyUtils props = new PropertyUtils(ePubConfig);
+			boolean createPdfFiles = props.getPropBoolean("createPdfFiles");
+			boolean createIndividualEpubs = props.getPropBoolean("createIndividualEpubFiles");
+			boolean createMonthlyEpubs = props.getPropBoolean("mergeEpubFilesByMonth");
 
 			if (createPdfFiles) {
 				RunToBuildPdfFiles.main(null);
 			}
-			if (createMonthlyEpubs) {
+			if (createIndividualEpubs) {
 				RunToBuildEpubFiles.main(null);
+			}
+			if (createMonthlyEpubs) {
+				RunToMergeEpubFilesGroupedByMonth.main(null);
 			}
 	}
 

@@ -1,4 +1,4 @@
-package net.ages.liturgical.workbench.transformer.epub;
+package net.ages.liturgical.workbench.transformer.utils;
 
 import java.io.File;
 
@@ -53,6 +53,7 @@ public class HtmlUtils {
 				+ title
 				+ "</title>"
 				+ link
+				+ "<meta charset=\"utf-8\"/>"
 				+ HEADclose;
 	}
 	
@@ -154,7 +155,20 @@ public class HtmlUtils {
 		return Q + v + Q;
 	}
 	
-	public static void main(String[] args) {
-	}	
+	
+	public static String anchor(String pClassName, String href, String text) {
+		return
+				"<p class=\""
+				+ pClassName 
+				+ "\">"
+				+  "<a class=\"" 
+				+ pClassName 
+				+ "\" href=\"" 
+				+ href 
+				+ "\">"
+				+ text 
+				+ "</a>"
+				+ "</p>";
+	}
 
 }

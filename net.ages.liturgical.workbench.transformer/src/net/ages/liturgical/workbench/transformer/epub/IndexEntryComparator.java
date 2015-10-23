@@ -2,6 +2,8 @@ package net.ages.liturgical.workbench.transformer.epub;
 
 import java.util.Comparator;
 
+import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
+
 /**
  * Compares after making lowercase and removing diacritics.
  * @author mac002

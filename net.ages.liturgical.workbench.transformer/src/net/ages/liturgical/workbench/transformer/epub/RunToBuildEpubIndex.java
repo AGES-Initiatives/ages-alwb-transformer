@@ -2,6 +2,19 @@ package net.ages.liturgical.workbench.transformer.epub;
 
 import java.util.Properties;
 
+import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
+
+/**
+ * Reads all the ePubs in the e/s directory and creates an index.html file
+ * with all the ePubs as links.
+ * 
+ * Also, updates the servicesindex.html with a link to the ePub index.html.
+ * 
+ * RunToRemoveEpubIndex.java can be run to remove the link from the servicesindex.html.
+ * 
+ * @author mac002
+ *
+ */
 public class RunToBuildEpubIndex {
 
 	public static void main(String[] args) {

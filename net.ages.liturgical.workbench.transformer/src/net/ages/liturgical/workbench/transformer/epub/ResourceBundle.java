@@ -1,5 +1,7 @@
 package net.ages.liturgical.workbench.transformer.epub;
 
+import org.apache.commons.io.IOUtils;
+
 import nl.siegmann.epublib.domain.Resource;
 
 /**
@@ -12,16 +14,13 @@ import nl.siegmann.epublib.domain.Resource;
  */
 public class ResourceBundle {
 	private String title;
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	private Resource main; // resource representing the actual html file with its text
-	private Resource toc; // its table of contents
-	private Resource index; // its index
-
+	private String tocTitle;
+	
+	private Resource main = null; // resource representing the actual html file with its text
+	private Resource toc = null; // its table of contents
+	private Resource leftIndex = null; // its index
+	private Resource rightIndex = null; // index for the language in right cell, if exists
+	
 	public Resource getMain() {
 		return main;
 	}
@@ -34,10 +33,49 @@ public class ResourceBundle {
 	public void setToc(Resource toc) {
 		this.toc = toc;
 	}
-	public Resource getIndex() {
-		return index;
+	public Resource getLeftIndex() {
+		return leftIndex;
 	}
-	public void setIndex(Resource index) {
-		this.index = index;
+	public void setLeftIndex(Resource index) {
+		this.leftIndex = index;
+	}
+	public String getMainHtml() {
+		try {
+			return IOUtils.toString(main.getInputStream(), "UTF-8");
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	public String getTocHtml() {
+		try {
+			return IOUtils.toString(toc.getInputStream(), "UTF-8");
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	public String getIndexHtml() {
+		try {
+			return IOUtils.toString(leftIndex.getInputStream(), "UTF-8");
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	public Resource getRightIndex() {
+		return rightIndex;
+	}
+	public void setRightIndex(Resource rightIndex) {
+		this.rightIndex = rightIndex;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getTocTitle() {
+		return tocTitle;
+	}
+	public void setTocTitle(String tocTitle) {
+		this.tocTitle = tocTitle;
 	}
 }

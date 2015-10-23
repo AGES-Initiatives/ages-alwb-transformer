@@ -9,7 +9,7 @@ import java.util.List;
 
 import com.mongodb.BasicDBObject;
 
-import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
+import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 
 /**
  * The purpose of this program is to change the keys in designated files so that they

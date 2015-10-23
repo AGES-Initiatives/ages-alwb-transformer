@@ -1,4 +1,4 @@
-package net.ages.liturgical.workbench.transformer.epub;
+package net.ages.liturgical.workbench.transformer.services.index.reader;
 
 import java.util.Iterator;
 import java.util.Map;

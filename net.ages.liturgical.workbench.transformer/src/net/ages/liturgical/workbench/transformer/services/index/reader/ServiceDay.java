@@ -1,4 +1,4 @@
-package net.ages.liturgical.workbench.transformer.epub;
+package net.ages.liturgical.workbench.transformer.services.index.reader;
 
 import java.io.File;
 import java.util.Iterator;
@@ -61,7 +61,7 @@ public class ServiceDay {
 					e = row.getElementsByTag("a").first();
 					serviceUrl = e.attr("href");
 					serviceDescription = e.text();
-					// ignore PDF files.
+					// ignore PDF and other ePub files.
 					if (serviceDescription.toLowerCase().contains("pdf") 
 							|| serviceUrl.startsWith("p")
 							|| serviceDescription.toLowerCase().contains("epub")

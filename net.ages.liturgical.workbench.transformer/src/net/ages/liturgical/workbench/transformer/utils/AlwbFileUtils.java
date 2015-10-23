@@ -1,6 +1,7 @@
-package net.ages.liturgical.workbench.transformer;
+package net.ages.liturgical.workbench.transformer.utils;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
@@ -9,11 +10,16 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.filefilter.DirectoryFileFilter;
+import org.apache.commons.io.filefilter.FileFilterUtils;
+import org.apache.commons.io.filefilter.NotFileFilter;
+import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
@@ -81,7 +87,6 @@ public class AlwbFileUtils {
 		List<File> list = getFilesInDirectory(directory, extension);
 		List<File> files = new ArrayList<File>();
 		Iterator<File> it = list.iterator();
-		String path = "";
 		File f;
 		while(it.hasNext()) {
 			f = it.next();
@@ -91,13 +96,30 @@ public class AlwbFileUtils {
 		}
 		return files;
 	}
+
+	/**
+	 * Finds all the files in specified directory with specified extension.
+	 * Returns only those files that match one of the supplied regular expressions.
+	 * @param directory - to search, including subdirectories
+	 * @param fileRegularExpressions - all the expressions to apply against the filenames
+	 * @param extension - file extension to use, e.g. html
+	 * @return those files that match any of the regular expressions
+	 */
+	public static List<File> getMatchingFilesInDirectory(String directory, List<String> fileRegularExpressions, String extension) {
+		List<File> files = new ArrayList<File>();
+			for (String p : fileRegularExpressions) {
+				for (File f : AlwbFileUtils.getMatchingFilesInDirectory(directory, p, extension)) {
+					files.add(f);
+				}
+			}
+		return files;
+	}
 	
 	public static List<File> getFilesFromSubdirectories(String directory, String extension) {
 		List<File> list = getFilesInDirectory(directory, extension);
 		String rootPath = new File(directory).getPath();
 		List<File> files = new ArrayList<File>();
 		Iterator<File> it = list.iterator();
-		String path = "";
 		File f;
 		while(it.hasNext()) {
 			f = it.next();
@@ -199,6 +221,62 @@ public class AlwbFileUtils {
 		return result;
 	}
 	
+	/**
+	 * For the supplied path to a directory
+	 * @param path
+	 * @return the immediate child directories
+	 */
+	public static File[] getDirectChildDirectories(String path) {
+		File root = new File(path);
+		return root.listFiles(directoryFilter);
+	}
+	
+	public static File[] getDirectChildYearDirectories(String path) {
+		File root = new File(path);
+		return root.listFiles(directoryYearFilter);
+	}
+
+	public static File[] getDirectChildMonthDirectories(String path) {
+		File root = new File(path);
+		return root.listFiles(directoryMonthFilter);
+	}
+
+	public static FileFilter directoryFilter = new FileFilter() {
+		public boolean accept(File file) {
+			return file.isDirectory();
+		}
+	};
+	
+	public static FileFilter directoryYearFilter = new FileFilter() {
+		public boolean accept(File file) {
+			if (file.isDirectory()) {
+				try {
+					int year = Integer.parseInt(file.getName());
+					return (year > 1000 && year < 3000);
+				} catch (Exception e) {
+					return false;
+				}
+			} else {
+				return false;
+			}
+		}
+	};
+	
+	public static FileFilter directoryMonthFilter = new FileFilter() {
+		public boolean accept(File file) {
+			if (file.isDirectory()) {
+				try {
+					int month = Integer.parseInt(file.getName());
+					return (month > 0 && month < 13);
+				} catch (Exception e) {
+					return false;
+				}
+			} else {
+				return false;
+			}
+		}
+	};
+
 	/**
 	 * Get the part of the path that starts after the delimiter
 	 * @param delimiter - string at end of which to split

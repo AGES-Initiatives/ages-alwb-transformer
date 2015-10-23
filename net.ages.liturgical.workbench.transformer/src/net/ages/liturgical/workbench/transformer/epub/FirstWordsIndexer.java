@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
+import net.ages.liturgical.workbench.transformer.utils.HtmlUtils;
+
 public class FirstWordsIndexer {
 	private Map<String,List<IndexEntry>> theMap = new TreeMap<String,List<IndexEntry>>();
 	private boolean excludeBetweenParentheses = true;
@@ -21,27 +24,21 @@ public class FirstWordsIndexer {
 	}
 	
 	public void add(String text, String id) {
-		boolean add = true;
 		if (excludeBetweenParentheses) {
-			if (text.trim().startsWith("(")) {
-				add = false;
+			if (! text.trim().startsWith("(")) {
+				String key = firstChar(text);
+				if (! theMap.containsKey(key)) {
+					theMap.put(key, new ArrayList<IndexEntry>());
+				}
+				List<IndexEntry> value = theMap.get(key);
+				value.add(
+						new IndexEntry(
+						  text
+						  , id
+				        )
+				);
+				theMap.put(key, value);
 			}
-		}
-		if (add) {
-			
-			String key = firstChar(text);
-					
-			if (! theMap.containsKey(key)) {
-				theMap.put(key, new ArrayList<IndexEntry>());
-			}
-			List<IndexEntry> value = theMap.get(key);
-			value.add(
-					new IndexEntry(
-					  text
-					  , id
-			        )
-			);
-			theMap.put(key, value);
 		}
 	}
 	
@@ -53,7 +50,7 @@ public class FirstWordsIndexer {
 	public String indexAsHtmlTable() {
 		StringBuffer sb = new StringBuffer();
 		sb.append(letterTable());
-		sb.append("<table>");
+		sb.append("\n<table>");
 		Iterator<String> theLetters = theMap.keySet().iterator();
 		int letterCount = 1;
 		while (theLetters.hasNext()) {
@@ -67,7 +64,7 @@ public class FirstWordsIndexer {
 				sb.append(it.next().getValue());
 			}
 		}
-		sb.append("</table>");
+		sb.append("\n</table>");
 		return sb.toString();
 	}
 	

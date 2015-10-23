@@ -6,7 +6,8 @@ import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 
-import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
+import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
+import net.ages.liturgical.workbench.transformer.utils.HtmlUtils;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.domain.Resource;
 import nl.siegmann.epublib.epub.EpubReader;
@@ -114,6 +115,7 @@ public class IndexUtils {
 			System.out.println(r.getId() + ": " + r.getHref());
 		}
 	}
+	
 	/**
 	 * Takes a fully qualified path and strips off the path
 	 * up to the start of the ePub directory.
@@ -130,6 +132,7 @@ public class IndexUtils {
 		}
 		return result;
 	}
+	
 	private static InputStream getResource(String path) {
 		return IndexUtils.class.getResourceAsStream(path);
 	}

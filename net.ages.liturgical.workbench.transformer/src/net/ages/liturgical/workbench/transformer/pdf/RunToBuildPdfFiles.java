@@ -4,9 +4,9 @@ import java.io.File;
 import java.util.List;
 import java.util.Properties;
 
-import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
 import net.ages.liturgical.workbench.transformer.AlwbTransformer;
-import net.ages.liturgical.workbench.transformer.epub.GeneralUtils;
+import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
+import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
 
 public class RunToBuildPdfFiles {
 

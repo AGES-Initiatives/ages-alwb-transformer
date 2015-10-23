@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
-import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
+import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.pdfbox.exceptions.COSVisitorException;

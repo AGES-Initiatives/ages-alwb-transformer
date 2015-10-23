@@ -2,6 +2,8 @@ package net.ages.liturgical.workbench.transformer.epub;
 
 import java.util.Properties;
 
+import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
+
 /**
  * Run this class if you want to remove the link to ePubs from
  * the servicesindex.html file.  It will also delete the /e/s/index.html

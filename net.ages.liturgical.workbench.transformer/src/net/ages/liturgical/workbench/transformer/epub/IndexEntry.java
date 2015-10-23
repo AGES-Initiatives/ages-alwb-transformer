@@ -26,7 +26,7 @@ public class IndexEntry {
 	}
 	
 	private String tdLeft(String className, String href, String text) {
-		return td("leftCell", className, href,text);
+		return td("indexCell", className, href,text);
 	}
 	
 	private String td(String tdClassName, String pClassName, String href, String text) {

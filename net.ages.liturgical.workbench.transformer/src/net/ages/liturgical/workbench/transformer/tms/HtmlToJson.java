@@ -12,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.XML;
 
-import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
+import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 
 public class HtmlToJson {
 

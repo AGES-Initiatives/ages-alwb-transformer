@@ -1,11 +1,16 @@
-package net.ages.liturgical.workbench.transformer.epub;
+package net.ages.liturgical.workbench.transformer.utils;
 
 import java.io.File;
 import java.io.InputStream;
 import java.text.Normalizer;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+
+import org.apache.tools.ant.util.FileUtils;
 
 public class GeneralUtils {
 
@@ -92,6 +97,92 @@ public class GeneralUtils {
 			e.printStackTrace();
 		}
 		return result;
-
+	}
+	
+	/**
+	 * Create a service date by using the directory information in the path
+	 * @param path - must contain at end /s/{year}/{month}{service}/{lang}/filename.html
+	 * @return year/month/day
+	 */
+	public static Date serviceDateFromPath(String path) {
+		Date result = null;
+		try {
+			String [] theDirs = FileUtils.getPathStack(path);
+			int l = theDirs.length;
+			if (theDirs.length > 7) {
+				String s = theDirs[l-7];
+				if (s.startsWith("s")) {
+					String day = theDirs[l-4];
+					String month = theDirs[l-5];
+					String year = theDirs[l-6];
+					SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+					result = sdf.parse(
+							day 
+							+ "-"
+							+ month
+							+ "-"
+							+ year
+							+ "-"
+							);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	/**
+	 * Converts a comma delimited String into a List<String>
+	 * @param delimitedString
+	 * @return the List. 
+	 */
+	public static List<String> stringToList(String delimitedString) {
+		List<String> result = new ArrayList<String>();
+		try {
+			for (String s : Arrays.asList(delimitedString.split(","))) {
+				result.add(s.trim());
+			}
+		} catch (Exception e) {
+			result = new ArrayList<String>();
+		}
+		return result;
+	}
+	public static int getPropInt(String value) {
+		try {
+			return Integer.parseInt(value);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	public static String firstNWords(String s, int nbrWords) {
+		String result = "";
+		StringBuffer sb = new StringBuffer();
+		try {
+			String [] parts = s.split(" ");
+			int cnt;
+			if (parts.length > nbrWords) {
+				cnt = nbrWords;
+				for (int i = 0; i < cnt; i++) {
+					String word = parts[i];
+					sb.append(word + " ");
+				}
+				result = sb.toString().trim();
+				char last = result.charAt(result.length()-1);
+				if (! Character.isLetter(last)) {
+					if (last != ')') {
+						result = result.substring(0, result.length()-1);
+					}
+				}
+				result = result.replaceAll(" * ", " ");
+				result = result + "...";
+			} else {
+				result = s;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

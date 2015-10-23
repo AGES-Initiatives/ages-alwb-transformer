@@ -21,8 +21,8 @@ import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 
-import net.ages.liturgical.workbench.transformer.AlwbFileUtils;
 import net.ages.liturgical.workbench.transformer.epub.RunToBuildEpubFiles;
+import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 /**
  * <b>Provides methods to transform XML-FO to PDF:
  * 

@@ -1,4 +1,4 @@
-package net.ages.liturgical.workbench.transformer.epub;
+package net.ages.liturgical.workbench.transformer.services.index.reader;
 
 /**
  * Contains information about a specific service
