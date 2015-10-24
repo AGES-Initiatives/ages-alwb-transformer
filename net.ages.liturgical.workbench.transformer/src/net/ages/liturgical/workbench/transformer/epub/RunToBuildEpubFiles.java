@@ -3,6 +3,8 @@ package net.ages.liturgical.workbench.transformer.epub;
 import java.io.File;
 import java.util.List;
 
+import net.ages.liturgical.workbench.transformer.epub.merger.RunToMergeEpubFilesGroupedByDay;
+import net.ages.liturgical.workbench.transformer.epub.merger.RunToMergeEpubFilesGroupedByMonth;
 import net.ages.liturgical.workbench.transformer.services.index.reader.HtmlServicesIndexReader;
 import net.ages.liturgical.workbench.transformer.services.index.reader.Service;
 import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
@@ -37,6 +39,8 @@ public class RunToBuildEpubFiles {
 			boolean excludeRoot = props.getPropBoolean("exclude.html.in.root.folder");
 			boolean includeMatinsOrdinary = props.getPropBoolean("epub.include.matins.ordinary");
 			boolean missingMatinsOrdinary = false;
+			boolean createDailyEpubs = props.getPropBoolean("mergeEpubFilesByDay");
+			boolean createMonthlyEpubs = props.getPropBoolean("mergeEpubFilesByMonth");
 
 			MatinsOrdinary theMatinsOrdinary = null;
 			String matinsOrdinarySource = props.getPropString("epub.path.to.matins.ordinary");
@@ -93,6 +97,12 @@ public class RunToBuildEpubFiles {
 						}
 						t.htmlToEpub(title);
 					}
+				}
+				if (createDailyEpubs) {
+					RunToMergeEpubFilesGroupedByDay.main(null);
+				}
+				if (createMonthlyEpubs) {
+					RunToMergeEpubFilesGroupedByMonth.main(null);
 				}
 			}
 		} catch (Exception e) {
