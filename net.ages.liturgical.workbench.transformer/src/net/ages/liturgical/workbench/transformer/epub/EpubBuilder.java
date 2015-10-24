@@ -139,7 +139,7 @@ public class EpubBuilder {
 				, date
 				, Constants.PATH_TO_RESOURCES
 				);
-
+		
 		if (generateFirstWordsIndex || generateToc) {
 			
 			ResourceBundle bundle = new HtmlIndexer().buildIndex(
@@ -161,6 +161,7 @@ public class EpubBuilder {
 			// set title[1] and title[2] for future retrieval
 			book.getMetadata().addTitle(bundle.getTocTitle());
 			book.getMetadata().addTitle(bundle.getTocDate());
+			book.getMetadata().addType(Constants.VALUE_TYPE_SERVICE);
 
 			if (generateToc) {
 				book.addSection(tocDisplayName, bundle.getToc());

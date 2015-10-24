@@ -3,12 +3,15 @@ package net.ages.liturgical.workbench.transformer.epub;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 import net.ages.liturgical.workbench.transformer.utils.HtmlUtils;
 import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.domain.Metadata;
 import nl.siegmann.epublib.domain.Resource;
 import nl.siegmann.epublib.epub.EpubReader;
 
@@ -24,10 +27,12 @@ public class IndexUtils {
 	String pathToEpubIndex;
 	String mainIndexEpubInfoHtml;
 	
-	public IndexUtils(String pathToServicesIndex, String mainIndexEpubInfoHtml) {
+	public IndexUtils(
+			String pathToServicesIndex
+			, String mainIndexEpubInfoHtml) {
 		this.pathToServicesIndex = pathToServicesIndex;
 		rootFolder = new File(pathToServicesIndex).getParent();
-		pathToEpubFolder = rootFolder + "/"+Constants.EPUB_SERVICE_DIR;
+		pathToEpubFolder = rootFolder + "/"+Constants.EPUB_MERGED_DIR;
 		pathToEpubIndex = pathToEpubFolder + "index.html";
 		this.mainIndexEpubInfoHtml = mainIndexEpubInfoHtml;
 	}
@@ -71,6 +76,11 @@ public class IndexUtils {
 			, String heading
 			) {
 		
+		List<String> months = new ArrayList<String>();
+		List<String> days = new ArrayList<String>();
+		List<String> adhoc = new ArrayList<String>();
+		List<String> unknown = new ArrayList<String>();
+		
 		Document doc;
 		// Use the servicesindex.html file as a template to write the ePub e/index.html file
 		doc = HtmlUtils.getDoc(new File(this.pathToServicesIndex));
@@ -88,15 +98,59 @@ public class IndexUtils {
 
 		while (it.hasNext()) {
 			File f = it.next();
+
 			System.out.println(f.getName());
 			try {
 				Book book = reader.readEpub(new FileInputStream(f.getPath()));
-	//			showContents(book);
-				sb.append("<div class=\"index-day\"><a href=\"" + subpath(f.getPath()) + "\">" + book.getTitle() + "</a></div>");
+				Metadata m = book.getMetadata();
+				String type = null;
+				if (book.getMetadata().getTypes().size() > 0) {
+					type = book.getMetadata().getTypes().get(0);
+				} else {
+					type = Constants.VALUE_TYPE_UNKNOWN;
+				}
+				String div = "<div class=\"index-day\"><a href=\"" + subpath(f.getPath()) + "\">" + book.getTitle() + "</a></div>";
+				if (type.equals(Constants.VALUE_TYPE_DAY)) {
+					days.add(div);
+				} else if (type.equals(Constants.VALUE_TYPE_MONTH)) {
+					months.add(div);
+				} else if (type.equals(Constants.VALUE_TYPE_AD_HOC)) {
+					adhoc.add(div);
+				} else {
+					unknown.add(div);
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+		
+		if (months.size() > 0) {
+			sb.append("<p>Services for Entire Month<p>");
+			for (String div : months) {
+				sb.append(div);
+			}
+		}
+		
+		if (days.size() > 0) {
+			sb.append("<p>All the Services for a Specific Day</p>");
+			for (String div : days) {
+				sb.append(div);
+			}
+		}
+		
+		if (adhoc.size() > 0) {
+			sb.append("<p>Miscellaneous ePubs</p>");
+			for (String div : adhoc) {
+				sb.append(div);
+			}
+		}
+
+		if (unknown.size() > 0) {
+			for (String div : unknown) {
+				sb.append(div);
+			}
+		}
+
 		// replace the content with the links to the epub files
 		contentElem.html(sb.toString());
 		// write the e/index.html file
@@ -125,10 +179,10 @@ public class IndexUtils {
 	private String subpath(String path) {
 		String result = path;
 		try {
-			int i = path.indexOf("/e/s/");
+			int i = path.indexOf("/" + Constants.EPUB_DIR);
 			result = path.substring(i+1,path.length());
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}
 		return result;
 	}

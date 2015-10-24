@@ -21,7 +21,8 @@ public class EpubMerger {
 	private String pathOut = null;
 	private String fileOut = null;
 	private Book mergedBook = null;
-	boolean daySpecific = false;
+	private String mergeType = null;
+	private boolean daySpecific = false;
 	
 	public EpubMerger (
 			List<File> files
@@ -30,7 +31,7 @@ public class EpubMerger {
 			, String path
 			, String filename
 			, List<String> exclusions
-			, boolean daySpecific
+			, String mergeType
 			) {
 		this.files = files;
 		this.title = title;
@@ -38,7 +39,7 @@ public class EpubMerger {
 		this.pathOut = path;
 		this.fileOut = filename;
 		this.exclusions = exclusions;
-		this.daySpecific = daySpecific;
+		this.mergeType = mergeType;
 		
 		mergedBook = EpubUtils.initializeEpubBook(
 				this.title
@@ -47,12 +48,14 @@ public class EpubMerger {
 				, ""  // date
 				, Constants.PATH_TO_RESOURCES
 		);
+		mergedBook.getMetadata().addType(mergeType);
+		daySpecific = mergeType.equals(Constants.VALUE_TYPE_DAY) 
+				|| mergeType.equals(Constants.VALUE_TYPE_SERVICE);
 		merge();
 	}
 	
 	public void merge() {
 		EpubReader reader = new EpubReader();
-		String sectionTitle = "";
 
 		for (File f: files) {
 			System.out.println(f.getName());

@@ -41,6 +41,7 @@ public class RunToBuildEpubFiles {
 			boolean missingMatinsOrdinary = false;
 			boolean createDailyEpubs = props.getPropBoolean("mergeEpubFilesByDay");
 			boolean createMonthlyEpubs = props.getPropBoolean("mergeEpubFilesByMonth");
+			boolean createIndexOfMergedEpubs = props.getPropBoolean("createIndexOfMergedEpubs");
 
 			MatinsOrdinary theMatinsOrdinary = null;
 			String matinsOrdinarySource = props.getPropString("epub.path.to.matins.ordinary");
@@ -103,6 +104,12 @@ public class RunToBuildEpubFiles {
 				}
 				if (createMonthlyEpubs) {
 					RunToMergeEpubFilesGroupedByMonth.main(null);
+				}
+				
+				if (createIndexOfMergedEpubs) {
+					if (createDailyEpubs || createMonthlyEpubs) {
+						RunToBuildEpubIndex.main(null);
+					}
 				}
 			}
 		} catch (Exception e) {
