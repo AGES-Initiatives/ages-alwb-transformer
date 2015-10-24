@@ -71,6 +71,12 @@ public class HtmlTransformer {
 				leftLang = langs;
 				rightLang = "";
 			}
+			if (displayTitle.contains(langs)) {
+				displayTitle = displayTitle.replace(langs, "");
+				if (displayTitle.contains("()")) {
+					displayTitle = displayTitle.replace("()","");
+				}
+			}
 			heading = 
 					"<h1>" 
 					+ displayTitle 
