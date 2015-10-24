@@ -15,6 +15,7 @@ import nl.siegmann.epublib.domain.Resource;
 public class ResourceBundle {
 	private String title;
 	private String tocTitle;
+	private String tocDate;
 	
 	private Resource main = null; // resource representing the actual html file with its text
 	private Resource toc = null; // its table of contents
@@ -77,5 +78,11 @@ public class ResourceBundle {
 	}
 	public void setTocTitle(String tocTitle) {
 		this.tocTitle = tocTitle;
+	}
+	public String getTocDate() {
+		return tocDate;
+	}
+	public void setTocDate(String tocDate) {
+		this.tocDate = tocDate;
 	}
 }

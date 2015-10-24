@@ -32,6 +32,9 @@ public class EpubBuilder {
 	private boolean saveHtml = false;
 	private String pathToMatinsOrdinary = null;
 	private int lettersPerRow = 5;
+	private String indexDisplayName = null;
+	private String textDisplayName = null;
+	private String tocDisplayName = null;
 	private List<String> classesToExclude = null;
 	private List<String> classesToIndex = null;
 	private List<String> classesForTocFullText = null;
@@ -110,6 +113,7 @@ public class EpubBuilder {
 		
 		String theTitle = null;
 		String theTocTitle = null;
+		String theTocDate = null;
 		
 		if (title == null || title.length() < 1) {
 			theTitle = hX.getTitleText();
@@ -121,7 +125,8 @@ public class EpubBuilder {
 					theTitle = theTitle + " " + hX.getServiceDateForTitle();
 				}
 				if (hX.getServiceDateForToc() != null) {
-					theTocTitle = title + " " + hX.getServiceDateForToc();
+					theTocTitle = title;
+					theTocDate = hX.getServiceDateForToc();
 				}
 			}
 		}
@@ -142,6 +147,7 @@ public class EpubBuilder {
 					, hX.getLangs()
 					, theTitle
 					, theTocTitle
+					, theTocDate
 					, hX.getHeading()
 					, newFileName + ".html"
 					, css
@@ -152,17 +158,24 @@ public class EpubBuilder {
 					, this.nGram
 					, this.lettersPerRow);
 
+			// set title[1] and title[2] for future retrieval
+			book.getMetadata().addTitle(bundle.getTocTitle());
+			book.getMetadata().addTitle(bundle.getTocDate());
+
 			if (generateToc) {
-				book.addSection("TOC (" + hX.getLangs()+ "): " + bundle.getTocTitle(), bundle.getToc());
+				book.addSection(tocDisplayName, bundle.getToc());
 			}
 			
-			book.addSection("Text (" + hX.getLangs()+ "): " + bundle.getTocTitle(), bundle.getMain());
+			book.addSection(textDisplayName, bundle.getMain());
 
 			if (generateFirstWordsIndex) {
-				book.addSection("Index (" + hX.getLeftLang() + "): "  + bundle.getTocTitle(), bundle.getLeftIndex());
-				if (bundle.getRightIndex() != null) {
-					book.addSection("Index (" + hX.getRightLang() + "): " + bundle.getTocTitle(), bundle.getRightIndex());
-				} 
+				if (bundle.getRightIndex() == null) {
+					// for monolingual, we don't need to say what the language is for the index
+					book.addSection(indexDisplayName, bundle.getLeftIndex());
+				} else {
+					book.addSection(indexDisplayName + " (" + hX.getLeftLang() + ")", bundle.getLeftIndex());
+					book.addSection(indexDisplayName + " (" + hX.getRightLang() + ")", bundle.getRightIndex());
+				}
 			}
 			
 			// If requested, for debug purposes write the html that is being used in the ePub
@@ -252,10 +265,10 @@ public class EpubBuilder {
 		StringBuffer sb = new StringBuffer();
 		String ePubFilename = fileName + ".epub";
 		
-		sb.append("<!DOCTYPE html>");
-		sb.append("<html>");
-		sb.append("<head>");
-		sb.append("<title data-commemoration=\"");
+		sb.append("\n<!DOCTYPE html>");
+		sb.append("\n<html>");
+		sb.append("\n<head>");
+		sb.append("\n<title data-commemoration=\"");
 		sb.append(commemoration);
 		sb.append("\" data-language=\"");
 		sb.append(language);
@@ -264,17 +277,17 @@ public class EpubBuilder {
 		sb.append("\">");
 		sb.append(title);
 		sb.append("</title>");
-		sb.append("<meta charset=\"utf-8\"/> ");
-		sb.append("<meta name=\"keywords\" content=\"\"/>");
-		sb.append("<script>");
+		sb.append("\n<meta charset=\"utf-8\"/> ");
+		sb.append("\n<meta name=\"keywords\" content=\"\"/>");
+		sb.append("\n<script>");
 		sb.append("window.location=\"");
 		sb.append(ePubFilename);
 		sb.append("\"");
 		sb.append("</script>");
 		sb.append("</head>");
-		sb.append("<body>");
-		sb.append("<p class=\"ePubDownloadNotice\">The ePub file is being downloaded.  Open it using an eReader capable of reading ePub, e.g. on an iPhone or iPad, use eBooks.  On an Android you can use Google Play Book.</p>");
-		sb.append("</body>");
+		sb.append("\n<body>");
+		sb.append("\n<p class=\"ePubDownloadNotice\">The ePub file is being downloaded.  Open it using an eReader capable of reading ePub, e.g. on an iPhone or iPad, use eBooks.  On an Android you can use Google Play Book.</p>");
+		sb.append("\n</body>");
 
 		return sb.toString();
 	}
@@ -282,6 +295,9 @@ public class EpubBuilder {
 		this.pathToServicesIndex = props.getPropString("pathToServicesIndexHtml");
 		this.pathToMatinsOrdinary = props.getPropString("epub.path.to.matins.ordinary");
 		this.pathToRoot = GeneralUtils.getParentPath(this.pathToServicesIndex)  + "/";
+		tocDisplayName = props.getPropString("epub.reader.toc.toc.display.name");
+		textDisplayName = props.getPropString("epub.reader.toc.text.display.name");
+		indexDisplayName = props.getPropString("epub.reader.toc.index.display.name");
 		this.author = props.getPropString("epub.author");
 		generateToc = props.getPropBoolean("epub.generate.toc");
 		generateFirstWordsIndex = props.getPropBoolean("epub.generate.first.words.index");

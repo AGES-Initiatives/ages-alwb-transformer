@@ -3,7 +3,6 @@ package net.ages.liturgical.workbench.transformer.epub.merger;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -54,9 +53,10 @@ public class RunToMergeEpubFilesGroupedByMonth {
 									files
 									, title + sdf.format(calendar.getTime())
 									, author
-									, source
+									, source + "m/s/" + year.getName() + "/" + month.getName() + "/"
 									, filenamePrefix + "." + year.getName() + "." + month.getName()
 									, exclusions
+									, false // not day specific
 									);
 						}
 					}

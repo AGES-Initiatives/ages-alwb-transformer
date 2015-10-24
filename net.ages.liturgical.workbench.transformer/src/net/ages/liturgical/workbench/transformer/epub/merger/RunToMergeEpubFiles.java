@@ -40,9 +40,10 @@ public class RunToMergeEpubFiles {
 					files
 					, title
 					, author
-					, source
+					, source  + "m/"
 					, mergeFilename
 					, exclusions
+					, false // not day specific
 					);
 		} catch (Exception e) {
 			e.printStackTrace();

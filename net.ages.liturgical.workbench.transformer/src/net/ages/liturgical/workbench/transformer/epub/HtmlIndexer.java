@@ -43,6 +43,7 @@ public class HtmlIndexer {
 			, String langs
 			, String title
 			, String tocTitle
+			, String tocDate
 			, String heading
 			, String htmlFileName
 			, String css
@@ -56,6 +57,7 @@ public class HtmlIndexer {
 		ResourceBundle result = new ResourceBundle();
 		result.setTitle(title);
 		result.setTocTitle(tocTitle);
+		result.setTocDate(tocDate);
 		String indexOfFirstLine = "";
 		// Set up indexers for the left and right languages.
 		// If it turns out to be a monolingual text, we will only use the left index.

@@ -241,6 +241,11 @@ public class AlwbFileUtils {
 		return root.listFiles(directoryMonthFilter);
 	}
 
+	public static File[] getDirectChildDayDirectories(String path) {
+		File root = new File(path);
+		return root.listFiles(directoryDayFilter);
+	}
+
 	public static FileFilter directoryFilter = new FileFilter() {
 		public boolean accept(File file) {
 			return file.isDirectory();
@@ -268,6 +273,21 @@ public class AlwbFileUtils {
 				try {
 					int month = Integer.parseInt(file.getName());
 					return (month > 0 && month < 13);
+				} catch (Exception e) {
+					return false;
+				}
+			} else {
+				return false;
+			}
+		}
+	};
+
+	public static FileFilter directoryDayFilter = new FileFilter() {
+		public boolean accept(File file) {
+			if (file.isDirectory()) {
+				try {
+					int day = Integer.parseInt(file.getName());
+					return (day > 0 && day < 32);
 				} catch (Exception e) {
 					return false;
 				}

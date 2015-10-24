@@ -2,9 +2,7 @@ package net.ages.liturgical.workbench.transformer.epub;
 
 import java.io.File;
 import java.util.List;
-import java.util.Properties;
 
-import net.ages.liturgical.workbench.transformer.AlwbTransformer;
 import net.ages.liturgical.workbench.transformer.services.index.reader.HtmlServicesIndexReader;
 import net.ages.liturgical.workbench.transformer.services.index.reader.Service;
 import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
@@ -80,6 +78,9 @@ public class RunToBuildEpubFiles {
 						Service s = htmlIndexer.getService(f.getPath());
 						if (s != null) {
 							title = s.getTitle();
+							if (s.getLanguage() != null) {
+								title = title + " (" + s.getLanguage() + ")";
+							}
 							if (s.getTitle().toLowerCase().startsWith("ma")) {
 								// this is a Matins service
 								if (includeMatinsOrdinary) {

@@ -14,13 +14,14 @@ import nl.siegmann.epublib.domain.TableOfContents;
 import nl.siegmann.epublib.epub.EpubReader;
 
 public class EpubMerger {
-	List<File> files = null;
-	List<String> exclusions = null;
-	String title = null;
-	String author = null;
-	String pathOut = null;
-	String fileOut = null;
-	Book mergedBook = null;
+	private List<File> files = null;
+	private List<String> exclusions = null;
+	private String title = null;
+	private String author = null;
+	private String pathOut = null;
+	private String fileOut = null;
+	private Book mergedBook = null;
+	boolean daySpecific = false;
 	
 	public EpubMerger (
 			List<File> files
@@ -29,13 +30,15 @@ public class EpubMerger {
 			, String path
 			, String filename
 			, List<String> exclusions
+			, boolean daySpecific
 			) {
 		this.files = files;
 		this.title = title;
 		this.author = author;
-		this.pathOut = path + "m/";
+		this.pathOut = path;
 		this.fileOut = filename;
 		this.exclusions = exclusions;
+		this.daySpecific = daySpecific;
 		
 		mergedBook = EpubUtils.initializeEpubBook(
 				this.title
@@ -49,15 +52,45 @@ public class EpubMerger {
 	
 	public void merge() {
 		EpubReader reader = new EpubReader();
+		String sectionTitle = "";
 
 		for (File f: files) {
 			System.out.println(f.getName());
 			try {
 				Book book = reader.readEpub(new FileInputStream(f.getPath()));
+				List<String> titles = book.getMetadata().getTitles();
+				String shortTitle = null;
+				switch(titles.size()) {
+					case 0: { 
+						shortTitle = book.getTitle();
+						break;
+					}
+					case 1: { 
+						shortTitle = book.getTitle();
+						break;
+					}
+					case 2: { 
+						shortTitle = titles.get(1);
+						break;
+					}
+					case 3: { 
+						if (daySpecific) { // no need to show the date in the toc
+							shortTitle = titles.get(1);
+						} else { // need to show the date in the toc
+							shortTitle = titles.get(2) + " " + titles.get(1);
+						}
+						break;
+					}
+				}
 				TableOfContents toc = book.getTableOfContents();
 				for (TOCReference tocr : toc.getTocReferences()) {
 					if (include(tocr.getCompleteHref())) {
-						mergedBook.addSection(tocr.getTitle(), tocr.getResource());
+						mergedBook.addSection(
+								shortTitle
+								+ ", "
+								+ tocr.getTitle()
+								, tocr.getResource()
+						);
 					}
 				}
 			} catch (Exception e) {
