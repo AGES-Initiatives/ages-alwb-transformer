@@ -1,4 +1,4 @@
-package net.ages.liturgical.workbench.transformer;
+package net.ages.liturgical.workbench.transformer.other;
 
 import java.io.File;
 import java.util.List;
