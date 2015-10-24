@@ -21,20 +21,12 @@ public class AlwbTransformer {
 			PropertyUtils props = new PropertyUtils(ePubConfig);
 			boolean createPdfFiles = props.getPropBoolean("createPdfFiles");
 			boolean createIndividualEpubs = props.getPropBoolean("createIndividualEpubFiles");
-			boolean createDailyEpubs = props.getPropBoolean("mergeEpubFilesByDay");
-			boolean createMonthlyEpubs = props.getPropBoolean("mergeEpubFilesByMonth");
 
 			if (createPdfFiles) {
 				RunToBuildPdfFiles.main(null);
 			}
 			if (createIndividualEpubs) {
 				RunToBuildEpubFiles.main(null);
-			}
-			if (createDailyEpubs) {
-				RunToMergeEpubFilesGroupedByDay.main(null);
-			}
-			if (createMonthlyEpubs) {
-				RunToMergeEpubFilesGroupedByMonth.main(null);
 			}
 	}
 
