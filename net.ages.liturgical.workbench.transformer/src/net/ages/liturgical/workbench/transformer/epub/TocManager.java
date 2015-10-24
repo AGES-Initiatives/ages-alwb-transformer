@@ -16,7 +16,7 @@ public class TocManager {
 		sb.append("\n<table>");
 	}
 	
-	public void add(String href, String className, String text) {
+	public void add(String className, String href, String text) {
 		if (excludeBetweenParentheses) {
 			if (! text.trim().startsWith("(")) {
 				sb.append(
