@@ -7,8 +7,9 @@ import org.json.JSONObject;
  * an ePub file so that they can be extracted later.
  * 
  * The epublib has a Map<String,String> for MetaData, but it 
- * does not seem to support ad hoc key-value pairs.  So, I created 
- * Attributes as an alternative.
+ * does not seem to support ad hoc key-value pairs.  It lets you store
+ * them, but if you write the ePub, then try to retrieve them, they are
+ * gone.  So, I created Attributes as an alternative.
  * 
  * The underlying storage uses Json with simple String key-value pairs.  
  * 
