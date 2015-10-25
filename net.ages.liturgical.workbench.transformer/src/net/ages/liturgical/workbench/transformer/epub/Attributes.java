@@ -10,7 +10,9 @@ import org.json.JSONObject;
  * does not seem to support ad hoc key-value pairs.  So, I created 
  * Attributes as an alternative.
  * 
- * The underlying storage uses Json.  Get the Json string by
+ * The underlying storage uses Json with simple String key-value pairs.  
+ * 
+ * Get the Json string by
  * calling getJsonString(), then store it book.getMetaData().addDescription();
  * 
  * Assuming that the .addDescription() method is only called once with the
