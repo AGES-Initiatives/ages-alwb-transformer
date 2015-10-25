@@ -102,19 +102,20 @@ public class IndexUtils {
 			System.out.println(f.getName());
 			try {
 				Book book = reader.readEpub(new FileInputStream(f.getPath()));
-				Metadata m = book.getMetadata();
+				Attributes attribs = null;
 				String type = null;
-				if (book.getMetadata().getTypes().size() > 0) {
-					type = book.getMetadata().getTypes().get(0);
-				} else {
-					type = Constants.VALUE_TYPE_UNKNOWN;
+				try {
+					attribs = new Attributes(book.getMetadata().getDescriptions().get(0));
+					type = attribs.getType();
+				} catch (Exception e) {
+					type = Attributes.VALUE_TYPE_UNKNOWN;
 				}
 				String div = "<div class=\"index-day\"><a href=\"" + subpath(f.getPath()) + "\">" + book.getTitle() + "</a></div>";
-				if (type.equals(Constants.VALUE_TYPE_DAY)) {
+				if (type.equals(Attributes.VALUE_TYPE_DAY)) {
 					days.add(div);
-				} else if (type.equals(Constants.VALUE_TYPE_MONTH)) {
+				} else if (type.equals(Attributes.VALUE_TYPE_MONTH)) {
 					months.add(div);
-				} else if (type.equals(Constants.VALUE_TYPE_AD_HOC)) {
+				} else if (type.equals(Attributes.VALUE_TYPE_AD_HOC)) {
 					adhoc.add(div);
 				} else {
 					unknown.add(div);

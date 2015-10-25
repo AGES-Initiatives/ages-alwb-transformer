@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.util.Iterator;
 import java.util.List;
 
+import net.ages.liturgical.workbench.transformer.epub.Attributes;
 import net.ages.liturgical.workbench.transformer.epub.Constants;
 import net.ages.liturgical.workbench.transformer.epub.EpubUtils;
 import nl.siegmann.epublib.domain.Book;
@@ -48,9 +49,11 @@ public class EpubMerger {
 				, ""  // date
 				, Constants.PATH_TO_RESOURCES
 		);
-		mergedBook.getMetadata().addType(mergeType);
-		daySpecific = mergeType.equals(Constants.VALUE_TYPE_DAY) 
-				|| mergeType.equals(Constants.VALUE_TYPE_SERVICE);
+		Attributes mergedAttribs = new Attributes();
+		mergedAttribs.setType(mergeType);
+		mergedBook.getMetadata().addDescription(mergedAttribs.toJsonString());
+		daySpecific = mergeType.equals(Attributes.VALUE_TYPE_DAY) 
+				|| mergeType.equals(Attributes.VALUE_TYPE_SERVICE);
 		merge();
 	}
 	
@@ -61,35 +64,27 @@ public class EpubMerger {
 			System.out.println(f.getName());
 			try {
 				Book book = reader.readEpub(new FileInputStream(f.getPath()));
-				List<String> titles = book.getMetadata().getTitles();
-				String shortTitle = null;
-				switch(titles.size()) {
-					case 0: { 
-						shortTitle = book.getTitle();
-						break;
-					}
-					case 1: { 
-						shortTitle = book.getTitle();
-						break;
-					}
-					case 2: { 
-						shortTitle = titles.get(1);
-						break;
-					}
-					case 3: { 
-						if (daySpecific) { // no need to show the date in the toc
-							shortTitle = titles.get(1);
-						} else { // need to show the date in the toc
-							shortTitle = titles.get(2) + " " + titles.get(1);
-						}
-						break;
+				Attributes attribs = null;
+				try {
+					attribs = new Attributes(book.getMetadata().getDescriptions().get(0));
+				} catch (Exception e) {
+					attribs = null;
+				}
+				String tocTitle = null;
+				if (attribs == null) {
+					tocTitle = title;
+				} else {
+					if (daySpecific) { // no need to show the date in the toc
+						tocTitle = attribs.getTocTitle();
+					} else { // need to show the date in the toc
+						tocTitle = attribs.getTocDate() + " " + attribs.getTocTitle();
 					}
 				}
 				TableOfContents toc = book.getTableOfContents();
 				for (TOCReference tocr : toc.getTocReferences()) {
 					if (include(tocr.getCompleteHref())) {
 						mergedBook.addSection(
-								shortTitle
+								tocTitle
 								+ ", "
 								+ tocr.getTitle()
 								, tocr.getResource()

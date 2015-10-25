@@ -12,7 +12,7 @@ public class AlwbTransformer {
 	 * Run this to transform fo into PDF and HTML into ePub.
 	 * Set properties in the file Transformer.config.
 	 * It uses key = value pairs.
-	 * Unlike an ares file, the values do not have quotation marks arodeund them.
+	 * Unlike an ares file, the values do not have quotation marks around them.
 	 * 
 	 * @param args - none
 	 */

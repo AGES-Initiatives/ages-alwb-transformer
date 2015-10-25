@@ -158,11 +158,13 @@ public class EpubBuilder {
 					, this.nGram
 					, this.lettersPerRow);
 
-			// set title[1] and title[2] for future retrieval
-			book.getMetadata().addTitle(bundle.getTocTitle());
-			book.getMetadata().addTitle(bundle.getTocDate());
-			book.getMetadata().addType(Constants.VALUE_TYPE_SERVICE);
-
+			// set attributes for future retrieval, e.g., merges
+			Attributes attribs = new Attributes();
+			attribs.setType(Attributes.VALUE_TYPE_SERVICE);
+			attribs.setTocTitle(bundle.getTocTitle());
+			attribs.setTocDate(bundle.getTocDate());
+			book.getMetadata().addDescription(attribs.toJsonString());
+			
 			if (generateToc) {
 				book.addSection(tocDisplayName, bundle.getToc());
 			}

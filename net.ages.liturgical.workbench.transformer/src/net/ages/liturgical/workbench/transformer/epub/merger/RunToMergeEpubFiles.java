@@ -3,7 +3,7 @@ package net.ages.liturgical.workbench.transformer.epub.merger;
 import java.io.File;
 import java.util.List;
 
-import net.ages.liturgical.workbench.transformer.epub.Constants;
+import net.ages.liturgical.workbench.transformer.epub.Attributes;
 import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
 import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
@@ -44,7 +44,7 @@ public class RunToMergeEpubFiles {
 					, source  + "m/"
 					, mergeFilename
 					, exclusions
-					, Constants.VALUE_TYPE_AD_HOC
+					, Attributes.VALUE_TYPE_AD_HOC
 					);
 		} catch (Exception e) {
 			e.printStackTrace();

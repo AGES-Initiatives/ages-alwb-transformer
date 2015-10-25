@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import net.ages.liturgical.workbench.transformer.epub.Constants;
+import net.ages.liturgical.workbench.transformer.epub.Attributes;
 import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
 import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
@@ -74,7 +74,7 @@ public class RunToMergeEpubFilesGroupedByDay {
 												+ "." 
 												+ day.getName()
 										, exclusions
-										, Constants.VALUE_TYPE_DAY
+										, Attributes.VALUE_TYPE_DAY
 										);
 							}
 						}
