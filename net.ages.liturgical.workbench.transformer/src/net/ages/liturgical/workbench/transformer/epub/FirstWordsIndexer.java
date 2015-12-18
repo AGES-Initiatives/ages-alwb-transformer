@@ -43,8 +43,11 @@ public class FirstWordsIndexer {
 	}
 	
 	private String firstChar(String text) {
-		String result = GeneralUtils.normalize(text).substring(0, 1);
-		return result.toUpperCase();
+		String result = text;
+		if (result.length() > 0) {
+			result = GeneralUtils.normalize(text).substring(0, 1).toUpperCase();
+		}
+		return result;
 	}
 	
 	public String indexAsHtmlTable() {

@@ -17,7 +17,7 @@ public class RunToPrintResourcesInEpubFile {
 
 	public static void main(String[] args) {
 	try {
-		File f = new File("/Users/mac002/Git/ages-alwb-templates/net.ages.liturgical.workbench.templates/src-gen/website/test/dcs/e/s/2015/08/31/ve/gr-en/se.m09.d01.ve.gr-en.epub");
+		File f = new File("/Users/mac002/Git/ages-alwb-templates/net.ages.liturgical.workbench.templates/src-gen/website/test/dcs/e/m/s/2016/03/12/se.2016.03.12.epub");
 		EpubReader reader = new EpubReader();
 		Book book = reader.readEpub(new FileInputStream(f.getPath()));
 		Collection<Resource> col = book.getResources().getAll();

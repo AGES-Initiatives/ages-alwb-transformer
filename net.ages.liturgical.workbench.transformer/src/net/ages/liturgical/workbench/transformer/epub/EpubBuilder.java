@@ -234,22 +234,29 @@ public class EpubBuilder {
 	
 	private String newPath(String path, String from, String to) {
 		String result = path;
+		String separator = "/";
 		try {
 			File f  = new File(path);
-			result = f.getParent().replace(delimit(from),delimit(to)) + "/";
+			if (path.contains("\\")) {
+				separator = "\\";
+			}
+			result = f.getParent().replace(
+					separator
+					+ from
+					+ separator
+					, separator
+					+ to
+					+ separator
+					) 
+					+ separator;
 			f = new File(result);
 			f.mkdirs();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
-		
 	}
 
-	private String delimit(String s) {
-		return "/" + s + "/";
-	}
-	
 	/**
 	 * Index.html file that will automatically initiate a
 	 * download of the ePub

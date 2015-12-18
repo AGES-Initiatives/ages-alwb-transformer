@@ -33,8 +33,8 @@ public class RunToMergeEpubFilesGroupedByDay {
 			String filenamePrefix = props.getPropString("merge.day.filename.prefix");
 			SimpleDateFormat titleSdf = new SimpleDateFormat(props.getPropString("merge.day.title.date.format"));
 			boolean mergeFiles = props.getPropBoolean("mergeEpubFilesByMonth");
+			List<String> patterns = props.getPropArray("merge.day.regular.expression");
 			List<String> exclusions = props.getListFromDelimitedString("merge.day.exclusions");
-			String mergeRegEx = props.getPropString("merge.day.regular.expression");
 			// We use the Calendar to format the date on the title of the ePub
 			Calendar calendar = new GregorianCalendar();
 			
@@ -51,7 +51,7 @@ public class RunToMergeEpubFilesGroupedByDay {
 						for (File day : days) {
 							calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(day.getName()));
 							// get the files that match the patterns
-							List<File> files = AlwbFileUtils.getMatchingFilesInDirectory(day.getPath(), mergeRegEx,"epub");
+							List<File> files = AlwbFileUtils.getMatchingFilesInDirectory(day.getPath(), patterns,"epub");
 							if (files.size() > 0) {
 								// Create the EpubMerger.  Instantiating it will invoke the merge process.
 								EpubMerger merger = new EpubMerger(
