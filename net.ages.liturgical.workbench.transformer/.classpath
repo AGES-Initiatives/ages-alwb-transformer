@@ -49,5 +49,6 @@
 			<attribute name="javadoc_location" value="jar:file:/Users/mac002/Git/ages-alwb-transformer/net.ages.liturgical.workbench.transformer/lib/epublib/epublib-core-3.1-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/codehouse/plexus-utils-3.0.15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

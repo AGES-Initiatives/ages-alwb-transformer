@@ -406,6 +406,7 @@ public class AlwbFileUtils {
 		try {
 			file = new File(filename);
 			if (!file.exists()) {
+				file.getParentFile().mkdirs();
 				file.createNewFile();
 			}
 			FileWriter fw = new FileWriter(file.getAbsoluteFile());
