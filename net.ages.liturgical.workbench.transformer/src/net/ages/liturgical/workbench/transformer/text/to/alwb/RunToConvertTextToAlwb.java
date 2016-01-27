@@ -27,24 +27,32 @@ public class RunToConvertTextToAlwb {
 			String ePubConfig = "/Transformer.config";
 			PropertyUtils props = new PropertyUtils(ePubConfig);
 			String pathIn = props.getPropString("text.to.alwb.path.in");
-			String pathOut = props.getPropString("text.to.alwb.path.out");
+			String pathOutAres = props.getPropString("text.to.alwb.path.out.ares");
+			String pathOutAtem = props.getPropString("text.to.alwb.path.out.atem");
 			String actors = props.getPropString("text.to.alwb.actors");
 			String actorDelimiter = props.getPropString("text.to.alwb.actor.delimiter");
 			String domain = props.getPropString("text.to.alwb.domain");
 			String atemTagOpen = props.getPropString("text.to.alwb.default.atem.tag.open");
 			String atemTagClose = props.getPropString("text.to.alwb.default.atem.tag.close");
+			String ampersand = props.getPropString("text.to.alwb.replace.ampersand.with");
 			
 			TextToAlwb tta = new TextToAlwb(
 					actors
 					, actorDelimiter
 					, pathIn
-					, pathOut
+					, pathOutAres
+					, pathOutAtem
 					, domain
 					, atemTagOpen
 					, atemTagClose
+					, ampersand
 					);
 			tta.process();
-			System.out.println("Done...Look in " + pathOut);
+			System.out.println("Done...Look in \n" 
+			+ pathOutAres
+			+ "\n"
+			+ pathOutAtem
+			);
 		} catch (Exception e) {
 			ErrorUtils.report(logger, e);
 			System.out.println("Did you forget to assign values in the transformer.config file for TextToAlwb?");

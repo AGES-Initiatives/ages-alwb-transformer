@@ -32,7 +32,8 @@ public class TextToAlwb {
 	private List<String> actors = new ArrayList<String>();
 	private String actorDelimiter;
 	private String pathIn;
-	private String pathOut;
+	private String pathOutAres;
+	private String pathOutAtem;
 	private String domain;
 	private File duplicatesFile;
 	private static final String duplicatesPrefix = "duplicates_"; 
@@ -54,29 +55,34 @@ public class TextToAlwb {
 	private String title;
 	private String atemTagOpen;
 	private String atemTagEnd;
+	private String ampersand;
 	
 	public TextToAlwb(
 			String actors
 			, String actorDelimiter
 			, String pathIn
-			, String pathOut
+			, String pathOutAres
+			, String pathOutAtem
 			, String domain
 			, String atemTagOpen
 			, String atemTagEnd
+			, String ampersand
 			) {
 		this.actors = GeneralUtils.stringToList(actors);
 		this.actorDelimiter = actorDelimiter;
 		this.pathIn = pathIn;
-		this.pathOut = pathOut;
+		this.pathOutAres = pathOutAres;
+		this.pathOutAtem = pathOutAtem;
 		this.domain = domain;
 		duplicatesResourceName = duplicatesPrefix + domain;
 		duplicatesFileName = duplicatesResourceName + ".ares";
 		this.atemTagOpen = atemTagOpen;
 		this.atemTagEnd = atemTagEnd;
+		this.ampersand = ampersand;
 	}
 
 	private void loadDuplicatesFile() {
-		duplicatesFile = new File(this.pathOut+"/"+ duplicatesFileName);
+		duplicatesFile = new File(this.pathOutAres+"/"+ duplicatesFileName);
 		if (duplicatesFile.exists()) {
 			try {
 				List<String> lines = AlwbFileUtils.linesFromFile(duplicatesFile);
@@ -101,7 +107,7 @@ public class TextToAlwb {
 				ErrorUtils.report(logger, e);
 			}
 		} else {
-			File duplicatesDir = new File(pathOut);
+			File duplicatesDir = new File(pathOutAres);
 			duplicatesDir.mkdirs();
 		}
 	}
@@ -134,11 +140,14 @@ public class TextToAlwb {
 		Iterator<Entry<String,String>> it = duplicates.entrySet().iterator();
 		while (it.hasNext()) {
 			Entry<String,String> entry = it.next();
-			domainContents.append(entry.getKey() + " = " + quote(entry.getValue()) + "\n");
+			String value = entry.getValue();
+			value = value.replaceAll("&", ampersand);
+			value = value.replaceAll("&", ampersand);
+			domainContents.append(entry.getKey() + " = " + quote(value) + "\n");
 			greekContents.append(entry.getKey() + " = \"\""  + "\n");
 		}
-		AlwbFileUtils.writeFile(pathOut + "/library/" + duplicatesFileName, domainContents.toString());
-		AlwbFileUtils.writeFile(pathOut + "/library/" + greekDuplicatesFileName, greekContents.toString());
+		AlwbFileUtils.writeFile(pathOutAres + "/library/" + duplicatesFileName, domainContents.toString());
+		AlwbFileUtils.writeFile(pathOutAres + "/library/" + greekDuplicatesFileName, greekContents.toString());
 	}
 	
 	private void writeDomainAresFile() {
@@ -153,9 +162,11 @@ public class TextToAlwb {
 			} else {
 				value = quote(StringUtils.escape(entry.getValue()));
 			}
+			value = value.replaceAll("&", ampersand);
+			value = value.replaceAll("&", ampersand);
 			contents.append(entry.getKey() + " = " + value + "\n");
 		}
-		AlwbFileUtils.writeFile(pathOut + "/library/" + aresFileName, contents.toString());
+		AlwbFileUtils.writeFile(pathOutAres + "/library/" + aresFileName, contents.toString());
 	}
 
 	private void writeTemplateFile() {
@@ -210,7 +221,7 @@ public class TextToAlwb {
 			}
 		}
 		contents.append("End-Template");
-		AlwbFileUtils.writeFile(pathOut + "/templates/" + templateFileName, contents.toString());
+		AlwbFileUtils.writeFile(pathOutAtem + "/" + templateFileName, contents.toString());
 	}
 	
 	private boolean isActor(String value) {
@@ -233,7 +244,7 @@ public class TextToAlwb {
 			Entry<String,String> entry = it.next();
 			contents.append(entry.getKey() + " = " + entry.getValue() + "\n");
 		}
-		AlwbFileUtils.writeFile(pathOut + "/library/" + greekAresFileName, contents.toString());
+		AlwbFileUtils.writeFile(pathOutAres + "/library/" + greekAresFileName, contents.toString());
 	}
 
 	private String pad(int i) {
@@ -378,7 +389,9 @@ public class TextToAlwb {
 					String[] lineParts = lineParts(line);
 					recordStringForDuplicates(lineParts[0]);
 					if (lineParts[1] != null && lineParts.length > 0) {
-						recordStringForDuplicates(lineParts[1]);
+						String value = lineParts[1].replaceAll("&", ampersand);
+						value = value.replaceAll("&", ampersand);
+						recordStringForDuplicates(value);
 					}
 				}
 			}
