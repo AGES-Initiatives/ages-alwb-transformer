@@ -29,6 +29,8 @@ public class TextToAlwb {
 	// Map below holds the ares key-value pairs for the text
 	private Map<String,String> aresForDomain = new TreeMap<String,String>();
 	private Map<String,String> aresForGreek = new TreeMap<String,String>();
+	// Map to hold text of all files
+	private Map<File,List<String>> mapFileLines = new TreeMap<File, List<String>>();
 	private List<String> actors = new ArrayList<String>();
 	private String actorDelimiter;
 	private String pathIn;
@@ -150,6 +152,42 @@ public class TextToAlwb {
 		AlwbFileUtils.writeFile(pathOutAres + "/library/" + greekDuplicatesFileName, greekContents.toString());
 	}
 	
+	private void loadLines(List<File> files) {
+		for (File f : files) {
+			List<String> lines = AlwbFileUtils.linesFromFile(f);
+			int s = lines.size();
+			List<String> newLines = new ArrayList<String>();
+			for (int i=0; i < s; i++) {
+				if (i == s-1) {
+					newLines.add(amp(lines.get(i)));
+				} else {
+					String l1 = lines.get(i);
+					String l2 = lines.get(i+1);
+					if (l1.length() > 0 && Character.isLowerCase(l1.codePointAt(0))) {
+						// ignore
+					} else {
+						try {
+							if (l2.length() > 0 && Character.isLowerCase(l2.codePointAt(0))) {
+								newLines.add(amp(l1 + " " + l2));
+							} else {
+								newLines.add(amp(l1));
+							}
+						} catch (Exception e) {
+							ErrorUtils.report(logger, e);
+						}
+					}
+				}
+			}
+			mapFileLines.put(f, newLines);
+		}
+	}
+	
+	private String amp(String s) {
+		String result = s.replaceAll("&", ampersand);
+		result = result.replaceAll("&", ampersand);
+		return result;
+	}
+
 	private void writeDomainAresFile() {
 		StringBuffer contents = new StringBuffer();
 		contents.append(this.aresLineOneKey + " = " + aresResourceName +  "\n");
@@ -382,17 +420,19 @@ public class TextToAlwb {
 	}
 
 	private void findDuplicates(List<File> files) {
-		for (File file : files) {
-			List<String> lines = AlwbFileUtils.linesFromFile(file);
+		for (File f : mapFileLines.keySet()) {
+			List<String> lines = mapFileLines.get(f);
 			for (String line : lines) {
-				if (line.length() != 0) {
-					String[] lineParts = lineParts(line);
-					recordStringForDuplicates(lineParts[0]);
-					if (lineParts[1] != null && lineParts.length > 0) {
-						String value = lineParts[1].replaceAll("&", ampersand);
-						value = value.replaceAll("&", ampersand);
-						recordStringForDuplicates(value);
+				try {
+					if (line.length() != 0) {
+						String[] lineParts = lineParts(line);
+						recordStringForDuplicates(lineParts[0]);
+						if (lineParts[1] != null && lineParts.length > 0) {
+							recordStringForDuplicates(lineParts[1]);
+						}
 					}
+				} catch (Exception e) {
+					ErrorUtils.report(logger, e);
 				}
 			}
 		}
@@ -423,6 +463,7 @@ public class TextToAlwb {
 		boolean result = true;
 		try {
 			List<File> files = AlwbFileUtils.getFilesInDirectory(pathIn, "txt");
+			loadLines(files);
 			loadDuplicatesFile();
 			findDuplicates(files);
 			for (File file : files) {
