@@ -52,6 +52,8 @@ public class TextToAlwb {
 	private String templateName;
 	private String templateFileName;
 	private String title;
+	private String atemTagOpen;
+	private String atemTagEnd;
 	
 	public TextToAlwb(
 			String actors
@@ -59,6 +61,8 @@ public class TextToAlwb {
 			, String pathIn
 			, String pathOut
 			, String domain
+			, String atemTagOpen
+			, String atemTagEnd
 			) {
 		this.actors = GeneralUtils.stringToList(actors);
 		this.actorDelimiter = actorDelimiter;
@@ -67,6 +71,8 @@ public class TextToAlwb {
 		this.domain = domain;
 		duplicatesResourceName = duplicatesPrefix + domain;
 		duplicatesFileName = duplicatesResourceName + ".ares";
+		this.atemTagOpen = atemTagOpen;
+		this.atemTagEnd = atemTagEnd;
 	}
 
 	private void loadDuplicatesFile() {
@@ -157,7 +163,7 @@ public class TextToAlwb {
 		contents.append("Template " + templateName +  "\n\n");
 		
 		// set imports
-		contents.append("Status Review\n\n");
+		contents.append("Status Draft\n\n");
 //		contents.append("\timport duplicates_gr_GR_cog.*\n");
 		contents.append("\timport " + this.aresResourceName + ".*\n\n");
 		contents.append("\timport iTags.*\n");
@@ -181,11 +187,6 @@ public class TextToAlwb {
 		contents.append("\t\tSet_Page_Number 1 End_Set_Page_Number\n");
 		contents.append("\tEnd_Head\n\n");
 		
-		/**
-		 * Actor sid Priest End-Actor
-		 * Dialog sid euLI.Key0109.text End-Dialog
-		 * Para role alttext sid euLI.Key0301.text End-Para
-		 */
 		Iterator<Entry<String,String>> it =  this.aresForDomain.entrySet().iterator();
 		boolean inDialog = false;
 		while (it.hasNext()) {
@@ -200,12 +201,12 @@ public class TextToAlwb {
 						inDialog = false;
 						contents.append("\t\tDialog sid " + entry.getKey() + " End-Dialog\n");
 					} else {
-						contents.append("\t\tPara role alttext sid " + entry.getKey() + " End-Para\n");
+						contents.append("\t\t" + atemTagOpen + " sid " + entry.getKey() + " " + atemTagEnd +"\n");
 					}
 				}
 			} else {
 				inDialog = false;
-				contents.append("\t\tPara role alttext sid " + entry.getKey() + " End-Para\n");
+				contents.append("\t\t" + atemTagOpen + " sid " + entry.getKey() + " " + atemTagEnd + "\n");
 			}
 		}
 		contents.append("End-Template");
@@ -424,7 +425,7 @@ public class TextToAlwb {
 				aresFileName = createAresFileName(file.getName(), domain);
 				greekAresFileName = createAresFileName(file.getName(), greekDomain);
 				atemFileName = createAlwbFileName(file.getName())+".atem";
-				print("Transforming \n"+ file.getName()+ "\nto\n"+ aresFileName+ "\nand to\n"+ atemFileName);
+				print("Transforming "+ file.getName());
 				List<String> lines = AlwbFileUtils.linesFromFile(file);
 				title = lines.get(0);
 				for (String line : lines) {

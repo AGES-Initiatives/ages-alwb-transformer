@@ -31,6 +31,8 @@ public class RunToConvertTextToAlwb {
 			String actors = props.getPropString("text.to.alwb.actors");
 			String actorDelimiter = props.getPropString("text.to.alwb.actor.delimiter");
 			String domain = props.getPropString("text.to.alwb.domain");
+			String atemTagOpen = props.getPropString("text.to.alwb.default.atem.tag.open");
+			String atemTagClose = props.getPropString("text.to.alwb.default.atem.tag.close");
 			
 			TextToAlwb tta = new TextToAlwb(
 					actors
@@ -38,10 +40,14 @@ public class RunToConvertTextToAlwb {
 					, pathIn
 					, pathOut
 					, domain
+					, atemTagOpen
+					, atemTagClose
 					);
-			System.out.println("Processed OK? = " + tta.process());
+			tta.process();
+			System.out.println("Done...Look in " + pathOut);
 		} catch (Exception e) {
 			ErrorUtils.report(logger, e);
+			System.out.println("Did you forget to assign values in the transformer.config file for TextToAlwb?");
 		}
 	}
 		
