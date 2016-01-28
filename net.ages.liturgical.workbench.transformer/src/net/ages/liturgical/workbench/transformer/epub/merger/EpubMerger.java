@@ -71,9 +71,7 @@ public class EpubMerger {
 					attribs = null;
 				}
 				String tocTitle = null;
-				if (attribs == null) {
-					tocTitle = title;
-				} else {
+				if (attribs != null) {
 					if (daySpecific) { // no need to show the date in the toc
 						tocTitle = attribs.getTocTitle();
 					} else { // need to show the date in the toc
@@ -83,12 +81,20 @@ public class EpubMerger {
 				TableOfContents toc = book.getTableOfContents();
 				for (TOCReference tocr : toc.getTocReferences()) {
 					if (include(tocr.getCompleteHref())) {
-						mergedBook.addSection(
-								tocTitle
-								+ ", "
-								+ tocr.getTitle()
-								, tocr.getResource()
-						);
+						if (attribs == null) {
+							mergedBook.addSection(
+									tocr.getTitle()
+									, tocr.getResource()
+							);
+							
+						} else {
+							mergedBook.addSection(
+									tocTitle
+									+ ", "
+									+ tocr.getTitle()
+									, tocr.getResource()
+							);
+						}
 					}
 				}
 			} catch (Exception e) {

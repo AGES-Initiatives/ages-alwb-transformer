@@ -148,8 +148,8 @@ public class TextToAlwb {
 			domainContents.append(entry.getKey() + " = " + quote(value) + "\n");
 			greekContents.append(entry.getKey() + " = \"\""  + "\n");
 		}
-		AlwbFileUtils.writeFile(pathOutAres + "/library/" + duplicatesFileName, domainContents.toString());
-		AlwbFileUtils.writeFile(pathOutAres + "/library/" + greekDuplicatesFileName, greekContents.toString());
+		AlwbFileUtils.writeFile(pathOutAres + "/" + duplicatesFileName, domainContents.toString());
+		AlwbFileUtils.writeFile(pathOutAres + "/" + greekDuplicatesFileName, greekContents.toString());
 	}
 	
 	private void loadLines(List<File> files) {
@@ -228,10 +228,12 @@ public class TextToAlwb {
 		contents.append("\t\t\tcenter @text \"" + title + "\"\n");
 		contents.append("\t\tEnd_Page_Header_Odd\n");
 		contents.append("\t\tPage_Footer_Even\n");
-		contents.append("\t\t\tcenter @pageNbr\n");
+		contents.append("\t\tleft @text \"PRIEST'S SERVICE BOOK\"\n");
+		contents.append("\t\tright @pageNbr\n");
 		contents.append("\t\tEnd_Page_Footer_Even\n");
 		contents.append("\t\tPage_Footer_Odd\n");
-		contents.append("\t\t\tcenter @pageNbr\n");
+		contents.append("\t\tleft @pageNbr\n");
+		contents.append("\t\tright @text \"PRIEST'S SERVICE BOOK\"\n");
 		contents.append("\t\tEnd_Page_Footer_Odd\n");
 		contents.append("\t\tSet_Page_Number 1 End_Set_Page_Number\n");
 		contents.append("\tEnd_Head\n\n");
@@ -282,7 +284,7 @@ public class TextToAlwb {
 			Entry<String,String> entry = it.next();
 			contents.append(entry.getKey() + " = " + entry.getValue() + "\n");
 		}
-		AlwbFileUtils.writeFile(pathOutAres + "/library/" + greekAresFileName, contents.toString());
+		AlwbFileUtils.writeFile(pathOutAres + "/" + greekAresFileName, contents.toString());
 	}
 
 	private String pad(int i) {

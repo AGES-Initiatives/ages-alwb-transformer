@@ -44,6 +44,44 @@ public class AlwbFileUtils {
 		return list;
 	}
 	
+	/**
+	 * Used to get a report of files of a specific type, and optionally to prefix and/or suffix
+	 * the name, for whatever purpose is needed.
+	 * @param prefix - will occur before the filename.  Can be set to null;
+	 * @param suffix - will occur after the filename.  Can be set to null;
+	 * @param path - directory to search
+	 * @param extension - file extension to find
+	 */
+	public static  List<String > listFiles(String prefix, String suffix, String path, String extension) {
+		List<String> result = new ArrayList<String>();
+		if (prefix == null) {
+			prefix = "";
+		}
+		if (suffix == null) {
+			suffix = "";
+		}
+		List<File> files = AlwbFileUtils.getFilesInDirectory(path, extension);
+		for (File f : files) {
+			result.add(prefix + f.getName() + suffix);
+		}
+		return result;
+	}
+	
+	/**
+	 * Used to get a report of files of a specific type, and optionally to prefix and/or suffix
+	 * the name, for whatever purpose is needed.
+	 * @param prefix - will occur before the filename.  Can be set to null;
+	 * @param suffix - will occur after the filename.  Can be set to null;
+	 * @param path - directory to search
+	 * @param extension - file extension to find
+	 */
+	public static  void printFileList(String prefix, String suffix, String path, String extension) {
+		List<String> files = listFiles(prefix,suffix,path,extension);
+		for (String s : files) {
+			System.out.println(s);
+		}
+	}
+	
 	public static String[] getPathsToFilesInDirectory(String directory, String extension, String excludeSubPath) {
 		List<File> list = getFilesInDirectory(directory, extension);
 		List<String> paths = new ArrayList<String>();

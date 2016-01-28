@@ -1,7 +1,9 @@
 package net.ages.liturgical.workbench.transformer;
 
 import net.ages.liturgical.workbench.transformer.epub.RunToBuildEpubFiles;
+import net.ages.liturgical.workbench.transformer.epub.merger.RunToMergeEpubFiles;
 import net.ages.liturgical.workbench.transformer.pdf.RunToBuildPdfFiles;
+import net.ages.liturgical.workbench.transformer.pdf.RunToMergePdfFilesForBook;
 import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
 
 public class AlwbTransformer {
@@ -18,13 +20,22 @@ public class AlwbTransformer {
 			String ePubConfig = "/Transformer.config";
 			PropertyUtils props = new PropertyUtils(ePubConfig);
 			boolean createPdfFiles = props.getPropBoolean("createPdfFiles");
+			boolean mergePdfFiles = props.getPropBoolean("mergePdfForBook");
 			boolean createIndividualEpubs = props.getPropBoolean("createIndividualEpubFiles");
+			boolean createCustomEpubMerge = props.getPropBoolean("createCustomEpubMerge");
 
 			if (createPdfFiles) {
 				RunToBuildPdfFiles.main(null);
 			}
+			if (mergePdfFiles) {
+				RunToMergePdfFilesForBook.main(null);
+			}
 			if (createIndividualEpubs) {
 				RunToBuildEpubFiles.main(null);
+			}
+			
+			if (createCustomEpubMerge) {
+				RunToMergeEpubFiles.main(null);
 			}
 	}
 
