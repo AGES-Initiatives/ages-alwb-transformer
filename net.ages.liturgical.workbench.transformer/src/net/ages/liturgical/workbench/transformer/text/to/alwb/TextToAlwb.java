@@ -204,7 +204,7 @@ public class TextToAlwb {
 			value = value.replaceAll("&", ampersand);
 			contents.append(entry.getKey() + " = " + value + "\n");
 		}
-		AlwbFileUtils.writeFile(pathOutAres + "/library/" + aresFileName, contents.toString());
+		AlwbFileUtils.writeFile(pathOutAres + "/" + aresFileName, contents.toString());
 	}
 
 	private void writeTemplateFile() {

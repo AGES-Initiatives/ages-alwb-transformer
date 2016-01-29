@@ -18,6 +18,16 @@ public class GeneralUtils {
 		return c.getResourceAsStream(path);
 	}
 
+	/**
+	 * 
+	 * @param i number to padd
+	 * @param j number of leading zeros
+	 * @return
+	 */
+	public static String pad(int i, int j) {
+		return String.format("%0" + j+"d", i);
+	}
+
 	public static void createDir(String path) {
 		try {
 			File f = new File(path);

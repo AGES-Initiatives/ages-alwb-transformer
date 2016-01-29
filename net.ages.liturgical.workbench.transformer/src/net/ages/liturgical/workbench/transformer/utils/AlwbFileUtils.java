@@ -7,8 +7,11 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
+import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -42,6 +45,34 @@ public class AlwbFileUtils {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	
+	public static void copyFiles(
+			String fromDir
+			, String toDir
+			, String extension
+			) {
+		CopyOption[] options = new CopyOption[]{
+			      StandardCopyOption.REPLACE_EXISTING,
+			      StandardCopyOption.COPY_ATTRIBUTES
+			    }; 
+		List<File> filesIn = getFilesInDirectory(fromDir, extension);
+		for (File file : filesIn) {
+			try {
+				Files.copy(Paths.get(file.getAbsolutePath()), Paths.get(toDir+"/"+ file.getName()), options);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static String getFileAsString(File f) {
+		StringBuffer result = new StringBuffer();
+		List<String> lines = linesFromFile(f);
+		for (String line : lines) {
+			result.append(line.trim() + " ");
+		}
+		return result.toString();
 	}
 	
 	/**
