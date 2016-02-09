@@ -6,14 +6,27 @@ public class CellElement{
 	String className;
 	String text;
 	String key;
+	boolean tagIsForOuter; // Para sid x.y sid x.b.  For x.b, tagIsForOuter.
 	
-	public CellElement(int row, String tag, String className, String text, String key) {
+	public CellElement(
+			int row
+			, String tag
+			, String className
+			, String text
+			, String key
+			, boolean tagIsForOuter
+			) {
 		super();
 		this.tag = tag;
 		this.className = className;
 		this.row = row;
 		this.text = text;
 		this.key = key;
+		this.tagIsForOuter = tagIsForOuter;
+	}
+	
+	public boolean tagIsForOuter() {
+		return tagIsForOuter;
 	}
 
 	public int getRow() {

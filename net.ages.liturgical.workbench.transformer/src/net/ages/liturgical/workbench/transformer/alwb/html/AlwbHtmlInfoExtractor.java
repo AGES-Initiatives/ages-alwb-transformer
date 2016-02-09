@@ -13,8 +13,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import net.ages.liturgical.workbench.transformer.alwb.html.models.Atem;
 import net.ages.liturgical.workbench.transformer.alwb.html.models.Cell;
 import net.ages.liturgical.workbench.transformer.alwb.html.models.CellElement;
+import net.ages.liturgical.workbench.transformer.alwb.html.models.ClassToAtem;
 import net.ages.liturgical.workbench.transformer.alwb.html.models.Row;
 import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
@@ -31,7 +33,88 @@ public class AlwbHtmlInfoExtractor {
 		process();
 	}
 	
+	public String toAresFileContents(String resourceName) {
+		StringBuffer sb = new StringBuffer();
+		return sb.toString();
+	}
 	
+	public String toAtemFileContents(
+			String templateName
+			, String domain
+			, String title
+			) {
+		ClassToAtem cta = new ClassToAtem();
+		StringBuffer contents = new StringBuffer();
+		contents.append("Template " + templateName +  "\n\n");
+		
+		// set imports
+		contents.append("Status Draft\n\n");
+//		contents.append("\timport duplicates_gr_GR_cog.*\n");
+		contents.append("\timport " + templateName + ".*\n\n");
+		contents.append("\timport iTags.*\n");
+		contents.append("\timport bTags.*\n");
+		contents.append("\timport roles.*\n");
+		
+		// set header
+		contents.append("\n\tHead\n");
+		contents.append("\t\tPage_Header_Even\n");
+		contents.append("\t\t\tcenter @text \"" + title + "\"\n");
+		contents.append("\t\tEnd_Page_Header_Even\n");
+		contents.append("\t\tPage_Header_Odd\n");
+		contents.append("\t\t\tcenter @text \"" + title + "\"\n");
+		contents.append("\t\tEnd_Page_Header_Odd\n");
+		contents.append("\t\tPage_Footer_Even\n");
+		contents.append("\t\tleft @text \"PRIEST'S SERVICE BOOK\"\n");
+		contents.append("\t\tright @pageNbr\n");
+		contents.append("\t\tEnd_Page_Footer_Even\n");
+		contents.append("\t\tPage_Footer_Odd\n");
+		contents.append("\t\tleft @pageNbr\n");
+		contents.append("\t\tright @text \"PRIEST'S SERVICE BOOK\"\n");
+		contents.append("\t\tEnd_Page_Footer_Odd\n");
+		contents.append("\t\tSet_Page_Number 1 End_Set_Page_Number\n");
+		contents.append("\tEnd_Head\n\n");
+		for (Row row : rowMap.values()) {
+			Cell left = row.getLeft();
+			List<CellElement> list = left.getList();
+			if (list == null || list.size() == 0) {
+				System.out.println("Oh, no!!!!");
+			} else {
+				String firstClassName = list.get(0).getClassName();
+				Atem firstAtem = cta.get(firstClassName);
+				for (CellElement element : left.getList()) {
+					Atem atem = cta.get(element.getClassName());
+					if (atem == null) {
+						System.out.println("can't find " + element.getTag() + " " + element.getClassName());
+					} else {
+						if (element.tagIsForOuter()) {
+							contents.append(
+							" sid " 
+							+ element.getKey().replace("|", ".")
+							);
+						} else {
+							contents.append(
+									" " 
+							+ atem.getPrefix() 
+							+ " sid " 
+							+ element.getKey().replace("|", ".")
+							+ " "
+							+ atem.getSuffix()
+							);
+						}
+					}
+				}
+				contents.append(" ");
+				if (firstAtem != null) {
+					contents.append(firstAtem.getSuffix());
+				}
+				contents.append("\n");
+			}
+		}
+		contents.append("End-Template");
+		return contents.toString();
+	}
+	
+
 	private Cell processCellElements(int row, boolean left, Elements elements) {
 		Cell result = new Cell();
 		List<CellElement> elementList = result.getList();
@@ -43,13 +126,26 @@ public class AlwbHtmlInfoExtractor {
 				Element parent = keyElement.parent();
 				String tag = parent.tagName();
 				String key = keyElement.attr("data-key");
+				if (key.contains("li.rubric.rank1")) {
+					System.out.println("");
+				}
 				String className = parent.className();
 				if (className.matches("leftCell") || className.matches("rightCell")) {
 					// ignore
 				} else {
 					classNames.add(className.trim());
 					String text = parent.ownText();
-					elementList.add(new CellElement(row, tag, className, text, key));
+					Element previousSibling = keyElement.previousElementSibling();
+					if (previousSibling == null) {
+						elementList.add(new CellElement(row, tag, className, text, key, false));
+					} else {
+						Element previousSiblingParent = previousSibling.parent();
+						if (previousSiblingParent == parent) {
+							elementList.add(new CellElement(row, tag, className, text, key, true));
+						} else {
+							elementList.add(new CellElement(row, tag, className, text, key, false));
+						}
+					}
 				}
 			}
 		}
@@ -104,8 +200,9 @@ public class AlwbHtmlInfoExtractor {
 		return mismatch;
 	}
 	public static void main(String[] args) {
-		String base = "/Users/mac002/git/ages-alwb-transformer/net.ages.liturgical.workbench.transformer/data/";
-		String in = base + "in/dl.gr-en.html";
+		String base = "/Users/mac002/Git/ages-alwb-transformer/net.ages.liturgical.workbench.transformer/data";
+		String in = "/Users/mac002/Git/alwb-repositories/kenya/oak-alwb-templates-oak/net.ages.liturgical.workbench.templates.oak/src-gen/website/test/dcs/h/b/liturgy/chrysostom/lash/oak/gr-en/index.html";
+//		String in = base + "in/dl.gr-en.html";
 		String out = base + "/out/liturgystjohnGrk.";
 		AlwbHtmlInfoExtractor extractor = new AlwbHtmlInfoExtractor(
 				AlwbFileUtils
@@ -137,6 +234,14 @@ public class AlwbHtmlInfoExtractor {
 
 		}
 		AlwbFileUtils.writeFile(out+"mismatched.txt", sb.toString());
+		AlwbFileUtils.writeFile(
+				out+"bk.liturgy.chrysostom.lash.oak.atem"
+				, extractor.toAtemFileContents(
+						"bk.liturgy.chrysostom.lash.oak"
+						,"gr_GR_cog"
+						, "Divine Liturgy of St. John Chrysostomos"
+						)
+			);
 	}
 
 }
