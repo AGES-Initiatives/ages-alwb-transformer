@@ -1,6 +1,7 @@
 package net.ages.liturgical.workbench.transformer.text.to.alwb;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import org.codehaus.plexus.util.StringUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -154,31 +155,31 @@ public class TextToAlwb {
 	
 	private void loadLines(List<File> files) {
 		for (File f : files) {
-			List<String> lines = AlwbFileUtils.linesFromFile(f);
-			int s = lines.size();
-			List<String> newLines = new ArrayList<String>();
-			for (int i=0; i < s; i++) {
-				if (i == s-1) {
-					newLines.add(amp(lines.get(i)));
-				} else {
-					String l1 = lines.get(i);
-					String l2 = lines.get(i+1);
-					if (l1.length() > 0 && Character.isLowerCase(l1.codePointAt(0))) {
-						// ignore
+			try {
+				List<String> lines = AlwbFileUtils.linesFromFile(f);
+				int s = lines.size();
+				List<String> newLines = new ArrayList<String>();
+				for (int i=0; i < s; i++) {
+					if (i == s-1) {
+						newLines.add(amp(lines.get(i)));
 					} else {
-						try {
-							if (l2.length() > 0 && Character.isLowerCase(l2.codePointAt(0))) {
-								newLines.add(amp(l1 + " " + l2));
-							} else {
-								newLines.add(amp(l1));
-							}
-						} catch (Exception e) {
-							ErrorUtils.report(logger, e);
+						String l1 = lines.get(i);
+						String l2 = lines.get(i+1);
+						if (l1.length() > 0 && Character.isLowerCase(l1.codePointAt(0))) {
+							// ignore
+						} else {
+								if (l2.length() > 0 && Character.isLowerCase(l2.codePointAt(0))) {
+									newLines.add(amp(l1 + " " + l2));
+								} else {
+									newLines.add(amp(l1));
+								}
 						}
 					}
 				}
+				mapFileLines.put(f, newLines);
+			} catch (Exception e) {
+				ErrorUtils.report(logger, e);
 			}
-			mapFileLines.put(f, newLines);
 		}
 	}
 	
@@ -194,19 +195,32 @@ public class TextToAlwb {
 		Iterator<Entry<String,String>> it =  this.aresForDomain.entrySet().iterator();
 		while (it.hasNext()) {
 			Entry<String,String> entry = it.next();
+			if (entry.getKey().contains("d1154")) {
+				int i = 0;
+				i = 2;
+			}
 			String value;
 			if (entry.getValue().contains(domain) || entry.getValue().contains(greekDomain)) {
 				value = entry.getValue();
 			} else {
-				value = quote(StringUtils.escape(entry.getValue()));
+				value = entry.getValue();
+				// if you are wondering why you get \u2018 etc., it comes from escapeJava.
+				value = quote(escape(entry.getValue()));
 			}
 			value = value.replaceAll("&", ampersand);
 			value = value.replaceAll("&", ampersand);
+			value = new String(value.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
 			contents.append(entry.getKey() + " = " + value + "\n");
 		}
 		AlwbFileUtils.writeFile(pathOutAres + "/" + aresFileName, contents.toString());
 	}
 
+	
+	private String escape(String s) {
+//		return s;
+		return StringEscapeUtils.escapeJava(s);
+	}
+	
 	private void writeTemplateFile() {
 		StringBuffer contents = new StringBuffer();
 		contents.append("Template " + templateName +  "\n\n");
@@ -400,7 +414,7 @@ public class TextToAlwb {
 					aresKeyCounter++;
 					String key = "p"+pad(aresKeyCounter);
 					String value = "";
-					String quoted = quote(StringUtils.escape(parts[i]));
+					String quoted = quote(escape(parts[i]));
 					if (duplicatesIndex.containsKey(quoted)) {
 						value = this.duplicatesResourceName + "." + duplicatesIndex.get(quoted);
 					} else {
@@ -442,10 +456,14 @@ public class TextToAlwb {
 		for (String key : stringCount.keySet()) {
 			Integer count = stringCount.get(key);
 			if (count > 1) {
-				if (! duplicates.containsValue(quote(StringUtils.escape(key)))) {
+				if (! duplicates.containsValue(quote(escape(key)))) {
 					counter++;
 					String propKey = "d" + pad(counter);
-					String value = quote(StringUtils.escape(key));
+					if (propKey.contains("d1154")) {
+						int i = 0;
+						i = 3;
+					}
+					String value = quote(escape(key));
 					duplicates.put(propKey, value);
 					duplicatesIndex.put(value, propKey);
 				}

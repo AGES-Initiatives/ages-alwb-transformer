@@ -2,6 +2,7 @@ package net.ages.liturgical.workbench.transformer;
 
 import net.ages.liturgical.workbench.transformer.epub.RunToBuildEpubFiles;
 import net.ages.liturgical.workbench.transformer.epub.merger.RunToMergeEpubFiles;
+import net.ages.liturgical.workbench.transformer.json.RunToBuildJsonFiles;
 import net.ages.liturgical.workbench.transformer.pdf.RunToBuildPdfFiles;
 import net.ages.liturgical.workbench.transformer.pdf.RunToMergePdfFilesForBook;
 import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
@@ -9,7 +10,7 @@ import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
 public class AlwbTransformer {
 
 	/**
-	 * Run this to transform fo into PDF and HTML into ePub.
+	 * Run this to transform fo into PDF, HTML into json, and HTML into ePub.
 	 * Set properties in the file Transformer.config.
 	 * It uses key = value pairs.
 	 * Unlike an ares file, the values do not have quotation marks arodeund them.
@@ -23,6 +24,7 @@ public class AlwbTransformer {
 			boolean mergePdfFiles = props.getPropBoolean("mergePdfForBook");
 			boolean createIndividualEpubs = props.getPropBoolean("createIndividualEpubFiles");
 			boolean createCustomEpubMerge = props.getPropBoolean("createCustomEpubMerge");
+			boolean createJsonFiles = props.getPropBoolean("createJsonFiles");
 
 			if (createPdfFiles) {
 				RunToBuildPdfFiles.main(null);
@@ -36,6 +38,9 @@ public class AlwbTransformer {
 			
 			if (createCustomEpubMerge) {
 				RunToMergeEpubFiles.main(null);
+			}
+			if (createJsonFiles) {
+				RunToBuildJsonFiles.main(null);
 			}
 	}
 

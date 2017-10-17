@@ -17,7 +17,8 @@ import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 public class HtmlToJson {
 
 	public static void main(String[] args) {
-		String source = "../net.ages.liturgical.workbench.templates/src-gen/website/public/dcs/h/s/euchologion/liturgies/gr";
+		String source = "//Users/mac002/Git/alwb-repositories/kenya/oak-alwb-templates-oak/net.ages.liturgical.workbench.templates.oak/src-gen/website/test/dcs/h/b/liturgy/chrysostom/lash/oak";
+//				"../net.ages.liturgical.workbench.templates/src-gen/website/public/dcs/h/s/euchologion/liturgies/gr";
 		List<File> files = AlwbFileUtils.getFilesInDirectory(source,"html");
 
 		for (File f : files) {

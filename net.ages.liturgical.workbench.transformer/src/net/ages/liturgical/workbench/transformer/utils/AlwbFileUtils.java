@@ -1,17 +1,25 @@
 package net.ages.liturgical.workbench.transformer.utils;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -41,10 +49,58 @@ public class AlwbFileUtils {
 		try {
 			list = Files.readAllLines(path, Charset.forName("UTF-8"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			StringBuffer sb = reportBadGuys(f);
+			if (sb.length() > 0) {
+				System.out.println(sb.toString());
+				System.out.println("There are bad characters in the file " + f.getName());
+			}
 		}
 		return list;
+	}
+	
+	public static StringBuffer reportBadGuys(File f) {
+		StringBuffer sb = new StringBuffer();
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(f));
+			String line;
+			int lineCount = 0;
+			int charCount = 0;
+		    while ((line = br.readLine()) != null) {
+		    	lineCount++;
+		    	char[] theChars = line.toCharArray();
+		    	for (int i = 0; i < theChars.length; i++) {
+				    byte[] theBytes = Character.toString(theChars[i]).getBytes(StandardCharsets.UTF_8);
+				    charCount++;
+				    if (theBytes.length > 1) {
+					    sb.append((f.getName() + ":" + lineCount + ":" + charCount + ":" + theChars[i])+"\n");
+				    }
+		    	}
+		    }		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return sb;
+	}
+
+	public static void reportBadChars(File f) {
+		try {
+			int charCount = 0;
+			InputStream inputStream       = new FileInputStream(f);
+			Reader  inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+			int data = inputStreamReader.read();
+			while(data != -1){
+			    char theChar = (char) data;
+			    byte[] theBytes = Character.toString(theChar).getBytes(StandardCharsets.UTF_8);
+			    charCount++;
+			    if (theBytes.length > 1) {
+				    System.out.println(charCount + ": " + theChar);
+			    }
+			    data = inputStreamReader.read();
+			}
+			inputStreamReader.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void copyFiles(
@@ -202,7 +258,7 @@ public class AlwbFileUtils {
 	/**
 	 * Recursively read contents of directory and return all files found
 	 * @param directory
-	 * @param extension period + file extension, e.g. .html
+	 * @param file extension, e.g. html
 	 * @return List containing all files found
 	 */
 	public static List<File> getFilesInDirectory(String directory, final String extension) {
@@ -479,6 +535,7 @@ public class AlwbFileUtils {
 				file.createNewFile();
 			}
 			FileWriter fw = new FileWriter(file.getAbsoluteFile());
+//			bw = Files.newBufferedWriter(file.toPath(),StandardCharsets.UTF_8, StandardOpenOption.WRITE);
 			bw = new BufferedWriter(fw);
 			bw.write(content);
 		} catch (IOException e) {

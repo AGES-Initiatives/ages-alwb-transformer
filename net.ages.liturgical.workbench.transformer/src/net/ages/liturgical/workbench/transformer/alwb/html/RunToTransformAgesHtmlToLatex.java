@@ -21,14 +21,15 @@ import net.ages.liturgical.workbench.transformer.alwb.html.models.Row;
 import net.ages.liturgical.workbench.transformer.utils.AlwbFileUtils;
 import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
 
-public class AlwbHtmlInfoExtractor {
+public class RunToTransformAgesHtmlToLatex {
 
 	private String html;
 	private Map<Integer, Row> rowMap = new TreeMap<Integer,Row>();
 	private List<String> classNames = new ArrayList<String>();
 	private List<Row> mismatch = new ArrayList<Row>();
+	private static RunToTransformAgesHtmlToLatex extractor;
 	
-	public AlwbHtmlInfoExtractor(String html) {
+	public RunToTransformAgesHtmlToLatex(String html) {
 		this.html = html;
 		process();
 	}
@@ -199,15 +200,13 @@ public class AlwbHtmlInfoExtractor {
 	public List<Row> getMismatches() {
 		return mismatch;
 	}
-	public static void main(String[] args) {
-		String base = "/Users/mac002/Git/ages-alwb-transformer/net.ages.liturgical.workbench.transformer/data";
-		String in = "/Users/mac002/Git/alwb-repositories/kenya/oak-alwb-templates-oak/net.ages.liturgical.workbench.templates.oak/src-gen/website/test/dcs/h/b/liturgy/chrysostom/lash/oak/gr-en/index.html";
-//		String in = base + "in/dl.gr-en.html";
-		String out = base + "/out/liturgystjohnGrk.";
-		AlwbHtmlInfoExtractor extractor = new AlwbHtmlInfoExtractor(
-				AlwbFileUtils
-				.getFileAsString(new File(in)));
-		List<Cell> cells = extractor.getLeftCells();
+
+	
+	public static void writeData(
+			String out
+			, String lang
+			, List<Cell> cells
+			) {
 		int counter = 0;
 		StringBuffer sb = new StringBuffer();
 		for (Cell cell : cells) {
@@ -216,7 +215,7 @@ public class AlwbHtmlInfoExtractor {
 				sb.append(e.getText() + "\n");
 			}
 		}
-		AlwbFileUtils.writeFile(out+"txt", sb.toString());
+		AlwbFileUtils.writeFile(out+"_"+ lang +".txt", sb.toString());
 		
 		List<Row> mismatches = extractor.getMismatches();
 		sb = new StringBuffer();
@@ -242,6 +241,21 @@ public class AlwbHtmlInfoExtractor {
 						, "Divine Liturgy of St. John Chrysostomos"
 						)
 			);
+
+	}
+	
+	public static void main(String[] args) {
+		String base = "/Users/mac002/Git/ages-alwb-transformer/net.ages.liturgical.workbench.transformer/data";
+//		String in = "/Users/mac002/Git/alwb-repositories/kenya/oak-alwb-templates-oak/net.ages.liturgical.workbench.templates.oak/src-gen/website/test/dcs/h/b/liturgy/chrysostom/lash/oak/en/index.html";
+		String in = base + "/in/dl.gr-en.html";
+		String out = base + "/out/liturgystjohnEng.";
+		extractor = new RunToTransformAgesHtmlToLatex(
+				AlwbFileUtils
+				.getFileAsString(new File(in)));
+		List<Cell> cells = extractor.getLeftCells();
+		writeData(out,"gr", cells);
+		cells = extractor.getRightCells();
+		writeData(out,"eng",cells);
 	}
 
 }

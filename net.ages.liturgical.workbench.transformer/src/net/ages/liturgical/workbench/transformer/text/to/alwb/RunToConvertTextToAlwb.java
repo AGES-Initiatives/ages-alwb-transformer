@@ -16,6 +16,11 @@ import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
  * files converted to ares and atem files before you start changing
  * the format tags in the atem files.  But, it is OK to add additional
  * files later.
+ * 
+ * WARNING:
+ * the duplicates file is read in if it exists.  So, if you have errors in it, make sure
+ * you delete it before re-running the program.
+ *  
  * @author mac002
  *
  */
