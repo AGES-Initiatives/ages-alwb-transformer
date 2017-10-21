@@ -1,5 +1,7 @@
 package net.ages.liturgical.workbench.transformer.json;
 
+import java.io.File;
+
 import alwb.transformer.models.Result;
 import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
 import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
@@ -15,7 +17,7 @@ public class RunToBuildJsonFiles {
 			boolean createJsonFiles = props.getPropBoolean("createJsonFiles");
 
 			if (createJsonFiles) {
-				JsonBuilder t = new JsonBuilder(inputPath + "/h");
+				JsonBuilder t = new JsonBuilder(inputPath + File.separator + "h");
 				result = t.toJson();
 			}
 
@@ -29,7 +31,7 @@ public class RunToBuildJsonFiles {
 				System.out.println(result.toJsonString());
 			} else {
 				System.out.println(result.fileCount + " json files were created.");
-				System.out.println("They are in: " +  inputPath + "/j" );
+				System.out.println("They are in: " +  inputPath + File.separator + "j" );
 				System.out.println("Be sure to upload them to the website...");
 			}
 		} catch (Exception e) {
