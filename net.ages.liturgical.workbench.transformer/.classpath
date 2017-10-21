@@ -51,6 +51,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/codehouse/plexus-utils-3.0.15.jar"/>
-	<classpathentry kind="lib" path="lib/jars/transformer-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jars/transformer-1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
