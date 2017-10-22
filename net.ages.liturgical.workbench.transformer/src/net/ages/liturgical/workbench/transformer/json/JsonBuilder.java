@@ -11,9 +11,17 @@ public class JsonBuilder {
 	}
 	
 	public Result toJson() {
+		DirectoryHtmlToJson htmlToJson = new DirectoryHtmlToJson(
+				this.path
+				, false 
+				);
+		return htmlToJson.process();
+	}
+
+	public Result toJson(boolean printPretty) {
 			DirectoryHtmlToJson htmlToJson = new DirectoryHtmlToJson(
 					this.path
-					, false // set to true in order to have pretty print json
+					, printPretty // set to true in order to have pretty print json
 					);
 		return htmlToJson.process();
 	}

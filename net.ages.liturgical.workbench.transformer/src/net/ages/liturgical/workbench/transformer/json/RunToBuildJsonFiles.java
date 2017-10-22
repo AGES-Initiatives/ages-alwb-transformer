@@ -13,6 +13,7 @@ public class RunToBuildJsonFiles {
 		try {
 			String config = "/Transformer.config";
 			PropertyUtils props = new PropertyUtils(config);
+			boolean printPretty = props.getPropBoolean("formatJson");
 			boolean createJsonFiles = props.getPropBoolean("createJsonFiles");
 
 			if (createJsonFiles) {
@@ -24,7 +25,7 @@ public class RunToBuildJsonFiles {
 				boolean pathExists = new File(path).exists();
 				if (pathExists) {
 					JsonBuilder t = new JsonBuilder(path);
-					result = t.toJson();
+					result = t.toJson(printPretty);
 					if (result.errorCount > 0 || result.fileCount == 0) {
 						if (result.fileCount == 0) {
 							System.out.println("No Json files were created.");
