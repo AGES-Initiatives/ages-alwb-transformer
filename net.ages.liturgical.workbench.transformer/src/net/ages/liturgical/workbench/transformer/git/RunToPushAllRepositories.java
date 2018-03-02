@@ -2,6 +2,9 @@ package net.ages.liturgical.workbench.transformer.git;
 
 import org.ocmc.pols.git.JGitUtils;
 
+import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
+import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
+
 /**
  * Run this to push all local repositories to Github.
  * 
@@ -15,10 +18,9 @@ public class RunToPushAllRepositories {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// set the path to the folder under which all your repositories resides
-       // Windows uses backslashes, e.g. C:\myGitDirectory.
-		// Do not use a path with spaces in the names.
-		String alwbPath = "/Users/mac002/Git/mcolburn/synch-test"; 
+		String configPath = "/Transformer.config";
+		PropertyUtils props = new PropertyUtils(configPath);
+		String alwbPath = GeneralUtils.getParentPath(props.getPropString("pathToParentGitDirectory"));
 		String username = System.getenv("username");
 		String pwd = System.getenv("pwd");
 		String message = "";  // this message will apply to all commits in all repositories.

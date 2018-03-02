@@ -2,6 +2,9 @@ package net.ages.liturgical.workbench.transformer.git;
 
 import org.ocmc.pols.git.JGitUtils;
 
+import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
+import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
+
 /**
  * Run this when you want to blow away all your changes and reset the
  * project libraries and templates to be exactly the way they are in Github.
@@ -16,14 +19,9 @@ public class RunToResetAllRepositories {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/**
-		 * Set the path to the folder under which all your repositories reside.
-		 * Remember that Windows uses backslashes.
-		 * You have to use a double back slash when you set the alwbPath,
-		 * e.g. c:\\git
-		 * Do not use spaces in the path names.
-		 */
-		String alwbPath = "/Users/mac002/Git/alwb-repositories/ages"; 
+		String configPath = "/Transformer.config";
+		PropertyUtils props = new PropertyUtils(configPath);
+		String alwbPath = GeneralUtils.getParentPath(props.getPropString("pathToParentGitDirectory"));
 		JGitUtils.resetAllGitRepos(alwbPath);
 	}
 }

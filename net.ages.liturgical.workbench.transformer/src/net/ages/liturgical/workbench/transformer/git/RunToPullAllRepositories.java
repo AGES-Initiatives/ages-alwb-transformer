@@ -2,6 +2,9 @@ package net.ages.liturgical.workbench.transformer.git;
 
 import org.ocmc.pols.git.JGitUtils;
 
+import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
+import net.ages.liturgical.workbench.transformer.utils.PropertyUtils;
+
 /**
  * Run this to pull all repositories from Github.
  * 
@@ -15,14 +18,9 @@ public class RunToPullAllRepositories {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/**
-		 * Set the path to the folder under which all your repositories reside.
-		 * Remember that Windows uses backslashes.
-		 * You have to use a double back slash when you set the alwbPath,
-		 * e.g. c:\\git
-		 * Do not use spaces in the path names.
-		 */
-		String alwbPath = "c:\\git"; 
+		String configPath = "/Transformer.config";
+		PropertyUtils props = new PropertyUtils(configPath);
+		String alwbPath = GeneralUtils.getParentPath(props.getPropString("pathToParentGitDirectory"));
 		JGitUtils.pullAllGitRepos(alwbPath);
 	}
 }
