@@ -20,6 +20,7 @@ public class RunToPushAllRepositories {
 	public static void main(String[] args) {
 		String configPath = "/Transformer.config";
 		PropertyUtils props = new PropertyUtils(configPath);
+		boolean debug = props.getPropBoolean("debugGit");
 		String alwbPath = GeneralUtils.getParentPath(props.getPropString("pathToParentGitDirectory"));
 		String username = System.getenv("username");
 		String pwd = System.getenv("pwd");
@@ -28,6 +29,8 @@ public class RunToPushAllRepositories {
 				alwbPath
 				, username
 				, pwd
-				, message);
+				, message
+				, debug
+				);
 	}
 }

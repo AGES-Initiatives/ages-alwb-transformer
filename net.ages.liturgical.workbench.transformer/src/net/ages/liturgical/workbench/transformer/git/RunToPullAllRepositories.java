@@ -20,7 +20,8 @@ public class RunToPullAllRepositories {
 	public static void main(String[] args) {
 		String configPath = "/Transformer.config";
 		PropertyUtils props = new PropertyUtils(configPath);
+		boolean debug = props.getPropBoolean("debugGit");
 		String alwbPath = GeneralUtils.getParentPath(props.getPropString("pathToParentGitDirectory"));
-		JGitUtils.pullAllGitRepos(alwbPath);
+		JGitUtils.pullAllGitRepos(alwbPath, debug);
 	}
 }
