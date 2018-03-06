@@ -67,7 +67,11 @@ public class Attributes {
 	}
 	
 	public String getType() {
-		return (String) map.get(KEY_TYPE);
+		if (map.has(KEY_TYPE)) {
+			return (String) map.get(KEY_TYPE);
+		} else {
+			return "";
+		}
 	}
 	
 	public void setTocTitle(String value) {
@@ -75,7 +79,11 @@ public class Attributes {
 	}
 	
 	public String getTocTitle() {
-		return (String) map.getString(KEY_TOC_TITLE);
+		if (map.has(KEY_TOC_TITLE)) {
+			return (String) map.getString(KEY_TOC_TITLE);
+		} else {
+			return "";
+		}
 	}
 	
 	public void setTocDate(String value) {
@@ -83,7 +91,11 @@ public class Attributes {
 	}
 	
 	public String getTocDate() {
-		return (String) map.getString(KEY_TOC_DATE);
+		if (map.has(KEY_TOC_DATE)) {
+			return (String) map.getString(KEY_TOC_DATE);
+		} else {
+			return "";
+		}
 	}
 	
 	public String get(String key) {

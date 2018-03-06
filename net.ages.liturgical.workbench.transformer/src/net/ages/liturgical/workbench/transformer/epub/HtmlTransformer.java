@@ -9,6 +9,7 @@ import java.util.List;
 import net.ages.liturgical.workbench.transformer.utils.GeneralUtils;
 import net.ages.liturgical.workbench.transformer.utils.HtmlUtils;
 
+import org.codehaus.plexus.util.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -23,6 +24,7 @@ public class HtmlTransformer {
 	private String leftLang = "";
 	private String rightLang = "";
 	private boolean isService = false;
+	private boolean isBook = false;
 	private String serviceDateForTitle = null;
 	private String serviceDateForToc = null;
 	private String heading = "";
@@ -54,6 +56,15 @@ public class HtmlTransformer {
 			// Save off header attributes before we strip it away
 			titleText = doc.title();
 			isService = titleText.startsWith("se");
+			isBook = titleText.startsWith("bk");
+			if (isBook) {
+				titleText = doc.getElementsByTag("td").first().text();
+				if (titleText == null) {
+					titleText = doc.title();
+				} else {
+					titleText = StringUtils.capitaliseAllWords(titleText.toLowerCase());
+				}
+			}
 			if (title == null) {
 				displayTitle = titleText;
 			} else {

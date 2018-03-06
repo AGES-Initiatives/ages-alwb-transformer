@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="net.ages.liturgical.workbench.transformer.alwb.html.models.more"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/jars/ant-commons-logging.jar"/>
 	<classpathentry kind="lib" path="lib/jars/ant-launcher.jar"/>
@@ -49,5 +50,8 @@
 			<attribute name="javadoc_location" value="jar:file:/Users/mac002/Git/ages-alwb-transformer/net.ages.liturgical.workbench.transformer/lib/epublib/epublib-core-3.1-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/codehouse/plexus-utils-3.0.15.jar"/>
+	<classpathentry kind="lib" path="lib/jars/transformer-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/jars/pols.git-0.0.1-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
