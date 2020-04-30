@@ -1,4 +1,2 @@
-# ages-alwb-transformer
-To generate PDF and ePub files, run the java program, AlwbTransformer.java.
-You can tell the transformer what settings to use by editing the file Transformer.config.
-The preface, sources, css, etc. for the ePub are stored in net.ages.liturgical.workbench.transformer.epub.resources. 
+## ALWB Transformer 
+This repository contains utilities written in Java for the processing of Eastern Orthodox Christian liturgical text files, such as those available at the [AGES-Initiatives github site](https://github.com/AGES-Initiatives).
