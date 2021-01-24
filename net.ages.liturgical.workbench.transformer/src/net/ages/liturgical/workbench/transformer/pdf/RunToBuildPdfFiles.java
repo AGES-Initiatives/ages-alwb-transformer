@@ -20,7 +20,6 @@ public class RunToBuildPdfFiles {
 			boolean deleteFoFiles = props.getPropBoolean("deleteFoFiles");
 
 			boolean hadErrors = false;
-foSource = "/Users/mac002/Downloads/fo";
 			if (createPdfFiles) {
 				List<File> files = AlwbFileUtils.getFilesInDirectory(foSource,"fo");
 
