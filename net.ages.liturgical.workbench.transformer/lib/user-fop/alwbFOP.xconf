@@ -7,25 +7,25 @@
   <font-base>./</font-base>
 
 	<renderers> 
-    		<renderer mime="application/pdf"> 
+    	<renderer mime="application/pdf"> 
        		<fonts> 
-         		<font embed-url="ttf/Accordance.ttf"> 
-           			<font-triplet name="Accordance" 
+         		<font embed-url="ttf/LiberationSerif-Regular.ttf"> 
+           			<font-triplet name="Liberation Serif" 
            			 	style="normal" weight="normal"/> 
          		</font> 
-         		<font embed-url="ttf/AccordanceBold.ttf"> 
-           			<font-triplet name="Accordance Bold" 
+         		<font embed-url="ttf/LiberationSerif-Bold.ttf"> 
+           			<font-triplet name="Liberation Serif Bold" 
            			 	style="normal" weight="bold"/> 
          		</font> 
-         		<font embed-url="ttf/AccordanceBoldItalic.ttf"> 
-           			<font-triplet name="Accordance Bold Italic" 
+         		<font embed-url="ttf/LiberationSerif-BoldItalic.ttf"> 
+           			<font-triplet name="Liberation Serif Bold Italic" 
            			 	style="italic" weight="bold"/> 
          		</font> 
-         		<font embed-url="ttf/AccordanceItalic.ttf"> 
-           			<font-triplet name="Accordance Italic" 
+         		<font embed-url="ttf/LiberationSerif-Italic.ttf"> 
+           			<font-triplet name="Liberation Serif Italic" 
            			 	style="italic" weight="normal"/> 
          		</font> 
        		</fonts> 
      	</renderer> 
-   	</renderers> 
+   	</renderers>  
 </fop>

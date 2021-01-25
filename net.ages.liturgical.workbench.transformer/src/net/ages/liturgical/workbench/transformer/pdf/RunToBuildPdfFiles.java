@@ -18,7 +18,7 @@ public class RunToBuildPdfFiles {
 			String foSource = GeneralUtils.getParentPath(props.getPropString("pathToServicesIndexHtml"));
 			boolean createPdfFiles = props.getPropBoolean("createPdfFiles");
 			boolean deleteFoFiles = props.getPropBoolean("deleteFoFiles");
-
+foSource = "/Users/mac002/Downloads/fo";
 			boolean hadErrors = false;
 			if (createPdfFiles) {
 				List<File> files = AlwbFileUtils.getFilesInDirectory(foSource,"fo");
